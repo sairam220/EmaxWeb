@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Typography, Container, Grid, Button, Card, CardMedia, CardContent, useMediaQuery } from '@mui/material';
+import { Box, Typography, Container, Grid, Button, Card, CardMedia, CardContent } from '@mui/material';
 import CallIcon from '@mui/icons-material/Call';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';

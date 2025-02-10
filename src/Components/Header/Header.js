@@ -3,7 +3,6 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
 import Popover from '@mui/material/Popover'
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -74,7 +73,7 @@ function ResponsiveAppBar() {
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
               sx={{ display: { xs: 'block', md: 'none' } }}
-              aria-hidden={Boolean(anchorElNav)} 
+              
             >
               <MenuItem onClick={handleCloseNavMenu}>
                 <HomeIcon sx={{color: '#616161', marginRight: 1 }} />
@@ -91,6 +90,7 @@ function ResponsiveAppBar() {
                 onClose={handleCloseServicesMenu}
                 anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
                 transformOrigin={{ vertical: 'top', horizontal: 'left' }}
+                disableRestoreFocus
               >
                 <Box sx={{
                   padding: '10px 20px',
@@ -127,6 +127,7 @@ function ResponsiveAppBar() {
                 onClose={handleCloseIndustriesMenu}
                 anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
                 transformOrigin={{ vertical: 'top', horizontal: 'left' }}
+                disableRestoreFocus
               >
                 <Box sx={{
                   padding: '10px 20px',
