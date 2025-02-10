@@ -57,7 +57,7 @@ const Home = () => {
         responsive: [
             { breakpoint: 1200, settings: { slidesToShow: 3 } },
             { breakpoint: 900, settings: { slidesToShow: 2 } },
-            { breakpoint: 600, settings: { slidesToShow: 1, arrows: false,  } },
+            { breakpoint: 600, settings: { slidesToShow: 1, arrows: false } },
         ],
 
     };
@@ -136,12 +136,13 @@ const Home = () => {
                                     sx={{
                                         boxShadow: 3,
                                         borderRadius: 3,
-                                        maxWidth: 290,
+                                        
+                                        maxWidth: 296,
                                         height: 400,
-                                        marginRight: '15px',
+                                        margin: '0 auto',
                                         display: 'flex',
                                         flexDirection: 'column',
-                                        justifyContent: 'space-between',
+                                        justifyContent: 'space-between', 
                                         alignContent:'center'
                                     }}
                                 >
