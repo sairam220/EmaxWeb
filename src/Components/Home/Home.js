@@ -1,9 +1,22 @@
 import React from 'react';
-import { Box, Typography, Container, Grid, Button, Card, CardMedia, CardContent } from '@mui/material';
+import {
+    Box, Typography, Container, Grid, Button,
+    Card, CardMedia, CardContent,
+} from '@mui/material';
+import Timeline from '@mui/lab/Timeline';
+import TimelineItem from '@mui/lab/TimelineItem';
+import TimelineSeparator from '@mui/lab/TimelineSeparator';
+import TimelineConnector from '@mui/lab/TimelineConnector';
+import TimelineContent from '@mui/lab/TimelineContent';
+import TimelineDot from '@mui/lab/TimelineDot';
 import CallIcon from '@mui/icons-material/Call';
 import Slider from 'react-slick';
+import EngineeringIcon from '@mui/icons-material/Engineering';
+import MiscellaneousServicesIcon from '@mui/icons-material/MiscellaneousServices';
+import PsychologyIcon from '@mui/icons-material/Psychology';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+
 
 // Services Data
 const services = [
@@ -41,6 +54,25 @@ const services = [
     },
 ];
 
+const capabilitiesData = [
+    {
+        image: 'https://emaxss.org/wp-content/uploads/2024/05/managem.png?w=300',
+        text: 'Enhancing Product Portfolio',
+        information: "Portfolio Enhancement"
+    },
+    {
+        image: 'https://emaxss.org/wp-content/uploads/2024/05/continuous-improvement.png?w=300',
+        text: 'Optimizing Product Variability',
+        information: "Product Optimization"
+    },
+    {
+        image: 'https://emaxss.org/wp-content/uploads/2024/05/artificial-intelligence.png?w=300',
+        text: 'Statistical Design & ML Models',
+        information: "Statistical Design"
+    },
+];
+
+
 const Home = () => {
 
 
@@ -75,6 +107,7 @@ const Home = () => {
         >
             <Container maxWidth="lg">
 
+                {/* Heading Section */}
                 <Grid container spacing={4} alignItems="center">
                     {/* Left Side Content */}
                     <Grid item xs={12} md={6}>
@@ -122,8 +155,45 @@ const Home = () => {
                         />
                     </Grid>
                 </Grid>
-                <Box mt={6} mb={2}>
-                    <Typography variant="h4" fontWeight="bold" textAlign="center" mb={3}>
+
+                {/* Slider Section (Services) */}
+                <Box mt={6} mb={6} sx={{ mt: { xs: '50px', sm: '70px', md: '100px' } }}>
+                    <Typography
+                        variant="h4"
+                        fontWeight="bold"
+                        textAlign="center"
+                        mb={6}
+                        sx={{
+                            fontFamily: "'Roboto', sans-serif",
+                            position: 'relative',
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            padding: '8px 16px',
+                            backgroundColor: '#424242', // Gray background color
+                            color: 'white',
+                            borderRadius: 2,
+                            textTransform: 'uppercase',
+                            boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
+                            fontSize: '1.5rem',
+                            '@media (max-width: 600px)': {
+                                fontSize: '1.25rem',
+                                padding: '6px 12px',
+                            },
+                            '&::before': {
+                                content: '""',
+                                position: 'absolute',
+                                bottom: '-10px',
+                                left: '50%',
+                                transform: 'translateX(-50%)',
+                                borderLeft: '10px solid transparent',
+                                borderRight: '10px solid transparent',
+                                borderTop: '10px solid #424242', // Match the background color
+                            },
+                        }}
+                    >
+                        <Box sx={{ mr: 1 }}>
+                            <MiscellaneousServicesIcon sx={{ color: 'white', fontSize: '2rem' }} /> {/* Icon for services */}
+                        </Box>
                         Our Services
                     </Typography>
                     <Slider
@@ -136,14 +206,14 @@ const Home = () => {
                                     sx={{
                                         boxShadow: 3,
                                         borderRadius: 3,
-                                        
+
                                         maxWidth: 296,
                                         height: 400,
                                         margin: '0 auto',
                                         display: 'flex',
                                         flexDirection: 'column',
-                                        justifyContent: 'space-between', 
-                                        alignContent:'center'
+                                        justifyContent: 'space-between',
+                                        alignContent: 'center'
                                     }}
                                 >
                                     <CardMedia component="img" height="220" image={service.img} alt={service.title} />
@@ -169,6 +239,170 @@ const Home = () => {
                         ))}
                     </Slider>
                 </Box>
+
+                {/* Timeline Section (Capabilites)*/}
+                <Box mt={6} mb={2} sx={{ mt: { xs: '50px', sm: '70px', md: '100px' } }}>
+
+                    <Typography
+                        variant="h4"
+                        fontWeight="bold"
+                        textAlign="center"
+                        mb={3}
+                        sx={{
+                            fontFamily: "'Roboto', sans-serif",
+                            position: 'relative',
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            padding: '8px 16px',
+                            backgroundColor: '#0073e6',
+                            color: 'white',
+                            borderRadius: 2,
+                            textTransform: 'uppercase',
+                            boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
+                            fontSize: '1.5rem',
+                            '@media (max-width: 600px)': {
+                                fontSize: '1.25rem',
+                                padding: '6px 12px',
+                            },
+                            '&::before': {
+                                content: '""',
+                                position: 'absolute',
+                                bottom: '-10px',
+                                left: '50%',
+                                transform: 'translateX(-50%)',
+                                borderLeft: '10px solid transparent',
+                                borderRight: '10px solid transparent',
+                                borderTop: '10px solid #0073e6',
+                            },
+                        }}
+                    >
+                        <Box sx={{ mr: 1 }}>
+                            <EngineeringIcon sx={{ color: 'white', fontSize: '2rem' }} />
+                        </Box>
+                        Our Capabilities
+                    </Typography>
+
+                    <Timeline position="alternate">
+                        {capabilitiesData.map((item, index) => (
+                            <TimelineItem key={index}>
+                                <TimelineSeparator>
+                                    {index !== 0 && (
+                                        <TimelineConnector
+                                            sx={{
+                                                bgcolor: 'black',
+                                                height: '30px', // Adjusted height for proper connection
+                                                '@media (max-width: 600px)': {
+                                                    height: '10px', // Shorter for mobile screens
+                                                },
+                                            }} />
+                                    )}
+                                    <TimelineDot
+                                        sx={{
+                                            display: 'flex',
+                                            justifyContent: 'center',
+                                            alignItems: 'center',
+                                            width: 120,
+                                            height: 120,
+                                            padding: 0,
+                                            margin: '0 auto',
+                                            backgroundColor: 'white',
+                                            border: '2px solid #0073e6',
+                                            borderRadius: '50%',
+                                            boxShadow: 2,
+                                            '@media (max-width: 600px)': {
+                                                width: 60,
+                                                height: 60,
+                                            },
+                                        }}
+                                    >
+                                        <img
+                                            src={item.image}
+                                            alt={item.text}
+                                            style={{
+                                                width: '100%',
+                                                height: '100%',
+                                                objectFit: 'cover',
+                                                borderRadius: '50%',
+                                            }}
+                                        />
+                                    </TimelineDot>
+                                    {index !== capabilitiesData.length - 1 && (
+                                        <TimelineConnector sx={{
+                                            bgcolor: 'black',
+                                            height: '30px'
+                                        }} />
+                                    )}
+                                </TimelineSeparator>
+                                <TimelineContent
+                                    style={{ alignContent: 'center' }}
+                                >
+                                    <Typography
+                                        style={{
+                                            fontWeight: 600,
+                                            fontSize: { xs: '1.2rem', sm: '1.5rem' },
+                                            color: 'text.primary',
+                                        }}
+                                    >
+                                        {item.text}
+                                    </Typography>
+                                    <Typography>{item.information}</Typography>
+                                </TimelineContent>
+                            </TimelineItem>
+                        ))}
+                    </Timeline>
+                </Box>
+
+                <Box mt={6} mb={2} sx={{ mt: { xs: '50px', sm: '70px', md: '100px' } }}>
+                    <Typography
+                        variant="h4"
+                        fontWeight="bold"
+                        textAlign="center"
+                        mb={6.8}
+                        sx={{
+                            fontFamily: "'Roboto', sans-serif",
+                            position: 'relative',
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            padding: '8px 16px',
+                            backgroundColor: '#4e342e',
+                            color: 'white',
+                            borderRadius: 2,
+                            textTransform: 'uppercase',
+                            boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
+                            fontSize: '1.5rem',
+                            '@media (max-width: 600px)': {
+                                fontSize: '1.25rem',
+                                padding: '6px 12px',
+                            },
+                            '&::before': {
+                                content: '""',
+                                position: 'absolute',
+                                bottom: '-10px',
+                                left: '50%',
+                                transform: 'translateX(-50%)',
+                                borderLeft: '10px solid transparent',
+                                borderRight: '10px solid transparent',
+                                borderTop: '10px solid #4e342e',
+                            },
+                        }}
+                    >
+                        <Box sx={{ mr: 1 }}>
+                            <PsychologyIcon sx={{ color: 'white', fontSize: '2rem' }} />
+                        </Box>
+                        Methodology
+                    </Typography>
+                    <img
+                        src="https://emaxss.org/wp-content/uploads/2024/05/methodology.png?w=1024&h=552"
+                        alt="Methodology"
+                        style={{
+                            width: '90%', // Makes the image responsive
+                            height: 'auto',
+                            borderRadius: '8px',
+                           
+                        }}
+                    />
+                </Box>
+
             </Container>
         </Box>
     );
