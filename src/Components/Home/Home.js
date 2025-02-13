@@ -398,10 +398,68 @@ const Home = () => {
                             width: '90%', // Makes the image responsive
                             height: 'auto',
                             borderRadius: '8px',
-                           
+
                         }}
                     />
                 </Box>
+
+                <Box mt={4} mb={4}>
+                    <Card
+                        sx={{
+                            display: 'flex',
+                            flexDirection: { xs: 'column', md: 'row' },  // Makes it column on small screens and row on larger screens
+                            alignItems: 'center',
+                            maxWidth: 1200,
+                            margin: '0 auto',
+                            boxShadow: 3,
+                            borderRadius: 2,
+                            padding: 3,
+                            cursor:'pointer',
+                            backgroundColor: '#f5f5f5',
+                            transition: 'transform 0.3s ease',
+                            '&:hover': {
+                                transform: 'translateY(-10px)',
+                                boxShadow: 6,
+                            },
+                        }}
+                    >
+                        {/* Image Section */}
+                        <CardMedia
+                            component="img"
+                            image={`${process.env.PUBLIC_URL}/enstin.jpg`}  // Make sure the image is directly inside the public folder
+                            alt="Albert Einstein"
+                            sx={{
+                                width: { xs: '100%', md: 400 },  // Full width on small screens, 400px on medium and up
+                                height: { xs: 'auto', md: 400 },  // Auto height on small screens
+                                objectFit: 'cover',
+                                borderRadius: 2,
+                                boxShadow: 2,
+                                marginBottom: { xs: 3, md: 0 }, // Margin on small screens to separate text and image
+                            }}
+                        />
+
+                        {/* Text Section */}
+                        <CardContent
+                            sx={{
+                                display: 'flex',
+                                flexDirection: 'column',
+                                justifyContent: 'center',
+                                textAlign: 'left',
+                                color: 'text.primary',
+                                paddingLeft: { md: 3 },
+                            }}
+                        >
+                            <Typography variant="h5" fontWeight="bold" gutterBottom>
+                                "The one who follows the crowd will usually go no further than the crowd. The one who walks alone is likely to find themselves in places no one has ever been before."
+                            </Typography>
+                            <Typography variant="body1" color="text.secondary" fontStyle="italic">
+                                - Albert Einstein
+                            </Typography>
+                        </CardContent>
+                    </Card>
+                </Box>
+
+
 
             </Container>
         </Box>
