@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { Tabs, Tab, Box } from "@mui/material";
+import { Tabs, Tab, Box, Typography } from "@mui/material";
 import { BarChart, Lightbulb, Dashboard, Search, Layers, LayersClear, RadioButtonChecked, Psychology } from '@mui/icons-material';
+import MiscellaneousServicesIcon from '@mui/icons-material/MiscellaneousServices';
 
 const services = [
     { name: "SAPI", icon: <BarChart /> },
@@ -29,6 +30,45 @@ export default function Services() {
                 overflowX: "hidden",
             }}
         >
+            <Typography
+                variant="h4"
+                sx={{
+                    fontWeight: "bold",
+                    textAlign: "center",
+                    mb: 4,
+                    color: "#222",
+                    // textTransform: "uppercase",
+                    letterSpacing: 1.5,
+                    fontFamily: "'Poppins', sans-serif",
+                    position: "relative",
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: 1.2, // Space between icon and text
+                    "&::after": {
+                        content: '""',
+                        position: "absolute",
+                        bottom: -8,
+                        left: "50%",
+                        width: "60px",
+                        height: "4px",
+                        background: "linear-gradient(90deg, #007FFF, #00C6FF)",
+                        borderRadius: "2px",
+                        transform: "translateX(-50%)",
+                    },
+                    "@media (max-width: 600px)": {
+                        fontSize: "1.3rem",
+                        letterSpacing: 1,
+                    },
+                }}
+            >
+
+                Our Services
+                <MiscellaneousServicesIcon sx={{ color: "#000000", fontSize: "2.2rem" }} />
+            </Typography>
+
+
+
+
             <Tabs
                 value={value}
                 onChange={handleChange}

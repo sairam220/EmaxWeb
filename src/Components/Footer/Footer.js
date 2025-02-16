@@ -4,7 +4,7 @@ import { styled } from "@mui/system";
 import { Twitter, LinkedIn, GitHub } from "@mui/icons-material";
 
 const StyledFooter = styled(Box)(({ theme }) => ({
-    background: "linear-gradient(135deg, #1a237e 0%, #0d47a1 100%)",
+    background: "linear-gradient(135deg, #0F2027, #203A43, #2C5364)",
     color: "#ffffff",
     width: "100%", // Ensures it spans the full width
     padding: "20px 0", // Adjusted padding

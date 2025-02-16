@@ -1,241 +1,140 @@
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Popover from '@mui/material/Popover'
-import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
-import Button from '@mui/material/Button';
-import MenuItem from '@mui/material/MenuItem';
-import HomeIcon from '@mui/icons-material/Home';
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
-import BuildIcon from '@mui/icons-material/Build';
-import TrendingUpIcon from '@mui/icons-material/TrendingUp';
-import ContactMailIcon from '@mui/icons-material/ContactMail';
-import InfoIcon from '@mui/icons-material/Info';
-import DomainIcon from '@mui/icons-material/Domain';
-import { Link } from 'react-router-dom';  // Import Link
+import * as React from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import {
+  AppBar,
+  Box,
+  Toolbar,
+  IconButton,
+  Menu,
+  MenuItem,
+  Container,
+  Button,
+  Typography,
+} from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
+import BuildOutlinedIcon from "@mui/icons-material/BuildOutlined";
+import TrendingUpOutlinedIcon from "@mui/icons-material/TrendingUpOutlined";
+import ContactMailOutlinedIcon from "@mui/icons-material/ContactMailOutlined";
+import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
+import DomainOutlinedIcon from "@mui/icons-material/DomainOutlined";
 
-
-const pages = ['HOME','Services' , 'Industries','Trends & Advances', 'Contact', 'About Us'];
-
-const services = [
-  'Stat Analysis', 'Product Innovation', 'TEM', 'SEM',
-  'FIB-SEM', 'XRD', 'Probe Station', 'AI/ML'
-];
-
-const industries = [
-  'Semiconductors', 'Metals', 'Ceramics', 'Food & Pharma', 'Aerospace'
+const pages = [
+  { name: "HOME", icon: <HomeOutlinedIcon />, path: "/" },
+  { name: "Services", icon: <BuildOutlinedIcon />, path: "/services" },
+  { name: "Industries", icon: <DomainOutlinedIcon />, path: "/industries" },
+  { name: "Trends & Advances", icon: <TrendingUpOutlinedIcon />, path: "/trends-advances" },
+  { name: "Contact", icon: <ContactMailOutlinedIcon />, path: "/contact" },
+  { name: "About Us", icon: <InfoOutlinedIcon />, path: "/about-us" },
 ];
 
 function ResponsiveAppBar() {
+  const location = useLocation();
+  const navigate = useNavigate();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElServices, setAnchorElServices] = React.useState(null);
-  const [anchorElIndustries, setAnchorElIndustries] = React.useState(null);
 
   const handleOpenNavMenu = (event) => setAnchorElNav(event.currentTarget);
   const handleCloseNavMenu = () => setAnchorElNav(null);
 
-  const handleOpenServicesMenu = (event) => setAnchorElServices(event.currentTarget);
-  const handleCloseServicesMenu = () => setAnchorElServices(null);
-
-  const handleOpenIndustriesMenu = (event) => setAnchorElIndustries(event.currentTarget);
-  const handleCloseIndustriesMenu = () => setAnchorElIndustries(null);
-
-
+  const handleMenuClick = (path) => {
+    navigate(path);
+    handleCloseNavMenu();
+  };
 
   return (
-    <AppBar position="fixed" sx={{ backgroundColor: '#424242'}}>
-      <Container maxWidth={false} sx={{ padding: 0, margin: 0, width: '100%' }}>
-        <Toolbar disableGutters>
+    <AppBar
+      position="fixed"
+      sx={{
+        background: "linear-gradient(135deg, #0F2027, #203A43, #2C5364)",
+        backdropFilter: "blur(15px)",
+        boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.3)",
+      }}
+    >
+      <Container maxWidth={false} sx={{ padding: 0, margin: 0, width: "100%" }}>
+        <Toolbar disableGutters sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
 
-          {/*Desktop Logo */}
-          <Box sx={{ display: { xs: 'none', md: 'flex' }, mr: 1, alignItems: 'center' }}>
+          {/* LOGO */}
+          <Box sx={{ display: "flex", alignItems: "center", flexGrow: 1 }}>
             <img
               src="https://emax42.wordpress.com/wp-content/uploads/2024/05/emax-white-multicolor-3.png?w=1024"
               alt="Logo"
-              style={{ height: '40px', objectFit: 'contain' }}
+              style={{ height: "40px", objectFit: "contain", marginLeft: "20px" }}
             />
           </Box>
 
-          {/* Mobile Menu */}
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          {/* MOBILE MENU */}
+          <Box sx={{ display: { xs: "flex", md: "none" } }}>
             <IconButton size="large" aria-label="menu" onClick={handleOpenNavMenu} color="inherit">
-              <MenuIcon />
+              <MenuIcon sx={{ color: "#FFF" }} />
             </IconButton>
             <Menu
               id="menu-appbar"
               anchorEl={anchorElNav}
-              anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
+              anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
               keepMounted
-              transformOrigin={{ vertical: 'top', horizontal: 'left' }}
+              transformOrigin={{ vertical: "top", horizontal: "left" }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
-              sx={{ display: { xs: 'block', md: 'none' } }}
-              
+              sx={{ display: { xs: "block", md: "none" } }}
             >
-              <MenuItem onClick={handleCloseNavMenu}>
-                <HomeIcon sx={{color: '#616161', marginRight: 1 }} />
-                HOME
-              </MenuItem>
-              <MenuItem onClick={handleOpenServicesMenu}>
-                <BuildIcon sx={{color: '#616161', marginRight: 1 }} />
-                Services {anchorElServices ? <ArrowDropUpIcon /> : <ArrowDropDownIcon />}
-              </MenuItem>
-              <Popover
-                open={Boolean(anchorElServices)}
-                anchorEl={anchorElServices}
-                sx={{ display: { xs: 'flex', md: 'none' } }}
-                onClose={handleCloseServicesMenu}
-                anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-                transformOrigin={{ vertical: 'top', horizontal: 'left' }}
-                disableRestoreFocus
-              >
-                <Box sx={{
-                  padding: '10px 20px',
-                  backgroundColor: '#1976d2',  // Blue background color for the header
-                  color: 'white',
-                  fontWeight: 'bold',
-                  fontSize: '16px',
-                  textAlign: 'center',
-                  marginBottom: '10px',
-                }}>
-                  Services
-                </Box>
-                {services.map((option, index) => (
-                  <MenuItem
-                    key={index}
-                    onClick={() => {
-                      handleCloseNavMenu();
-                      handleCloseServicesMenu();
-                    }}
-                  >
-                    {option}
-                  </MenuItem>
-                ))}
-              </Popover>
-
-              <MenuItem onClick={handleOpenIndustriesMenu}>
-                <DomainIcon sx={{color: '#616161', marginRight: 1 }} />
-                Industries {anchorElIndustries ? <ArrowDropUpIcon /> : <ArrowDropDownIcon />}
-              </MenuItem>
-              <Popover
-                sx={{ display: { xs: 'flex', md: 'none' } }}
-                open={Boolean(anchorElIndustries)}
-                anchorEl={anchorElIndustries}
-                onClose={handleCloseIndustriesMenu}
-                anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-                transformOrigin={{ vertical: 'top', horizontal: 'left' }}
-                disableRestoreFocus
-              >
-                <Box sx={{
-                  padding: '10px 20px',
-                  backgroundColor: '#1976d2',  // Blue background color for the header
-                  color: 'white',
-                  fontWeight: 'bold',
-                  fontSize: '16px',
-                  textAlign: 'center',
-                  marginBottom: '10px',
-                }}>
-                  Industries
-                </Box>
-                {industries.map((option, index) => (
-                  <MenuItem
-                    key={index}
-                    onClick={() => {
-                      handleCloseNavMenu();
-                      handleCloseIndustriesMenu();
-                    }}
-                  >
-                    {option}
-                  </MenuItem>
-                ))}
-              </Popover>
-
-              <MenuItem onClick={handleCloseNavMenu}>
-                <TrendingUpIcon sx={{ color: '#616161',marginRight: 1 }} />
-                Trends & Advances
-              </MenuItem>
-              <MenuItem onClick={handleCloseNavMenu}>
-                <ContactMailIcon sx={{color: '#616161', marginRight: 1 }} />
-                Contact
-              </MenuItem>
-              <MenuItem onClick={handleCloseNavMenu}>
-                <InfoIcon sx={{color: '#616161', marginRight: 1 }} />
-                About Us
-              </MenuItem>
-            </Menu>
-          </Box>
-
-          {/*Mobile Logo */}
-          <Box sx={{ display: { xs: 'flex', md: 'none' }, flexGrow: 1 }}>
-            <img
-              src="https://emax42.wordpress.com/wp-content/uploads/2024/05/emax-white-multicolor-3.png?w=1024"
-              alt="Logo"
-              style={{ height: '30px', objectFit: 'contain' }} // Adjust the height for mobile
-            />
-          </Box>
-
-          {/* Desktop Navigation */}
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end', alignItems: 'center' }}>
-
-            {/* <MenuItem>
-              HOME
-            </MenuItem>
-
-            <Button
-              onClick={handleOpenServicesMenu}
-              sx={{ my: 2, color: 'white', display: 'flex', alignItems: 'center' }}
-            >
-              Services {anchorElServices ? <ArrowDropUpIcon /> : <ArrowDropDownIcon />}
-            </Button>
-
-            <Menu
-              anchorEl={anchorElServices}
-              open={Boolean(anchorElServices)}
-              onClose={handleCloseServicesMenu}
-              sx={{ mt: 1, display: { xs: 'none', md: 'flex' } }}
-
-            >
-              {services.map((service) => (
-                <MenuItem key={service} onClick={handleCloseServicesMenu}>
-                  {service}
+              {pages.map((page) => (
+                <MenuItem
+                  key={page.name}
+                  onClick={() => handleMenuClick(page.path)}
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    color: location.pathname === page.path ? "#2196f3" : "#333",
+                    fontWeight: location.pathname === page.path ? "bold" : "normal",
+                    fontSize: "16px",
+                    "&:hover": { backgroundColor: "#EDE7F6" },
+                  }}
+                >
+                  {React.cloneElement(page.icon, {
+                    sx: { marginRight: 1, color: location.pathname === page.path ? "#2196f3" : "#616161" },
+                  })}
+                  {page.name}
                 </MenuItem>
               ))}
             </Menu>
+          </Box>
 
-            <Button
-              onClick={handleOpenIndustriesMenu}
-              sx={{ my: 2, color: 'white', display: 'flex', alignItems: 'center' }}
-            >
-              Industries {anchorElIndustries ? <ArrowDropUpIcon /> : <ArrowDropDownIcon />}
-            </Button> */}
-
-            {/* <Menu
-              anchorEl={anchorElIndustries}
-              open={Boolean(anchorElIndustries)}
-              onClose={handleCloseIndustriesMenu}
-              sx={{ mt: 1, display: { xs: 'none', md: 'flex' } }}
-            >
-              {industries.map((industry) => (
-                <MenuItem key={industry} onClick={handleCloseIndustriesMenu}>
-                  {industry}
-                </MenuItem>
-              ))}
-            </Menu> */}
-
+          {/* DESKTOP NAVIGATION */}
+          <Box sx={{ display: { xs: "none", md: "flex" }, justifyContent: "flex-end", alignItems: "center", flexGrow: 1 }}>
             {pages.map((page) => (
-              <Button key={page} sx={{ my: 2, color: 'white',marginRight:2 }}>
-                 <Link to={`/${page.toLowerCase()}`} style={{ textDecoration: 'none', color: 'white' }}>
-                  {page}
-                </Link>
+              <Button
+                key={page.name}
+                component={Link}
+                to={page.path}
+                sx={{
+                  mx: 1.5,
+                  px: 3,
+                  py: 1,
+                  borderRadius: "25px",
+                  fontWeight: "bold",
+                  textTransform: "uppercase",
+                  fontSize: "14px",
+                  fontFamily: "'Playfair Display', serif",
+                  color: location.pathname === page.path ? "#000" : "#EDE7F6",
+                  backgroundColor: location.pathname === page.path ? "#e8eaf6" : "transparent",
+                  transition: "all 0.3s ease-in-out",
+                  "&:hover": {
+                    backgroundColor: "#e8eaf6",
+                    color: "#000",
+                    transform: "scale(1.05)",
+                  },
+                }}
+              >
+                {React.cloneElement(page.icon, {
+                  sx: { marginRight: 1, fontSize: "22px" },
+                })}
+                <Typography variant="body1" sx={{ fontWeight: "500", fontFamily: "'Playfair Display', serif", }}>
+                  {page.name}
+                </Typography>
               </Button>
             ))}
           </Box>
-
         </Toolbar>
       </Container>
     </AppBar>

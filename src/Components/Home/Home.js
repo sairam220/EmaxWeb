@@ -286,33 +286,30 @@ const Home = () => {
                         {capabilitiesData.map((item, index) => (
                             <TimelineItem key={index}>
                                 <TimelineSeparator>
+                                    {/* Top Connector */}
                                     {index !== 0 && (
                                         <TimelineConnector
                                             sx={{
                                                 bgcolor: 'black',
-                                                height: '30px', // Adjusted height for proper connection
-                                                '@media (max-width: 600px)': {
-                                                    height: '10px', // Shorter for mobile screens
-                                                },
-                                            }} />
+                                                height: { xs: '10px', sm: '20px', md: '30px' }, // Responsive height
+                                            }}
+                                        />
                                     )}
+
+                                    {/* Timeline Dot with Image */}
                                     <TimelineDot
                                         sx={{
                                             display: 'flex',
                                             justifyContent: 'center',
                                             alignItems: 'center',
-                                            width: 120,
-                                            height: 120,
-                                            padding: 0,
-                                            margin: '0 auto',
+                                            width: { xs: 60, sm: 80, md: 120 }, // Responsive width
+                                            height: { xs: 60, sm: 80, md: 120 }, // Responsive height
                                             backgroundColor: 'white',
                                             border: '2px solid #0073e6',
                                             borderRadius: '50%',
                                             boxShadow: 2,
-                                            '@media (max-width: 600px)': {
-                                                width: 60,
-                                                height: 60,
-                                            },
+                                            padding: 0,
+                                            margin: '0 auto',
                                         }}
                                     >
                                         <img
@@ -326,30 +323,51 @@ const Home = () => {
                                             }}
                                         />
                                     </TimelineDot>
+
+                                    {/* Bottom Connector */}
                                     {index !== capabilitiesData.length - 1 && (
-                                        <TimelineConnector sx={{
-                                            bgcolor: 'black',
-                                            height: '30px'
-                                        }} />
+                                        <TimelineConnector
+                                            sx={{
+                                                bgcolor: 'black',
+                                                height: { xs: '10px', sm: '20px', md: '30px' }, // Responsive height
+                                            }}
+                                        />
                                     )}
                                 </TimelineSeparator>
+
+                                {/* Timeline Content */}
                                 <TimelineContent
-                                    style={{ alignContent: 'center' }}
+                                    sx={{
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        alignItems: { xs: 'center', sm: 'flex-start' }, // Center align for small screens
+                                        textAlign: { xs: 'center', sm: 'left' }, // Text alignment based on screen size
+                                    }}
                                 >
                                     <Typography
-                                        style={{
+                                        sx={{
                                             fontWeight: 600,
-                                            fontSize: { xs: '1.2rem', sm: '1.5rem' },
+                                            marginTop:{xs : '8%'},
+                                            fontSize: { xs: '1rem', sm: '1.3rem', md: '1.5rem' }, // Responsive text size
                                             color: 'text.primary',
                                         }}
                                     >
                                         {item.text}
                                     </Typography>
-                                    <Typography>{item.information}</Typography>
+                                    <Typography
+                                        sx={{
+                                            fontSize: { xs: '0.8rem', sm: '1rem' }, // Adjust text size for readability
+                                            color: 'text.secondary',
+                                            maxWidth: { xs: '90%', sm: '100%' }, // Prevents text overflow
+                                        }}
+                                    >
+                                        {item.information}
+                                    </Typography>
                                 </TimelineContent>
                             </TimelineItem>
                         ))}
                     </Timeline>
+
                 </Box>
 
                 <Box mt={6} mb={2} sx={{ mt: { xs: '50px', sm: '70px', md: '100px' } }}>
