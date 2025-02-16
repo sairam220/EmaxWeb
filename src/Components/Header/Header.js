@@ -17,8 +17,10 @@ import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import ContactMailIcon from '@mui/icons-material/ContactMail';
 import InfoIcon from '@mui/icons-material/Info';
 import DomainIcon from '@mui/icons-material/Domain';
+import { Link } from 'react-router-dom';  // Import Link
 
-const pages = ['Trends & Advances', 'Contact', 'About Us'];
+
+const pages = ['HOME','Services' , 'Industries','Trends & Advances', 'Contact', 'About Us'];
 
 const services = [
   'Stat Analysis', 'Product Innovation', 'TEM', 'SEM',
@@ -180,7 +182,7 @@ function ResponsiveAppBar() {
           {/* Desktop Navigation */}
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end', alignItems: 'center' }}>
 
-            <MenuItem>
+            {/* <MenuItem>
               HOME
             </MenuItem>
 
@@ -210,9 +212,9 @@ function ResponsiveAppBar() {
               sx={{ my: 2, color: 'white', display: 'flex', alignItems: 'center' }}
             >
               Industries {anchorElIndustries ? <ArrowDropUpIcon /> : <ArrowDropDownIcon />}
-            </Button>
+            </Button> */}
 
-            <Menu
+            {/* <Menu
               anchorEl={anchorElIndustries}
               open={Boolean(anchorElIndustries)}
               onClose={handleCloseIndustriesMenu}
@@ -223,11 +225,13 @@ function ResponsiveAppBar() {
                   {industry}
                 </MenuItem>
               ))}
-            </Menu>
+            </Menu> */}
 
             {pages.map((page) => (
-              <Button key={page} sx={{ my: 2, color: 'white' }}>
-                {page}
+              <Button key={page} sx={{ my: 2, color: 'white',marginRight:2 }}>
+                 <Link to={`/${page.toLowerCase()}`} style={{ textDecoration: 'none', color: 'white' }}>
+                  {page}
+                </Link>
               </Button>
             ))}
           </Box>

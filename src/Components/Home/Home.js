@@ -403,18 +403,18 @@ const Home = () => {
                     />
                 </Box>
 
-                <Box mt={4} mb={4}>
+                <Box mt={6} mb={6} px={{ xs: 2, sm: 4, md: 6 }}>
                     <Card
                         sx={{
                             display: 'flex',
-                            flexDirection: { xs: 'column', md: 'row' },  // Makes it column on small screens and row on larger screens
+                            flexDirection: { xs: 'column', md: 'row' },
                             alignItems: 'center',
-                            maxWidth: 1200,
+                            maxWidth: 900, // Reduced max width for better centering
                             margin: '0 auto',
                             boxShadow: 3,
                             borderRadius: 2,
                             padding: 3,
-                            cursor:'pointer',
+                            cursor: 'pointer',
                             backgroundColor: '#f5f5f5',
                             transition: 'transform 0.3s ease',
                             '&:hover': {
@@ -426,15 +426,15 @@ const Home = () => {
                         {/* Image Section */}
                         <CardMedia
                             component="img"
-                            image={`${process.env.PUBLIC_URL}/enstin.jpg`}  // Make sure the image is directly inside the public folder
+                            image={`${process.env.PUBLIC_URL}/enstin.jpg`}
                             alt="Albert Einstein"
                             sx={{
-                                width: { xs: '100%', md: 400 },  // Full width on small screens, 400px on medium and up
-                                height: { xs: 'auto', md: 400 },  // Auto height on small screens
+                                width: { xs: '100%', sm: 280, md: 320 }, // Reduced size for better balance
+                                height: { xs: 'auto', sm: 280, md: 320 },
                                 objectFit: 'cover',
                                 borderRadius: 2,
                                 boxShadow: 2,
-                                marginBottom: { xs: 3, md: 0 }, // Margin on small screens to separate text and image
+                                marginBottom: { xs: 3, md: 0 },
                             }}
                         />
 
@@ -444,15 +444,16 @@ const Home = () => {
                                 display: 'flex',
                                 flexDirection: 'column',
                                 justifyContent: 'center',
-                                textAlign: 'left',
+                                textAlign: 'center', // Centering text on smaller screens
                                 color: 'text.primary',
                                 paddingLeft: { md: 3 },
+                                maxWidth: 500, // Prevents text from stretching too wide
                             }}
                         >
-                            <Typography variant="h5" fontWeight="bold" gutterBottom>
+                            <Typography variant="h6" fontWeight="bold" gutterBottom>
                                 "The one who follows the crowd will usually go no further than the crowd. The one who walks alone is likely to find themselves in places no one has ever been before."
                             </Typography>
-                            <Typography variant="body1" color="text.secondary" fontStyle="italic">
+                            <Typography variant="body2" color="text.secondary" fontStyle="italic">
                                 - Albert Einstein
                             </Typography>
                         </CardContent>
