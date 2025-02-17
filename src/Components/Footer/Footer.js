@@ -2,6 +2,8 @@ import React from "react";
 import { Box, Container, Grid, Typography, IconButton, useMediaQuery } from "@mui/material";
 import { styled } from "@mui/system";
 import { Twitter, LinkedIn, GitHub } from "@mui/icons-material";
+import { Link } from "react-router-dom";
+
 
 const StyledFooter = styled(Box)(({ theme }) => ({
     background: "linear-gradient(135deg, #0F2027, #203A43, #2C5364)",
@@ -66,12 +68,24 @@ const Footer = () => {
                             Quick Links
                         </Typography>
                         <Box display="flex" flexDirection="column" gap={1}>
-                            <NeuralLink variant="body1">Home</NeuralLink>
-                            <NeuralLink variant="body1">Services</NeuralLink>
-                            <NeuralLink variant="body1">Industries</NeuralLink>
-                            <NeuralLink variant="body1">Trends & Advances</NeuralLink>
-                            <NeuralLink variant="body1">Contact</NeuralLink>
-                            <NeuralLink variant="body1">About Us</NeuralLink>
+                            <Link to="/" style={{ textDecoration: 'none', color:'#FFFF'}}>
+                                <NeuralLink variant="body1">Home</NeuralLink>
+                            </Link>
+                            <Link to="/services" style={{ textDecoration: 'none', color:'#FFFF'}}>
+                                <NeuralLink variant="body1">Services</NeuralLink>
+                            </Link>
+                            <Link to="/industries" style={{ textDecoration: 'none', color:'#FFFF'}}>
+                                <NeuralLink variant="body1">Industries</NeuralLink>
+                            </Link>
+                            <Link to="/trends-advances" style={{ textDecoration: 'none', color:'#FFFF'}}>
+                                <NeuralLink variant="body1">Trends & Advances</NeuralLink>
+                            </Link>
+                            <Link to="/contact" style={{ textDecoration: 'none', color:'#FFFF'}}>
+                                <NeuralLink variant="body1">Contact</NeuralLink>
+                            </Link>
+                            <Link to="/about-us" style={{ textDecoration: 'none', color:'#FFFF'}}>
+                                <NeuralLink variant="body1">About Us</NeuralLink>
+                            </Link>
                         </Box>
                     </Grid>
 

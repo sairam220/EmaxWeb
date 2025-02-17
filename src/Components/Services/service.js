@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Tabs, Tab, Box, Typography } from "@mui/material";
 import { BarChart, Lightbulb, Dashboard, Search, Layers, LayersClear, RadioButtonChecked, Psychology } from '@mui/icons-material';
 import MiscellaneousServicesIcon from '@mui/icons-material/MiscellaneousServices';
+import ProcessImprovementPage from "./sapi";
 
 const services = [
     { name: "SAPI", icon: <BarChart /> },
@@ -44,17 +45,17 @@ export default function Services() {
                     display: "inline-flex",
                     alignItems: "center",
                     gap: 1.2, // Space between icon and text
-                    "&::after": {
-                        content: '""',
-                        position: "absolute",
-                        bottom: -8,
-                        left: "50%",
-                        width: "60px",
-                        height: "4px",
-                        background: "linear-gradient(90deg, #007FFF, #00C6FF)",
-                        borderRadius: "2px",
-                        transform: "translateX(-50%)",
-                    },
+                    // "&::after": {
+                    //     content: '""',
+                    //     position: "absolute",
+                    //     bottom: -8,
+                    //     left: "50%",
+                    //     width: "60px",
+                    //     height: "4px",
+                    //     background: "linear-gradient(90deg, #007FFF, #00C6FF)",
+                    //     borderRadius: "2px",
+                    //     transform: "translateX(-50%)",
+                    // },
                     "@media (max-width: 600px)": {
                         fontSize: "1.3rem",
                         letterSpacing: 1,
@@ -129,6 +130,7 @@ export default function Services() {
                     />
                 ))}
             </Tabs>
+            <ProcessImprovementPage/>
         </Box>
     );
 }
