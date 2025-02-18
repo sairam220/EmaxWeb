@@ -1,12 +1,13 @@
 import React from "react";
 import { 
-  Container, Typography, Box, List, ListItem, 
+  Container, Typography, List, 
   ListItemIcon, ListItemText, Paper, useTheme 
 } from "@mui/material";
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { styled } from "@mui/system";
+import { motion } from "framer-motion";
 
-const StyledImage = styled(Box)(({ theme }) => ({
+const StyledImage = styled(motion.img)(({ theme }) => ({
   width: "100%",
   height: "auto",
   borderRadius: theme.spacing(2),
@@ -18,13 +19,15 @@ const StyledImage = styled(Box)(({ theme }) => ({
   },
 }));
 
-const StyledListItem = styled(ListItem)(({ theme }) => ({
-  marginBottom: theme.spacing(2),
+const StyledListItem = styled(motion.li)(({ theme }) => ({
+  marginBottom: theme.spacing(3),
   padding: theme.spacing(2),
   borderRadius: theme.spacing(1),
   transition: "all 0.3s ease-in-out",
   backgroundColor: theme.palette.background?.paper || "#f9f9f9",
   boxShadow: `0px 2px 5px rgba(0, 0, 0, 0.1)`, 
+  display: "flex",
+  alignItems: "center",
   "&:hover": {
     transform: "translateX(8px)",
     backgroundColor: theme.palette.action?.hover || "#f0f0f0", 
@@ -73,8 +76,7 @@ const ProcessImprovementPage = () => {
           align="center"
           color="primary"
           gutterBottom
-          sx={{ fontWeight: 700, mb: { xs: 4, sm: 4 }, letterSpacing: 0.8, fontSize: { xs: "1.8rem", sm: "2.2rem", md: "2.8rem" } }}
-          
+          sx={{ fontWeight: 550, mb: { xs: 4, sm: 4 }, letterSpacing: 0.8, fontSize: { xs: "1.8rem", sm: "2.2rem", md: "2.8rem" } }}
         >
           Statistical Approach for Process Improvement
         </Typography>
@@ -83,7 +85,7 @@ const ProcessImprovementPage = () => {
           variant="body1"
           align="justify"
           color="text.secondary"
-          sx={{ mb: { xs: 3, sm: 4 }, lineHeight: 1.8 }}
+          sx={{mt: { xs: 2, sm: 2 }, mb: { xs: 3, sm: 4 }, lineHeight: 1.8 }}
         >
           EMAX SS provides a design-based approach to industries for new product development 
           and process improvement. We also offer statistical quality control measures such as 
@@ -91,27 +93,32 @@ const ProcessImprovementPage = () => {
           enhance process efficiency and reliability.
         </Typography>
 
+        {/* Animated Image */}
         <StyledImage
-          component="img"
+          component={motion.img}
           src="https://emaxss.org/wp-content/uploads/2024/07/process1.png"
           alt="Process Improvement"
           sx={{ mb: { xs: 3, sm: 4 }, maxWidth: "100%", height: "auto" }}
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
           onError={(e) => {
             e.target.src = "https://emaxss.org/wp-content/uploads/2024/07/process1.png";
           }}
         />
 
-        <List sx={{ mt: 2 }}>
+        <List sx={{ mt: 2, listStyleType: "none", padding: 0 }}>
           {doePoints.map((item, index) => (
             <StyledListItem 
               key={index} 
               sx={{ 
                 px: { xs: 2, sm: 3 }, 
-                py: { xs: 1, sm: 2 }, 
-                display: "flex", 
-                alignItems: "center", // Ensures icon and text align
-                flexDirection: "row" // Keeps icon beside text always
+                py: { xs: 1, sm: 2 } 
               }}
+              component={motion.li}
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
             >
               <ListItemIcon sx={{ minWidth: "40px" }}>
                 <CheckCircleIcon style={{ color: theme.palette.primary.main, fontSize: 32 }} />

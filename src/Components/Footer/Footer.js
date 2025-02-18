@@ -108,6 +108,7 @@ const Footer = () => {
                             <iframe
                                 width="100%"
                                 height="100%"
+                                title="EMAX Location"
                                 src="https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=Level%201,%20289%20Goundappan%20Street,%20Coimbatore%20%E2%80%93%20641038,%20Tamil%20Nadu,%20India+(EMAX%20Scientific%20Solutions%20Pvt.%20Ltd)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
                                 style={{
                                     borderRadius: '10px',
