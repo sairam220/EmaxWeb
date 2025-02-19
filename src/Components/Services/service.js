@@ -6,6 +6,11 @@ import ProcessImprovementPage from "./sapi";
 import { motion } from 'framer-motion';
 import ProductInnovationPage from "./productInnovation";
 import TemServicesPage from "./tem";
+import ScanningElectronMicroscopyPage from "./sem";
+import FibSemPage from "./FIB";
+import XRDPage from "./xdr";
+import StructuralProbeStationPage from "./sps";
+import AiMlPage from "./AiMl";
 
 const services = [
     { name: "SAPI", icon: <BarChart /> },
@@ -42,16 +47,16 @@ export default function Services() {
                 return <ProductInnovationPage />;
             case 2:
                 return <TemServicesPage />;
-            // case 3:
-            //     return <SEMPage />;
-            // case 4:
-            //     return <FibSemPage />;
-            // case 5:
-            //     return <XRDPage />;
-            // case 6:
-            //     return <SPSPage />;
-            // case 7:
-            //     return <AiMlPage />;
+            case 3:
+                return <ScanningElectronMicroscopyPage />;
+            case 4:
+                return <FibSemPage />;
+            case 5:
+                return <XRDPage />;
+            case 6:
+                return <StructuralProbeStationPage />;
+            case 7:
+                return <AiMlPage />;
             default:
                 return <ProcessImprovementPage />;
         }
@@ -77,24 +82,13 @@ export default function Services() {
                         textAlign: "center",
                         mb: 4,
                         color: "#222",
-                        // textTransform: "uppercase",
+                        display: { xs: "inline-flex", sm: "none" },
                         letterSpacing: 1.5,
                         fontFamily: "'Poppins', sans-serif",
                         position: "relative",
-                        display: "inline-flex",
+                        // display: "inline-flex",
                         alignItems: "center",
-                        gap: 1.2, // Space between icon and text
-                        // "&::after": {
-                        //     content: '""',
-                        //     position: "absolute",
-                        //     bottom: -8,
-                        //     left: "50%",
-                        //     width: "60px",
-                        //     height: "4px",
-                        //     background: "linear-gradient(90deg, #007FFF, #00C6FF)",
-                        //     borderRadius: "2px",
-                        //     transform: "translateX(-50%)",
-                        // },
+                        gap: 1.2,
                         "@media (max-width: 600px)": {
                             fontSize: "1.3rem",
                             letterSpacing: 1,
@@ -116,13 +110,14 @@ export default function Services() {
                     scrollButtons="auto"
                     allowScrollButtonsMobile
                     sx={{
-                        width: { xs: "100%", sm: "auto" },
+                        width: { xs: "100%", sm: "auto"},
                         maxWidth: "100%",
                         overflowX: "auto",
                         bgcolor: "#ffffff",
                         borderRadius: 2,
                         boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
                         backdropFilter: "blur(10px)",
+                        height: { xs: "auto", sm: "auto", md: "50px" },
                         "& .MuiTabs-flexContainer": {
                             display: "flex",
                             flexWrap: "nowrap", // Prevents tabs from wrapping

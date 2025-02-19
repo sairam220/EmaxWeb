@@ -82,7 +82,7 @@ const ProductInnovationPage = () => {
 
 
     return (
-        <Container maxWidth="lg" sx={{ px: { xs: 2, sm: 4, md: 6 }, py: { xs: 4, sm: 6 }}}>
+        <Container maxWidth="xl" sx={{ px: { xs: 2, sm: 4, md: 6 }, py: { xs: 4, sm: 6 }}}>
             <Paper
                 elevation={3}
                 sx={{
