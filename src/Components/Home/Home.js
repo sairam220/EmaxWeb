@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import {  useNavigate } from "react-router-dom";
+
 import {
     Box, Typography, Container, Grid, Button,
     Card, CardMedia, CardContent,
@@ -76,6 +78,7 @@ const capabilitiesData = [
 
 
 const Home = () => {
+    const navigate = useNavigate();
     const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
     useEffect(() => {
@@ -87,6 +90,12 @@ const Home = () => {
     const pageVariants = {
         hidden: { opacity: 0, y: isMobile ? 20 : 50 },
         visible: { opacity: 1, y: 0, transition: { duration: 1, ease: "easeOut" } },
+    };
+
+    const handleLearnMore = (index) => {
+        localStorage.setItem("activeTab", index);
+        navigate("/services");
+       
     };
 
 
@@ -220,7 +229,6 @@ const Home = () => {
                                             sx={{
                                                 boxShadow: 3,
                                                 borderRadius: 3,
-
                                                 maxWidth: 296,
                                                 height: 400,
                                                 margin: '0 auto',
@@ -231,19 +239,21 @@ const Home = () => {
                                             }}
                                         >
                                             <CardMedia component="img" height="220" image={service.img} alt={service.title} />
-                                            <CardContent sx={{ textAlign: 'center', flexGrow: 1 }}>
-                                                <Typography variant="h6" fontWeight="bold">
+                                            <CardContent sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', flexGrow: 1 }}>
+                                                <Typography variant="h6" fontWeight="bold" sx={{ mb: 2 }}>
                                                     {service.title}
                                                 </Typography>
                                                 <Button
                                                     variant="outlined"
                                                     sx={{
-                                                        mt: 1,
+                                                       
                                                         textTransform: 'none',
                                                         fontSize: '0.9rem',
                                                         borderRadius: 2,
                                                         width: '100%',
+                                                        
                                                     }}
+                                                    onClick={() => handleLearnMore(index)} 
                                                 >
                                                     Learn More
                                                 </Button>

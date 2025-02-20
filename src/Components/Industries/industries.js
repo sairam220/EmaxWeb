@@ -1,29 +1,28 @@
 import { useState, useEffect } from "react";
 import { Tabs, Tab, Box, Typography } from "@mui/material";
-import { BarChart, Lightbulb, Dashboard, Search, Layers, LayersClear, RadioButtonChecked, Psychology } from '@mui/icons-material';
-import MiscellaneousServicesIcon from '@mui/icons-material/MiscellaneousServices';
-import ProcessImprovementPage from "./sapi";
+import OfflineBoltIcon from '@mui/icons-material/OfflineBolt';
+import ConstructionIcon from '@mui/icons-material/Construction';
+import EngineeringIcon from '@mui/icons-material/Engineering';
+import EscalatorIcon from '@mui/icons-material/Escalator';
+import MedicationIcon from '@mui/icons-material/Medication';
+import RocketIcon from '@mui/icons-material/Rocket';
 import { motion } from 'framer-motion';
-import ProductInnovationPage from "./productInnovation";
-import TemServicesPage from "./tem";
-import ScanningElectronMicroscopyPage from "./sem";
-import FibSemPage from "./FIB";
-import XRDPage from "./xdr";
-import StructuralProbeStationPage from "./sps";
-import AiMlPage from "./AiMl";
+import SemiConductors from "./semconductors";
+import MetalsPage from "./metals";
+import CeramicsPage from "./ceramics";
+import PharmaPage from "./pharma";
+import DefencePage from "./defence";
 
-const services = [
-    { name: "SAPI", icon: <BarChart /> },
-    { name: "Product Innovation", icon: <Lightbulb /> },
-    { name: "TEM", icon: <Dashboard /> },
-    { name: "SEM", icon: <Search /> },
-    { name: "FIB-SEM", icon: <Layers /> },
-    { name: "XRD", icon: <LayersClear /> },
-    { name: "SPS", icon: <RadioButtonChecked /> },
-    { name: "AI/ML", icon: <Psychology /> }
+const industries = [
+    { name: "Semiconductors", icon: <OfflineBoltIcon /> },
+    { name: "Metals", icon: <ConstructionIcon /> },
+    { name: "Ceramics", icon: <EscalatorIcon /> },
+    { name: "Pharma", icon: <MedicationIcon /> },
+    { name: "Aerospace", icon: <RocketIcon /> },
 ];
 
-export default function Services() {
+
+export default function Industries() {
     const [value, setValue] = useState(0);
     const handleChange = (_, newValue) => setValue(newValue);
     const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
@@ -34,16 +33,6 @@ export default function Services() {
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
-    useEffect(() => {
-        const savedTab = localStorage.getItem("activeTab");
-        if (savedTab !== null) {
-            setValue(Number(savedTab));
-        }
-        return () => {
-            localStorage.removeItem("activeTab");
-        };
-    }, []);
-
     const pageVariants = {
         hidden: { opacity: 0, y: isMobile ? 20 : 50 },
         visible: { opacity: 1, y: 0, transition: { duration: 1, ease: "easeOut" } },
@@ -52,23 +41,23 @@ export default function Services() {
     const renderPage = () => {
         switch (value) {
             case 0:
-                return <ProcessImprovementPage />;
+                return <SemiConductors />;
             case 1:
-                return <ProductInnovationPage />;
+                return <MetalsPage />;
             case 2:
-                return <TemServicesPage />;
+                return <CeramicsPage />;
             case 3:
-                return <ScanningElectronMicroscopyPage />;
+                return <PharmaPage />;
             case 4:
-                return <FibSemPage />;
-            case 5:
-                return <XRDPage />;
-            case 6:
-                return <StructuralProbeStationPage />;
-            case 7:
-                return <AiMlPage />;
+                return <DefencePage />;
+            // case 5:
+            //     return <XRDPage />;
+            // case 6:
+            //     return <StructuralProbeStationPage />;
+            // case 7:
+            //     return <AiMlPage />;
             default:
-                return <ProcessImprovementPage />;
+                return <SemiConductors />;
         }
     };
 
@@ -106,12 +95,9 @@ export default function Services() {
                     }}
                 >
 
-                    Our Services
-                    <MiscellaneousServicesIcon sx={{ color: "#000000", fontSize: "2.2rem" }} />
+                    Industries
+                    <EngineeringIcon sx={{ color: "#000000", fontSize: "2.2rem" }} />
                 </Typography>
-
-
-
 
                 <Tabs
                     value={value}
@@ -162,7 +148,7 @@ export default function Services() {
                         },
                     }}
                 >
-                    {services.map((service, index) => (
+                    {industries.map((service, index) => (
                         <Tab
                             key={index}
                             label={

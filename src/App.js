@@ -6,6 +6,7 @@ import Footer from './Components/Footer/Footer';
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import Services from './Components/Services/service';
 import { useEffect } from 'react';
+import Industries from './Components/Industries/industries';
 
 // Create a theme for Material UI
 const theme = createTheme();
@@ -35,6 +36,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/services" element={<Services />} />
+          <Route path='/industries' element={<Industries/>}/>
         </Routes>
 
         <ThemeProvider theme={theme}>
