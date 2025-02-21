@@ -7,6 +7,7 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import Services from './Components/Services/service';
 import { useEffect } from 'react';
 import Industries from './Components/Industries/industries';
+import ConatctUs from './Components/ContactUs/contactus';
 
 // Create a theme for Material UI
 const theme = createTheme();
@@ -37,6 +38,7 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/services" element={<Services />} />
           <Route path='/industries' element={<Industries/>}/>
+          <Route path='/contact' element={<ConatctUs/>}/>
         </Routes>
 
         <ThemeProvider theme={theme}>
