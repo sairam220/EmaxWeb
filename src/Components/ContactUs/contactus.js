@@ -11,7 +11,9 @@ import {
     Card,
     CircularProgress,
     useTheme,
-    useMediaQuery
+    useMediaQuery,
+    CardMedia, 
+    CardContent,
 } from "@mui/material";
 import { styled } from "@mui/system";
 import { motion } from "framer-motion";
@@ -216,6 +218,63 @@ export default function ContactUs() {
                         </Typography>
                     </AddressInfo>
                 </Container>
+
+                <Box mt={6} mb={3} px={{ xs: 1, sm: 4, md: 6 }}>
+                <Card
+                    sx={{
+                        display: 'flex',
+                        flexDirection: { xs: 'column', md: 'row' },
+                        alignItems: 'center',
+                        maxWidth: 900, // Reduced max width for better centering
+                        margin: '0 auto',
+                        boxShadow: 3,
+                        borderRadius: 2,
+                        padding: 2,
+                        cursor: 'pointer',
+                        backgroundColor: '#f5f5f5',
+                        transition: 'transform 0.3s ease',
+                        '&:hover': {
+                            transform: 'translateY(-10px)',
+                            boxShadow: 6,
+                        },
+                    }}
+                >
+                    {/* Image Section */}
+                    <CardMedia
+                        component="img"
+                        image="https://emaxss.org/wp-content/uploads/2024/07/swamychinmayananda_white.png"
+                        alt="Swami Chinmayananda"
+                        sx={{
+                            width: { xs: '100%', sm: 280, md: 320 }, // Reduced size for better balance
+                            height: { xs: 'auto', sm: 280, md: 320 },
+                            objectFit: 'cover',
+                            borderRadius: 2,
+                            boxShadow: 2,
+                            marginBottom: { xs: 3, md: 0 },
+                        }}
+                    />
+
+                    {/* Text Section */}
+                    <CardContent
+                        sx={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            justifyContent: 'center',
+                            textAlign: 'center', // Centering text on smaller screens
+                            color: 'text.primary',
+                            paddingLeft: { md: 3 },
+                            maxWidth: 500, // Prevents text from stretching too wide
+                        }}
+                    >
+                        <Typography variant="h6" fontWeight="bold" gutterBottom>
+                            "Plan your work. Then work out your plan"
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary" fontStyle="italic">
+                            - Swami Chinmayananda
+                        </Typography>
+                    </CardContent>
+                </Card>
+            </Box>
 
                 <Snackbar
                     open={snackbar.open}

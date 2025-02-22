@@ -8,6 +8,7 @@ import Services from './Components/Services/service';
 import { useEffect } from 'react';
 import Industries from './Components/Industries/industries';
 import ConatctUs from './Components/ContactUs/contactus';
+import AboutUs from './Components/AboutUs/aboutus';
 
 // Create a theme for Material UI
 const theme = createTheme();
@@ -39,6 +40,7 @@ function App() {
           <Route path="/services" element={<Services />} />
           <Route path='/industries' element={<Industries/>}/>
           <Route path='/contact' element={<ConatctUs/>}/>
+          <Route path='/about-us' element={<AboutUs/>}/>
         </Routes>
 
         <ThemeProvider theme={theme}>
