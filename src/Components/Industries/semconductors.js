@@ -6,6 +6,16 @@ import {
 } from "@mui/material";
 import { styled } from "@mui/system";
 import { motion } from "framer-motion";
+import cover from '../../asserts/Industries/cover-1.png'
+import fabrication1 from '../../asserts/Industries/fabrication1.webp'
+import fabrication21 from '../../asserts/Industries/fabrication2-1.png'
+import fabrication4 from '../../asserts/Industries/fabrication4.png'
+import structure from '../../asserts/Industries/structure.png'
+import trends1 from '../../asserts/Industries/trends1.png'
+import trends from '../../asserts/Industries/trends.png'
+import ricjardfeynman_white from '../../asserts/Industries/ricjardfeynman_white.webp'
+
+
 
 const StyledImage = styled(motion.img)(({ theme }) => ({
 
@@ -44,14 +54,14 @@ const SemiConductors = () => {
 
                         <StyledImage
                             component={motion.img}
-                            src="https://emaxss.org/wp-content/uploads/2024/06/cover-1.png"
+                            src={cover}
                             alt="Compression"
                             sx={{ width: "100%", height: "auto" }}
                             initial={{ opacity: 0, y: 50 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, ease: "easeOut" }}
                             onError={(e) => {
-                                e.target.src = "https://emaxss.org/wp-content/uploads/2024/06/cover-1.png";
+                                e.target.src = {cover};
                             }}
                         />
 
@@ -98,14 +108,14 @@ const SemiConductors = () => {
 
                         <StyledImage
                             component={motion.img}
-                            src="https://emaxss.org/wp-content/uploads/2024/07/fabrication1.png?w=2046"
+                            src={fabrication1}
                             alt="MOCVD"
                             sx={{ width: "100%", height: "auto" }}
                             initial={{ opacity: 0, y: 50 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, ease: "easeOut" }}
                             onError={(e) => {
-                                e.target.src = "https://emaxss.org/wp-content/uploads/2024/07/fabrication1.png?w=2046";
+                                e.target.src = {fabrication1};
                             }}
                         />
 
@@ -116,14 +126,14 @@ const SemiConductors = () => {
 
                         <StyledImage
                             component={motion.img}
-                            src="https://emaxss.org/wp-content/uploads/2024/07/fabrication2-1.png" // Add the URL of the second image
+                            src={fabrication21} // Add the URL of the second image
                             alt="fabrication2"
                             sx={{ width: "100%", height: "auto" }}
                             initial={{ opacity: 0, y: 50 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, ease: "easeOut" }}
                             onError={(e) => {
-                                e.target.src = "https://emaxss.org/wp-content/uploads/2024/07/fabrication2-1.png"; // Fallback if image fails to load
+                                e.target.src = {fabrication21}; // Fallback if image fails to load
                             }}
                         />
 
@@ -132,14 +142,14 @@ const SemiConductors = () => {
 
                         <StyledImage
                             component={motion.img}
-                            src="https://emaxss.org/wp-content/uploads/2024/07/fabrication4.png" // Add the URL of the second image
+                            src={fabrication4} // Add the URL of the second image
                             alt="fabrication3"
                             sx={{ width: "100%", height: "auto" }}
                             initial={{ opacity: 0, y: 50 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, ease: "easeOut" }}
                             onError={(e) => {
-                                e.target.src = "https://emaxss.org/wp-content/uploads/2024/07/fabrication4.png"; // Fallback if image fails to load
+                                e.target.src = {fabrication4}; // Fallback if image fails to load
                             }}
                         />
 
@@ -185,14 +195,14 @@ const SemiConductors = () => {
 
                         <StyledImage
                             component={motion.img}
-                            src="https://emaxss.org/wp-content/uploads/2024/06/structure.png"
+                            src={structure}
                             alt="Microstructure Development"
                             sx={{ width: "100%", height: "auto" }}
                             initial={{ opacity: 0, y: 50 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, ease: "easeOut" }}
                             onError={(e) => {
-                                e.target.src = "https://emaxss.org/wp-content/uploads/2024/06/structure.png";
+                                e.target.src = {structure};
                             }}
                         />
 
@@ -250,14 +260,14 @@ const SemiConductors = () => {
 
                         <StyledImage
                             component={motion.img}
-                            src="https://emaxss.org/wp-content/uploads/2024/06/trends1.png"
+                            src={trends1}
                             alt="Drive&Perfomannce-1"
                             sx={{ width: "100%", height: "auto" }}
                             initial={{ opacity: 0, y: 50 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, ease: "easeOut" }}
                             onError={(e) => {
-                                e.target.src = "https://emaxss.org/wp-content/uploads/2024/06/trends1.png";
+                                e.target.src = {trends1};
                             }}
                         />
 
@@ -268,14 +278,14 @@ const SemiConductors = () => {
 
                         <StyledImage
                             component={motion.img}
-                            src="https://emaxss.org/wp-content/uploads/2024/06/trends.png" // Add the URL of the second image
+                            src={trends} // Add the URL of the second image
                             alt="Drive&Perfomannce-2"
                             sx={{ width: "100%", height: "auto" }}
                             initial={{ opacity: 0, y: 50 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, ease: "easeOut" }}
                             onError={(e) => {
-                                e.target.src = "https://emaxss.org/wp-content/uploads/2024/06/trends.png"; // Fallback if image fails to load
+                                e.target.src = {trends}; // Fallback if image fails to load
                             }}
                         />
 
@@ -309,7 +319,7 @@ const SemiConductors = () => {
                     {/* Image Section */}
                     <CardMedia
                         component="img"
-                        image="https://emaxss.org/wp-content/uploads/2024/07/ricjardfeynman_white.png?w=2048"
+                        image={ricjardfeynman_white}
                         alt="Richard P Feynman"
                         sx={{
                             width: { xs: '100%', sm: 280, md: 320 }, // Reduced size for better balance

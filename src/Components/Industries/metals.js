@@ -4,6 +4,10 @@ import {
 } from "@mui/material";
 import { styled } from "@mui/system";
 import { motion } from "framer-motion";
+import cover2 from '../../asserts/Industries/cover-2.png'
+import process from '../../asserts/Industries/process.webp'
+import structure from '../../asserts/Industries/structure-5.webp'
+import functionality from '../../asserts/Industries/functionality-3.webp'
 
 const StyledImage = styled(motion.img)(({ theme }) => ({
     width: "100%",
@@ -71,14 +75,14 @@ const MetalsPage = () => {
 
                         <StyledImage
                             component={motion.img}
-                            src="https://emaxss.org/wp-content/uploads/2024/06/cover-2.png"
+                            src={cover2}
                             alt="Metals & Alloys"
                             sx={{ width: "100%", height: "auto" }}
                             initial={{ opacity: 0, y: 50 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, ease: "easeOut" }}
                             onError={(e) => {
-                                e.target.src = "https://emaxss.org/wp-content/uploads/2024/06/cover-2.png";
+                                e.target.src = {cover2};
                             }}
                         />
 
@@ -118,14 +122,14 @@ const MetalsPage = () => {
 
                         <StyledImage
                             component={motion.img}
-                            src="https://emaxss.org/wp-content/uploads/2024/07/process.png?w=2046"
+                            src={process}
                             alt="Alloy Manufacturing"
                             sx={{ width: "100%", height: "auto" }}
                             initial={{ opacity: 0, y: 50 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, ease: "easeOut" }}
                             onError={(e) => {
-                                e.target.src = "https://emaxss.org/wp-content/uploads/2024/07/process.png?w=2046";
+                                e.target.src = {process};
                             }}
                         />
                         <Typography variant="h6" color="primary" align="center" sx={{ fontWeight: 600, mb: 2 }}>
@@ -144,14 +148,14 @@ const MetalsPage = () => {
 
                         <StyledImage
                             component={motion.img}
-                            src="https://emaxss.org/wp-content/uploads/2024/06/structure-5.png?w=2046" // Add the URL of the second image
+                            src={structure} // Add the URL of the second image
                             alt="Microstructure Development"
                             sx={{ width: "100%", height: "auto" }}
                             initial={{ opacity: 0, y: 50 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, ease: "easeOut" }}
                             onError={(e) => {
-                                e.target.src = "https://emaxss.org/wp-content/uploads/2024/06/structure-5.png?w=2046"; // Fallback if image fails to load
+                                e.target.src = {structure}; // Fallback if image fails to load
                             }}
                         />
                         <Typography variant="h6" color="primary" align="center" sx={{ fontWeight: 600, mb: 2 }}>
@@ -168,14 +172,14 @@ const MetalsPage = () => {
 
                         <StyledImage
                             component={motion.img}
-                            src="https://emaxss.org/wp-content/uploads/2024/06/functionality-3.png?w=2046" // Add the URL of the second image
+                            src={functionality} // Add the URL of the second image
                             alt="Achieving enhanced/ optimised functionality"
                             sx={{ width: "100%", height: "auto" }}
                             initial={{ opacity: 0, y: 50 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, ease: "easeOut" }}
                             onError={(e) => {
-                                e.target.src = "https://emaxss.org/wp-content/uploads/2024/06/functionality-3.png?w=2046"; // Fallback if image fails to load
+                                e.target.src = {functionality}; // Fallback if image fails to load
                             }}
                         />
                         <Typography variant="h6" color="primary" align="center" sx={{ fontWeight: 600, mb: 2 }}>

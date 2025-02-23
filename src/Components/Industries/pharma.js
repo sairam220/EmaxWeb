@@ -4,6 +4,10 @@ import {
 } from "@mui/material";
 import { styled } from "@mui/system";
 import { motion } from "framer-motion";
+import process4 from '../../asserts/Industries/process-4.png'
+import structure4 from '../../asserts/Industries/structure-4.png'
+import optimisation from '../../asserts/Industries/optimisation.png'
+
 
 const StyledImage = styled(motion.img)(({ theme }) => ({
     width: "100%",
@@ -117,14 +121,14 @@ const PharmaPage = () => {
 
                         <StyledImage
                             component={motion.img}
-                            src="https://emaxss.org/wp-content/uploads/2024/06/process-4.png"
+                            src={process4}
                             alt="Pharmaceutical Manufacturing"
                             sx={{ mb: { xs: 3, sm: 4 }, maxWidth: "100%", height: "auto" }}
                             initial={{ opacity: 0, y: 50 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, ease: "easeOut" }}
                             onError={(e) => {
-                                e.target.src = "https://emaxss.org/wp-content/uploads/2024/06/process-4.png";
+                                e.target.src = {process4};
                             }}
                         />
 
@@ -154,14 +158,14 @@ const PharmaPage = () => {
 
                         <StyledImage
                             component={motion.img}
-                            src="https://emaxss.org/wp-content/uploads/2024/06/structure-4.png"
+                            src={structure4}
                             alt="Microstructure Development"
                             sx={{ width: "100%", height: "auto" }}
                             initial={{ opacity: 0, y: 50 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, ease: "easeOut" }}
                             onError={(e) => {
-                                e.target.src = "https://emaxss.org/wp-content/uploads/2024/06/structure-4.png";
+                                e.target.src = {structure4};
                             }}
                         />
                         <Typography variant="h6" color="primary" align="center" sx={{ fontWeight: 600, mb: 2 }}>
@@ -179,14 +183,14 @@ const PharmaPage = () => {
 
                         <StyledImage
                             component={motion.img}
-                            src="https://emaxss.org/wp-content/uploads/2024/06/optimisation.png" // Add the URL of the second image
+                            src={optimisation} // Add the URL of the second image
                             alt="Achieving and Improving Product Quality"
                             sx={{ width: "100%", height: "auto" }}
                             initial={{ opacity: 0, y: 50 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, ease: "easeOut" }}
                             onError={(e) => {
-                                e.target.src = "https://emaxss.org/wp-content/uploads/2024/06/optimisation.png"; // Fallback if image fails to load
+                                e.target.src = {optimisation}; // Fallback if image fails to load
                             }}
                         />
                         <Typography variant="h6" color="primary" align="center" sx={{ fontWeight: 600, mb: 2 }}>

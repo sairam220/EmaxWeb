@@ -4,6 +4,10 @@ import {
 } from "@mui/material";
 import { styled } from "@mui/system";
 import { motion } from "framer-motion";
+import functionality2 from '../../asserts/Industries/functionality-2.webp'
+import structure3 from '../../asserts/Industries/structure-3.webp'
+import quality from '../../asserts/Industries/quality.webp'
+
 
 const StyledImage = styled(motion.img)(({ theme }) => ({
     width: "100%",
@@ -95,14 +99,14 @@ const CeramicsPage = () => {
 
                         <StyledImage
                             component={motion.img}
-                            src="https://emaxss.org/wp-content/uploads/2024/06/functionality-2.png?w=2045"
+                            src={functionality2}
                             alt="Ceramic Production"
                             sx={{ width: "100%", height: "auto" }}
                             initial={{ opacity: 0, y: 50 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, ease: "easeOut" }}
                             onError={(e) => {
-                                e.target.src = "https://emaxss.org/wp-content/uploads/2024/06/functionality-2.png?w=2045";
+                                e.target.src = {functionality2};
                             }}
                         />
                         <Typography variant="h6" color="primary" align="center" sx={{ fontWeight: 600, mb: 2 }}>
@@ -121,14 +125,14 @@ const CeramicsPage = () => {
 
                         <StyledImage
                             component={motion.img}
-                            src="https://emaxss.org/wp-content/uploads/2024/06/structure-3.png?w=2048" // Add the URL of the second image
+                            src={structure3} // Add the URL of the second image
                             alt="Microstructure Development"
                             sx={{ width: "100%", height: "auto" }}
                             initial={{ opacity: 0, y: 50 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, ease: "easeOut" }}
                             onError={(e) => {
-                                e.target.src = "https://emaxss.org/wp-content/uploads/2024/06/structure-3.png?w=2048"; // Fallback if image fails to load
+                                e.target.src = {structure3} // Fallback if image fails to load
                             }}
                         />
                         <Typography variant="h6" color="primary" align="center" sx={{ fontWeight: 600, mb: 2 }}>
@@ -144,14 +148,14 @@ const CeramicsPage = () => {
 
                         <StyledImage
                             component={motion.img}
-                            src="https://emaxss.org/wp-content/uploads/2024/06/quality.png?w=2045" // Add the URL of the second image
+                            src={quality} // Add the URL of the second image
                             alt="Achieving and Improving Product Quality"
                             sx={{ width: "100%", height: "auto" }}
                             initial={{ opacity: 0, y: 50 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, ease: "easeOut" }}
                             onError={(e) => {
-                                e.target.src = "https://emaxss.org/wp-content/uploads/2024/06/quality.png?w=2045"; // Fallback if image fails to load
+                                e.target.src = {quality}; // Fallback if image fails to load
                             }}
                         />
                         <Typography variant="h6" color="primary" align="center" sx={{ fontWeight: 600, mb: 2 }}>

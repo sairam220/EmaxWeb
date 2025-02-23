@@ -7,6 +7,7 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { styled } from "@mui/system";
 import { motion } from "framer-motion";
 import product from '../../asserts/Services/new-product-innovation-1.png'
+import matrix from '../../asserts/Services/matrix-1.png'
 
 
 const StyledImage = styled(motion.img)(({ theme }) => ({
@@ -116,14 +117,14 @@ const ProductInnovationPage = () => {
                 {/* Animated Image */}
                 <StyledImage
                     component={motion.img}
-                    src="https://emaxss.org/wp-content/uploads/2024/06/new-product-innovation-1.png"
+                    src={product}
                     alt="Product Innovation"
                     sx={{ mt: { xs: 3, sm: 4 },mb: { xs: 3, sm: 4 }, maxWidth: "100%", height: "auto" }}
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
                     onError={(e) => {
-                        e.target.src = "https://emaxss.org/wp-content/uploads/2024/06/new-product-innovation-1.png";
+                        e.target.src = {product};
                     }}
                 />
 
@@ -173,7 +174,8 @@ const ProductInnovationPage = () => {
                 sx={{
                     p: { xs: 3, sm: 4, md: 5 },
                     borderRadius: 4,
-                    backgroundColor: theme.palette.background?.default || "#fff"
+                    backgroundColor: theme.palette.background?.default || "#fff",
+                    mb:6
                 }}
             >
                 <Typography
@@ -181,23 +183,27 @@ const ProductInnovationPage = () => {
                     align="center"
                     color="primary"
                     gutterBottom
-                    sx={{ fontWeight: 550, mb: { xs: 6, sm: 6 }, letterSpacing: 0.8, fontSize: { xs: "1.8rem", sm: "2.2rem", md: "2.8rem" } }}
+                    sx={{ 
+                        fontWeight: 550, mb: { xs: 3, sm: 4 }, letterSpacing: 0.8, fontSize: { xs: "1.8rem", sm: "2.2rem", md: "2.8rem" } 
+                    }}
                 >
                     Our Methodology
+
                 </Typography>
+                <br/>
 
 
                 {/* Animated Image */}
                 <StyledImage
                     component={motion.img}
-                    src={product}
-                    alt="Our Methodology"
-                    sx={{ mt: { xs: 3, sm: 4 },mb: { xs: 3, sm: 4 }, maxWidth: "40%", height: "auto" }}
+                    src={matrix}
+                    alt="Product Innovation"
+                    sx={{ mt: { xs: 3, sm: 4 },mb: { xs: 3, sm: 4 }, maxWidth: "100%", height: "auto" }}
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
                     onError={(e) => {
-                        e.target.src = {product};
+                        e.target.src = {matrix};
                     }}
                 />
 
