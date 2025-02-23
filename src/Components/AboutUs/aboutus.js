@@ -186,8 +186,51 @@ const AboutUs = () => {
                                 </Grid>
                             ))}
                         </Grid>
+                        <Paper elevation={3} sx={{ p: { xs: 2, sm: 4 }, mt: 6, backgroundColor: "#f5f5f5", borderRadius: '20px' }}>
+                            <Typography variant="h5" gutterBottom align="center" sx={{ fontWeight: 600 }}>
+                                Promoters
+                            </Typography>
+                            <List>
+                                <ListItem
+                                    sx={{
+                                        display: "flex",
+                                        flexDirection: { xs: "column", sm: "column" },
+                                        alignItems: "center",
+                                        gap: 1,
+                                        textAlign: { xs: "center", sm: "center" },
+                                    }}
+                                >
+                                    <ListItemText
+                                        primary={<Typography sx={{ fontWeight: 700 }}>Dr. P. S. Sankara Rama Krishnan, PhD (UNSW, Sydney)</Typography>}
+                                    />
+                                    <ListItemText primary="CEO, CTO" />
+                                    <a href="mailto:sankara.ps@emaxss.org" style={{ color: 'inherit', textDecoration: 'none' }}>
+                                        sankara.ps@emaxss.org
+                                    </a>
+                                </ListItem>
+                                <ListItem
+                                    sx={{
+                                        display: "flex",
+                                        flexDirection: { xs: "column", sm: "column" },
+                                        alignItems: "center",
+                                        gap: 1,
+                                        mt: { xs: 2, sm: 3 }, // Adjust margin for small screens
+                                        textAlign: { xs: "center", sm: "center" },
+                                    }}
+                                >
+                                    <ListItemText
+                                        primary={<Typography sx={{ fontWeight: 700 }}>P. S Suryanarayanan</Typography>}
+                                    />
+                                    <ListItemText primary="COO" />
+                                    <a href="mailto:surya.ps@emaxss.org" style={{ color: 'inherit', textDecoration: 'none' }}>
+                                        surya.ps@emaxss.org
+                                    </a>
+                                </ListItem>
+                            </List>
+                        </Paper>
 
-                        <Paper elevation={3} sx={{ p: 4, mt: 6, backgroundColor: "#f5f5f5" }}>
+
+                        <Paper elevation={3} sx={{ p: 4, mt: 6, backgroundColor: "#f5f5f5", borderRadius: '20px' }}>
                             <Typography variant="h5" gutterBottom align="center" sx={{ fontWeight: 600 }}>
                                 Contact Information
                             </Typography>
@@ -213,7 +256,62 @@ const AboutUs = () => {
                             </List>
                         </Paper>
 
+                        <Box mt={4} px={{ xs: 1, sm: 4, md: 6 }}>
+                            <Card
+                                sx={{
+                                    display: 'flex',
+                                    flexDirection: { xs: 'column', md: 'row' },
+                                    alignItems: 'center',
+                                    maxWidth: 900, // Reduced max width for better centering
+                                    margin: '0 auto',
+                                    boxShadow: 3,
+                                    borderRadius: 2,
+                                    padding: 2,
+                                    cursor: 'pointer',
+                                    backgroundColor: '#f5f5f5',
+                                    transition: 'transform 0.3s ease',
+                                    '&:hover': {
+                                        transform: 'translateY(-10px)',
+                                        boxShadow: 6,
+                                    },
+                                }}
+                            >
+                                {/* Image Section */}
+                                <CardMedia
+                                    component="img"
+                                    image="https://emaxss.org/wp-content/uploads/2024/07/sircv_white-1.png?w=1822"
+                                    alt="Sir CV Raman"
+                                    sx={{
+                                        width: { xs: '100%', sm: 280, md: 320 }, // Reduced size for better balance
+                                        height: { xs: 'auto', sm: 280, md: 320 },
+                                        objectFit: 'cover',
+                                        borderRadius: 2,
+                                        boxShadow: 2,
+                                        marginBottom: { xs: 3, md: 0 },
+                                    }}
+                                />
 
+                                {/* Text Section */}
+                                <CardContent
+                                    sx={{
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        justifyContent: 'center',
+                                        textAlign: 'center', // Centering text on smaller screens
+                                        color: 'text.primary',
+                                        paddingLeft: { md: 3 },
+                                        maxWidth: 500, // Prevents text from stretching too wide
+                                    }}
+                                >
+                                    <Typography variant="h6" fontWeight="bold" gutterBottom>
+                                        "Science is a language that transcends boundaries; it is a universal tool for understanding the world"
+                                    </Typography>
+                                    <Typography variant="body2" color="text.secondary" fontStyle="italic">
+                                        - Sir CV Raman
+                                    </Typography>
+                                </CardContent>
+                            </Card>
+                        </Box>
                     </Box>
                 </Container>
             </Box>

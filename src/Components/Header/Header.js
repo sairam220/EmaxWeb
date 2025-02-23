@@ -19,6 +19,8 @@ import TrendingUpOutlinedIcon from "@mui/icons-material/TrendingUpOutlined";
 import ContactMailOutlinedIcon from "@mui/icons-material/ContactMailOutlined";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import DomainOutlinedIcon from "@mui/icons-material/DomainOutlined";
+import logo from '../../asserts/Header/emax-white-multicolor-3.webp';
+
 
 const pages = [
   { name: "HOME", icon: <HomeOutlinedIcon />, path: "/" },
@@ -56,12 +58,16 @@ function ResponsiveAppBar() {
 
           {/* LOGO */}
           <Box sx={{ display: "flex", alignItems: "center", flexGrow: 1 }}>
-            <img
-              src="https://emax42.wordpress.com/wp-content/uploads/2024/05/emax-white-multicolor-3.png?w=1024"
-              alt="Logo"
-              style={{ height: "40px", objectFit: "contain", marginLeft: "20px" }}
-            />
+            <Link to="/">
+              <img
+                src={logo}
+
+                alt="Logo"
+                style={{ height: "42px", objectFit: "contain", marginLeft: "20px" }}
+              />
+            </Link>
           </Box>
+
 
           {/* MOBILE MENU */}
           <Box sx={{ display: { xs: "flex", md: "none" } }}>
