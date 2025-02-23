@@ -25,6 +25,8 @@ import WatchLaterIcon from "@mui/icons-material/WatchLater";
 import emailjs from "@emailjs/browser";
 import EventIcon from '@mui/icons-material/Event';
 import LocationOnIcon from "@mui/icons-material/LocationOn";
+import swamychinmayananda_white from '../../asserts/Services/swamychinmayananda_white.png'
+
 
 
 const StyledForm = styled("form")(({ theme }) => ({
@@ -242,7 +244,7 @@ export default function ContactUs() {
                         {/* Image Section */}
                         <CardMedia
                             component="img"
-                            image="https://emaxss.org/wp-content/uploads/2024/07/swamychinmayananda_white.png"
+                            image={swamychinmayananda_white}
                             alt="Swami Chinmayananda"
                             sx={{
                                 width: { xs: '100%', sm: 280, md: 320 }, // Reduced size for better balance

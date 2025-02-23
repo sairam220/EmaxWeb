@@ -7,6 +7,8 @@ import {
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { styled } from "@mui/system";
 import { motion } from "framer-motion";
+import aiml from '../../asserts/Services/aiml-3.png'
+import img03 from '../../asserts/Services/img03.png'
 
 const StyledImage = styled(motion.img)(({ theme }) => ({
     width: "100%",
@@ -17,6 +19,12 @@ const StyledImage = styled(motion.img)(({ theme }) => ({
     "&:hover": {
         transform: "scale(1.03)",
         boxShadow: `0px 4px 10px rgba(0, 0, 0, 0.12)`,
+    },
+    [theme.breakpoints.up("sm")]: {
+        width: "100%",
+    },
+    [theme.breakpoints.up("md")]: {
+        width: "65%",
     },
 }));
 
@@ -96,14 +104,14 @@ const AiMlPage = () => {
                 {/* Animated Image */}
                 <StyledImage
                     component={motion.img}
-                    src="https://emaxss.org/wp-content/uploads/2024/06/aiml-3.png"
+                    src={aiml}
                     alt="AI&ML"
                     sx={{ mb: { xs: 3, sm: 4 }, maxWidth: "100%", height: "auto" }}
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
                     onError={(e) => {
-                        e.target.src = "https://emaxss.org/wp-content/uploads/2024/06/aiml-3.png";
+                        e.target.src = {aiml};
                     }}
                 />
 
@@ -171,7 +179,7 @@ const AiMlPage = () => {
                     {/* Image Section */}
                     <CardMedia
                         component="img"
-                        image="https://emaxss.org/wp-content/uploads/2024/06/img03.png"
+                        image={img03}
                         alt="Srinivasa Ramanujan"
                         sx={{
                             width: { xs: '100%', sm: 280, md: 320 }, // Reduced size for better balance

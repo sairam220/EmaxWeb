@@ -3,6 +3,8 @@ import { Box, Container, Grid, Typography, IconButton, useMediaQuery } from "@mu
 import { styled } from "@mui/system";
 import { Twitter, LinkedIn, GitHub } from "@mui/icons-material";
 import { Link } from "react-router-dom";
+import logo from '../../asserts/Header/emax-white-multicolor-3.webp';
+
 
 
 const StyledFooter = styled(Box)(({ theme }) => ({
@@ -47,7 +49,7 @@ const Footer = () => {
                     <Grid item xs={12} md={3} textAlign={isMobile ? "center" : "left"}>
                         <Box sx={{ display: "flex", justifyContent: isMobile ? "center" : "left", mb: 2 }}>
                             <img
-                                src="https://emax42.wordpress.com/wp-content/uploads/2024/05/emax-white-multicolor-3.png?w=1024"
+                                src={logo}
                                 alt="Logo"
                                 style={{ height: '50px', objectFit: 'contain' }}
                             />

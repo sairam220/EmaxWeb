@@ -4,6 +4,12 @@ import {
 } from "@mui/material";
 import { styled } from "@mui/system";
 import { motion } from "framer-motion";
+import spss from '../../asserts/Services/structure-probe-1.png'
+import Frame166 from '../../asserts/Services/Frame 166.png'
+import Frame157 from '../../asserts/Services/frame-157.png'
+import Frame156 from '../../asserts/Services/frame-156.png'
+import Frame1612 from '../../asserts/Services/frame-161-2.png'
+import Frame155 from '../../asserts/Services/frame-155.png'
 
 const StyledImage = styled(motion.img)(({ theme }) => ({
     width: "100%",
@@ -15,6 +21,7 @@ const StyledImage = styled(motion.img)(({ theme }) => ({
         transform: "scale(1.03)",
         boxShadow: `0px 4px 10px rgba(0, 0, 0, 0.12)`,
     },
+    
 }));
 
 
@@ -88,14 +95,14 @@ const StructuralProbeStationPage = () => {
 
                         <StyledImage
                             component={motion.img}
-                            src="https://emaxss.org/wp-content/uploads/2024/06/structure-probe-1.png"
+                            src={spss}
                             alt="Compression"
                             sx={{ width: "100%", height: "auto" }}
                             initial={{ opacity: 0, y: 50 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, ease: "easeOut" }}
                             onError={(e) => {
-                                e.target.src = "https://emaxss.org/wp-content/uploads/2024/06/structure-probe-1.png";
+                                e.target.src = {spss};
                             }}
                         />
 
@@ -106,14 +113,14 @@ const StructuralProbeStationPage = () => {
 
                         <StyledImage
                             component={motion.img}
-                            src="https://emaxss.org/wp-content/uploads/2024/06/frame-166.png" // Add the URL of the second image
+                            src={Frame166} // Add the URL of the second image
                             alt="tensile"
                             sx={{ width: "100%", height: "auto" }}
                             initial={{ opacity: 0, y: 50 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, ease: "easeOut" }}
                             onError={(e) => {
-                                e.target.src = "https://emaxss.org/wp-content/uploads/2024/06/frame-166.png"; // Fallback if image fails to load
+                                e.target.src = {Frame166}; // Fallback if image fails to load
                             }}
                         />
 
@@ -142,14 +149,14 @@ const StructuralProbeStationPage = () => {
 
                         <StyledImage
                             component={motion.img}
-                            src="https://emaxss.org/wp-content/uploads/2024/06/frame-157.png"
+                            src={Frame157}
                             alt="Thermal Expansion-1"
                             sx={{ width: "100%", height: "auto" }}
                             initial={{ opacity: 0, y: 50 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, ease: "easeOut" }}
                             onError={(e) => {
-                                e.target.src = "https://emaxss.org/wp-content/uploads/2024/06/frame-157.png";
+                                e.target.src = {Frame157};
                             }}
                         />
 
@@ -160,14 +167,14 @@ const StructuralProbeStationPage = () => {
 
                         <StyledImage
                             component={motion.img}
-                            src="https://emaxss.org/wp-content/uploads/2024/06/frame-156.png" // Add the URL of the second image
+                            src={Frame156} // Add the URL of the second image
                             alt="Thermal Expansion-2"
                             sx={{ width: "100%", height: "auto" }}
                             initial={{ opacity: 0, y: 50 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, ease: "easeOut" }}
                             onError={(e) => {
-                                e.target.src = "https://emaxss.org/wp-content/uploads/2024/06/frame-156.png"; // Fallback if image fails to load
+                                e.target.src = {Frame156}; // Fallback if image fails to load
                             }}
                         />
 
@@ -197,14 +204,14 @@ const StructuralProbeStationPage = () => {
 
                         <StyledImage
                             component={motion.img}
-                            src="https://emaxss.org/wp-content/uploads/2024/06/frame-161-2.png"
+                            src={Frame1612}
                             alt="Seebeck Coefficient-1"
                             sx={{ width: "100%", height: "auto" }}
                             initial={{ opacity: 0, y: 50 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, ease: "easeOut" }}
                             onError={(e) => {
-                                e.target.src = "https://emaxss.org/wp-content/uploads/2024/06/frame-161-2.png";
+                                e.target.src = {Frame1612};
                             }}
                         />
 
@@ -215,14 +222,14 @@ const StructuralProbeStationPage = () => {
 
                         <StyledImage
                             component={motion.img}
-                            src="https://emaxss.org/wp-content/uploads/2024/06/frame-155.png" // Add the URL of the second image
+                            src={Frame155} // Add the URL of the second image
                             alt="Seebeck Coefficient-2"
                             sx={{ width: "100%", height: "auto" }}
                             initial={{ opacity: 0, y: 50 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, ease: "easeOut" }}
                             onError={(e) => {
-                                e.target.src = "https://emaxss.org/wp-content/uploads/2024/06/frame-155.png"; // Fallback if image fails to load
+                                e.target.src = {Frame155}; // Fallback if image fails to load
                             }}
                         />
 

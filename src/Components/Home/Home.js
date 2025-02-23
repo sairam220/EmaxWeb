@@ -20,57 +20,70 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { motion } from 'framer-motion';
 
-
+import HomeImage from '../../asserts/Home/output.jpg'
+import sapc from '../../asserts/Home/sapc.webp'
+import productInnovation from '../../asserts/Home/productInnovation.png'
+import tem from '../../asserts/Home/tem.webp'
+import sem from '../../asserts/Home/sem.png'
+import fib from '../../asserts/Home/fib-sem-2.png'
+import xray from '../../asserts/Home/x-ray.png'
+import spss from '../../asserts/Home/x-ray.png'
+import aiml from '../../asserts/Home/aiml.webp'
+import managem from '../../asserts/Home/managem.png'
+import continuous from '../../asserts/Home/continuous-improvement.png'
+import artificial from '../../asserts/Home/artificial-intelligence.png'
+import Frame from '../../asserts/Home/Frame 185.png'
+import AlbertEinstein from '../../asserts/Home/Img02.png'
 
 // Services Data
 const services = [
     {
         title: 'Statistical Approach for Process Improvement',
-        img: 'https://emaxss.org/wp-content/uploads/2024/05/process-5.png?w=1024',
+        img: sapc,
     },
     {
         title: 'Our Approach to New Product Innovation',
-        img: 'https://emaxss.org/wp-content/uploads/2024/05/new-product-innovation-3.png?w=1024',
+        img: productInnovation,
     },
     {
         title: 'Transmission Electron Microscopy (TEM)',
-        img: 'https://emaxss.org/wp-content/uploads/2024/05/electron-microscopy-services-5.png?w=1024',
+        img: tem,
     },
     {
         title: 'Scanning Electron Microscopy (SEM) services',
-        img: 'https://emaxss.org/wp-content/uploads/2024/05/sem-servcies-1.png?w=1024',
+        img: sem,
     },
     {
         title: 'Focussed Ion Beam-Scanning Electron Microscopy (FIB-SEM) services',
-        img: 'https://emaxss.org/wp-content/uploads/2024/05/fib-sem-2.png?w=1024',
+        img: fib,
     },
     {
         title: 'X-Ray Diffraction Services',
-        img: 'https://emaxss.org/wp-content/uploads/2024/05/x-ray.png',
+        img: xray,
     },
     {
         title: 'Structural & Probe Station Services',
-        img: 'https://emaxss.org/wp-content/uploads/2024/05/structure-probe-1.png',
+        img: spss,
     },
     {
         title: 'AI & ML Services',
-        img: 'https://emaxss.org/wp-content/uploads/2024/05/placeholder-2.png?w=1024',
+        img: aiml,
     },
 ];
 
 const capabilitiesData = [
     {
-        image: 'https://emaxss.org/wp-content/uploads/2024/05/managem.png?w=300',
+        image: managem,
         text: 'Enhancing Product Portfolio',
         information: "Portfolio Enhancement"
     },
     {
-        image: 'https://emaxss.org/wp-content/uploads/2024/05/continuous-improvement.png?w=300',
+        image: continuous,
         text: 'Optimizing Product Variability',
         information: "Product Optimization"
     },
     {
-        image: 'https://emaxss.org/wp-content/uploads/2024/05/artificial-intelligence.png?w=300',
+        image: artificial,
         text: 'Statistical Design & ML Models',
         information: "Statistical Design"
     },
@@ -168,7 +181,7 @@ const Home = () => {
                         <Grid item xs={12} md={6} sx={{ display: { xs: 'none', md: 'flex' } }}>
                             <Box
                                 component="img"
-                                src={`${process.env.PUBLIC_URL}/output.jpg`}
+                                src={HomeImage}
                                 alt="Industrial Solutions"
                                 sx={{
                                     width: '100%',
@@ -435,7 +448,7 @@ const Home = () => {
                             Methodology
                         </Typography>
                         <img
-                            src="https://emaxss.org/wp-content/uploads/2024/05/methodology.png?w=1024&h=552"
+                            src={Frame}
                             alt="Methodology"
                             style={{
                                 width: '90%', // Makes the image responsive
@@ -469,7 +482,7 @@ const Home = () => {
                             {/* Image Section */}
                             <CardMedia
                                 component="img"
-                                image="https://emaxss.org/wp-content/uploads/2024/05/alberteinstein.png?w=2048"
+                                image={AlbertEinstein}
                                 alt="Albert Einstein"
                                 sx={{
                                     width: { xs: '100%', sm: 280, md: 320 }, // Reduced size for better balance

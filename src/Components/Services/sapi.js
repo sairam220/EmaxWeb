@@ -6,6 +6,8 @@ import {
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { styled } from "@mui/system";
 import { motion } from "framer-motion";
+import process1 from '../../asserts/Services/process1.png'
+
 
 const StyledImage = styled(motion.img)(({ theme }) => ({
   width: "100%",
@@ -16,6 +18,12 @@ const StyledImage = styled(motion.img)(({ theme }) => ({
   "&:hover": {
     transform: "scale(1.03)",
     boxShadow: `0px 4px 10px rgba(0, 0, 0, 0.12)`,
+  },
+  [theme.breakpoints.up("sm")]: {
+    width: "100%",
+  },
+  [theme.breakpoints.up("md")]: {
+    width: "65%",
   },
 }));
 
@@ -96,14 +104,14 @@ const ProcessImprovementPage = () => {
         {/* Animated Image */}
         <StyledImage
           component={motion.img}
-          src="https://emaxss.org/wp-content/uploads/2024/07/process1.png"
+          src={process1}
           alt="Process Improvement"
           sx={{ mb: { xs: 3, sm: 4 }, maxWidth: "100%", height: "auto" }}
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           onError={(e) => {
-            e.target.src = "https://emaxss.org/wp-content/uploads/2024/07/process1.png";
+            e.target.src = {process1};
           }}
         />
 

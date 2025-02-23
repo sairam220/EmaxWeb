@@ -12,6 +12,14 @@ import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import { motion } from "framer-motion";
 import InfoIcon from '@mui/icons-material/Info';
 import GroupIcon from '@mui/icons-material/Group';
+import sircv_white from '../../asserts/Services/sircv_white-1.webp'
+import electron from '../../asserts/AboutUs/Group 245.png'
+import project from '../../asserts/AboutUs/project-management-2.png'
+import image122 from '../../asserts/AboutUs/image-122.png'
+import industrial from '../../asserts/AboutUs/industrial-product.png'
+import physical from '../../asserts/AboutUs/physical-chemistry.png'
+import ml from '../../asserts/AboutUs/ml.png'
+
 
 
 const StyledCard = styled(Card)(({ theme }) => ({
@@ -35,39 +43,39 @@ const AboutUs = () => {
     const teamMembers = [
         {
             name: "Dr. P S Sankara Rama Krishnan",
-            image: "https://emaxss.org/wp-content/uploads/2024/06/electron-11.png?w=78",
+            image: electron,
             expertise: "PhD from The University of New South Wales, Sydney, Australia",
             info: "Dr. P S Sankara Rama Krishnan has strong background in electron microscopy, analytical and process optimization across bulk, thin film oxides, and alloys."
         },
         {
             name: "P S Suriyanarayanan",
-            image: "https://emaxss.org/wp-content/uploads/2024/06/project-management-2.png",
+            image: project,
             expertise: "",
             info: "P.S Suryanarayanan is a financial professional with more than three decades of expertise in corporate management and finance."
         },
         {
             name: "Dr. D.H.K Murthy",
-            image: "https://emaxss.org/wp-content/uploads/2024/06/image.png",
+            image: image122,
             expertise: "PhD from Delft University of Technology, Netherlands",
             info: "Dr. D.H.K Murthy has strong experimental background in spectroscopy and chemical synthesis."
         },
         {
             name: "Dr. S.V Ilango",
-            image: "https://emaxss.org/wp-content/uploads/2024/06/industrial-product.png",
+            image: industrial,
             expertise: "PhD from Indian Institute of Technology, Bombay",
             info: "Dr. S.V Ilango has over three decades of industrial product development and was heading a corporate research, scale-up, and production related to ceramics, cement, and concrete wing."
         },
         {
             name: "Dr. Mohan Bhadbade",
             position: "",
-            image: "https://emaxss.org/wp-content/uploads/2024/06/physical-chemistry.png",
+            image: physical,
             expertise: "PhD from Indian Institute of Science, Bangalore",
             info: "Dr. Mohan Bhadbade has strong background in the analytical X-ray diffraction and expertise in physical chemistry."
         },
         {
             name: "Dr. Shakti Prasad Padhy",
             position: "",
-            image: "https://emaxss.org/wp-content/uploads/2024/06/ml.png",
+            image: ml,
             expertise: "PhD from Nanyang Technological University, Singapore",
             info: "Dr. Shakti Prasad Padhy has strong background in machine learning, automation, and high-throughput experiments for accelerated materials discovery"
         }
@@ -279,7 +287,7 @@ const AboutUs = () => {
                                 {/* Image Section */}
                                 <CardMedia
                                     component="img"
-                                    image="https://emaxss.org/wp-content/uploads/2024/07/sircv_white-1.png?w=1822"
+                                    image={sircv_white}
                                     alt="Sir CV Raman"
                                     sx={{
                                         width: { xs: '100%', sm: 280, md: 320 }, // Reduced size for better balance

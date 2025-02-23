@@ -8,6 +8,14 @@ import {
 import RadarIcon from '@mui/icons-material/Radar';
 import { styled } from "@mui/system";
 import { motion } from "framer-motion";
+import tem from '../../asserts/Services/electron-microscopy-services-1-2.png'
+import conventionaltem from '../../asserts/Services/conventionaltem-1.png'
+import stem from '../../asserts/Services/stem-mode-insitu.png'
+import louisdebrogliepng_white from '../../asserts/Services/louisdebrogliepng_white-1.webp'
+import frame from '../../asserts/Services/frame-49-3.png'
+import geometry from '../../asserts/Services/geometry.png'
+import aberration from '../../asserts/Services/aberration-corrections.png'
+import ernstruska from '../../asserts/Services/ernstruska.png'
 
 const StyledImage = styled(motion.img)(({ theme }) => ({
     width: "100%",
@@ -18,6 +26,12 @@ const StyledImage = styled(motion.img)(({ theme }) => ({
     "&:hover": {
         transform: "scale(1.03)",
         boxShadow: `0px 4px 10px rgba(0, 0, 0, 0.12)`,
+    },
+    [theme.breakpoints.up("sm")]: {
+        width: "100%",
+    },
+    [theme.breakpoints.up("md")]: {
+        width: "65%",
     },
 }));
 
@@ -53,7 +67,7 @@ const TemServicesPage = () => {
             title: "Corrected TEM/STEM & HAADF detectors",
             description: "Sub Å probe size, energy resolution ~0.20eV, spacial resolution at pm (at 80/200KeV)"
         },
-        
+
     ];
 
     return (
@@ -106,14 +120,14 @@ const TemServicesPage = () => {
                 {/* Animated Image */}
                 <StyledImage
                     component={motion.img}
-                    src="https://emaxss.org/wp-content/uploads/2024/06/electron-microscopy-services-1-2.png"
+                    src={tem}
                     alt="Transmission Electron Microscopy Services"
                     sx={{ mb: { xs: 3, sm: 4 }, maxWidth: "100%", height: "auto" }}
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
                     onError={(e) => {
-                        e.target.src = "https://emaxss.org/wp-content/uploads/2024/06/electron-microscopy-services-1-2.png";
+                        e.target.src = { tem };
                     }}
                 />
 
@@ -208,14 +222,14 @@ const TemServicesPage = () => {
                         </Typography>
                         <StyledImage
                             component={motion.img}
-                            src="https://emaxss.org/wp-content/uploads/2024/06/conventionaltem-1.png"
+                            src={conventionaltem}
                             alt="Our Methodology"
                             sx={{ width: "100%", height: "auto" }}
                             initial={{ opacity: 0, y: 50 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, ease: "easeOut" }}
                             onError={(e) => {
-                                e.target.src = "https://emaxss.org/wp-content/uploads/2024/06/conventionaltem-1.png";
+                                e.target.src = { conventionaltem };
                             }}
                         />
                         <Typography variant="body1" color="text.secondary" sx={{ mt: 2, textAlign: "center" }}>
@@ -230,14 +244,14 @@ const TemServicesPage = () => {
                         </Typography>
                         <StyledImage
                             component={motion.img}
-                            src="https://emaxss.org/wp-content/uploads/2024/06/stem-mode-insitu.png" // Add the URL of the second image
+                            src={stem} // Add the URL of the second image
                             alt="TEM Image Example"
                             sx={{ width: "100%", height: "auto" }}
                             initial={{ opacity: 0, y: 50 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, ease: "easeOut" }}
                             onError={(e) => {
-                                e.target.src = "https://emaxss.org/wp-content/uploads/2024/06/stem-mode-insitu.png"; // Fallback if image fails to load
+                                e.target.src = { stem }; // Fallback if image fails to load
                             }}
                         />
                         <Typography variant="body1" color="text.secondary" sx={{ mt: 2, textAlign: "center" }}>
@@ -273,7 +287,7 @@ const TemServicesPage = () => {
                     {/* Image Section */}
                     <CardMedia
                         component="img"
-                        image="https://emaxss.org/wp-content/uploads/2024/07/louisdebrogliepng_white-1.png?w=1672"
+                        image={louisdebrogliepng_white}
                         alt="Louis de Broglie"
                         sx={{
                             width: { xs: '100%', sm: 280, md: 320 }, // Reduced size for better balance
@@ -343,14 +357,14 @@ const TemServicesPage = () => {
 
                         <StyledImage
                             component={motion.img}
-                            src="https://emaxss.org/wp-content/uploads/2024/06/frame-49-3.png"
+                            src={frame}
                             alt="Our Methodology"
                             sx={{ width: "100%", height: "auto" }}
                             initial={{ opacity: 0, y: 50 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, ease: "easeOut" }}
                             onError={(e) => {
-                                e.target.src = "https://emaxss.org/wp-content/uploads/2024/06/frame-49-3.png";
+                                e.target.src = { frame };
                             }}
                         />
 
@@ -361,14 +375,14 @@ const TemServicesPage = () => {
 
                         <StyledImage
                             component={motion.img}
-                            src="https://emaxss.org/wp-content/uploads/2024/06/geometry.png" // Add the URL of the second image
+                            src={geometry} // Add the URL of the second image
                             alt="TEM Image Example"
                             sx={{ width: "100%", height: "auto" }}
                             initial={{ opacity: 0, y: 50 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, ease: "easeOut" }}
                             onError={(e) => {
-                                e.target.src = "https://emaxss.org/wp-content/uploads/2024/06/geometry.png"; // Fallback if image fails to load
+                                e.target.src = { geometry }; // Fallback if image fails to load
                             }}
                         />
 
@@ -425,14 +439,14 @@ const TemServicesPage = () => {
 
                         <StyledImage
                             component={motion.img}
-                            src="https://emaxss.org/wp-content/uploads/2024/06/aberration-corrections.png"
+                            src={aberration}
                             alt="Our Methodology"
                             sx={{ width: "100%", height: "auto" }}
                             initial={{ opacity: 0, y: 50 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, ease: "easeOut" }}
                             onError={(e) => {
-                                e.target.src = "https://emaxss.org/wp-content/uploads/2024/06/aberration-corrections.png";
+                                e.target.src = { aberration };
                             }}
                         />
 
@@ -458,10 +472,10 @@ const TemServicesPage = () => {
                     p: { xs: 3, sm: 4, md: 5 },
                     borderRadius: 4,
                     backgroundColor: theme.palette.background?.default || "#fff",
-                    mb:6,
-                    mt:4
+                    mb: 6,
+                    mt: 4
                 }}
-            >   
+            >
 
                 <List sx={{ mt: 2, listStyleType: "none", padding: 0 }}>
                     {doePoints.map((item, index) => (
@@ -528,7 +542,7 @@ const TemServicesPage = () => {
                     {/* Image Section */}
                     <CardMedia
                         component="img"
-                        image="https://emaxss.org/wp-content/uploads/2024/06/ernstruska.png"
+                        image={ernstruska}
                         alt="Ernst Ruska"
                         sx={{
                             width: { xs: '100%', sm: 280, md: 320 }, // Reduced size for better balance
