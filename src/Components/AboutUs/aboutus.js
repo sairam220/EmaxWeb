@@ -25,16 +25,31 @@ import ml from '../../asserts/AboutUs/ml.png'
 const StyledCard = styled(Card)(({ theme }) => ({
     height: "100%",
     display: "flex",
-
-    cursor: 'pointer',
     flexDirection: "column",
-    justifyContent: 'center',
-    transition: "transform 0.3s ease-in-out",
+    justifyContent: "center",
+    cursor: "pointer",
+    // transition: "transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out",
     "&:hover": {
-        transform: "translateY(-5px)"
+        transform: "translateY(-5px)",
+        boxShadow: "0px 5px 15px rgba(0, 0, 0, 0.2)",
     },
-    borderRadius: '20px'
+    borderRadius: "15px",
+    padding: theme.spacing(2),
+    backgroundColor: "#fafafa",
 }));
+
+const ImageContainer = styled(Box)({
+    width: 200,
+    height: 200,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    margin: "0 auto",
+    backgroundColor: "#f0f0f0",
+    borderRadius: "50%",
+    boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
+});
+
 
 const AboutUs = () => {
     const theme = useTheme();
@@ -118,19 +133,20 @@ const AboutUs = () => {
                             <Typography
                                 variant="h3"
                                 align="center"
-                                gutterBottom
                                 sx={{
                                     fontWeight: 700,
-                                    color: "#1976d2",
+                                    color: "#0D47A1",
+                                    mb: 4,
                                     display: "flex",
                                     alignItems: "center",
                                     justifyContent: "center",
-                                    gap: 1
+                                    gap: 1, // Ensures space between text and icon
+                                    flexWrap: "wrap", // Prevents layout issues on smaller screens
                                 }}
                             >
-                                About Us
-                                <InfoIcon sx={{ fontSize: 38, color: "#1976d2" }} />
+                                About Us <InfoIcon sx={{ fontSize: 38, color: "inherit" }} />
                             </Typography>
+
 
                             <Box my={6} >
                                 <Typography variant="body1" paragraph align="justify">
@@ -153,7 +169,7 @@ const AboutUs = () => {
                             gutterBottom
                             sx={{
                                 fontWeight: 700,
-                                color: "#1976d2",
+                                color: "#0D47A1",
                                 display: "flex",
                                 alignItems: "center",
                                 justifyContent: "center",
@@ -161,29 +177,22 @@ const AboutUs = () => {
                             }}
                         >
                             Our Team
-                            <GroupIcon sx={{ fontSize: 38, color: "#1976d2" }} />
+                            <GroupIcon sx={{ fontSize: 38, color: "#0D47A1", }} />
                         </Typography>
 
                         <Grid container spacing={4} my={4}>
                             {teamMembers.map((member) => (
-                                <Grid item xs={12} sm={6} md={4} key={member.name}>
+                                <Grid item xs={12} sm={6} md={4} sx={{ mb: 3 }} key={member.name}>
+
                                     <StyledCard>
-                                        <CardMedia
-                                            component="img"
-                                            height="180"
-                                            image={member.image}
-                                            alt={member.name}
-                                            sx={{
-                                                objectFit: "contain",
-                                                width: "auto",
-                                                margin: "0 auto"
-                                            }}
-                                        />
+                                        <ImageContainer>
+                                            <CardMedia component="img" image={member.image} alt={member.name} sx={{ width: 100, height: 100, objectFit: "contain" }} />
+                                        </ImageContainer>
                                         <CardContent>
-                                            <Typography variant="h6" gutterBottom sx={{ fontWeight: 600 }}>
+                                            <Typography variant="h6" fontWeight={600} gutterBottom>
                                                 {member.name}
                                             </Typography>
-                                            <Typography variant="body2" sx={{ fontWeight: 550, mb: 4 }}>
+                                            <Typography variant="body2" color="text.secondary" gutterBottom>
                                                 {member.expertise}
                                             </Typography>
                                             <Typography variant="body2">

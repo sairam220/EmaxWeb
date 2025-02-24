@@ -22,10 +22,10 @@ const StyledImage = styled(motion.img)(({ theme }) => ({
     },
     [theme.breakpoints.up("sm")]: {
         width: "100%",
-      },
-      [theme.breakpoints.up("md")]: {
+    },
+    [theme.breakpoints.up("md")]: {
         width: "65%",
-      },
+    },
 }));
 
 const StyledListItem = styled(motion.li)(({ theme }) => ({
@@ -91,14 +91,14 @@ const ProductInnovationPage = () => {
 
 
     return (
-        <Container maxWidth="xl" sx={{ px: { xs: 2, sm: 4, md: 6 }, py: { xs: 4, sm: 6 }}}>
+        <Container maxWidth="xl" sx={{ px: { xs: 2, sm: 4, md: 6 }, py: { xs: 4, sm: 6 } }}>
             <Paper
                 elevation={3}
                 sx={{
                     p: { xs: 3, sm: 4, md: 5 },
                     borderRadius: 4,
                     backgroundColor: theme.palette.background?.default || "#fff",
-                    mb:6
+                    mb: 6
                 }}
             >
                 <Typography
@@ -106,8 +106,8 @@ const ProductInnovationPage = () => {
                     align="center"
                     color="primary"
                     gutterBottom
-                    sx={{ 
-                        fontWeight: 550, mb: { xs: 3, sm: 4 }, letterSpacing: 0.8, fontSize: { xs: "1.8rem", sm: "2.2rem", md: "2.8rem" } 
+                    sx={{
+                        fontWeight: 550, mb: { xs: 3, sm: 4 }, letterSpacing: 0.8, fontSize: { xs: "1.8rem", sm: "2.2rem", md: "2.8rem" }
                     }}
                 >
                     Our Approach To New Product Innovation
@@ -119,12 +119,12 @@ const ProductInnovationPage = () => {
                     component={motion.img}
                     src={product}
                     alt="Product Innovation"
-                    sx={{ mt: { xs: 3, sm: 4 },mb: { xs: 3, sm: 4 }, maxWidth: "100%", height: "auto" }}
+                    sx={{ mt: { xs: 3, sm: 4 }, mb: { xs: 3, sm: 4 }, maxWidth: "100%", height: "auto" }}
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
                     onError={(e) => {
-                        e.target.src = {product};
+                        e.target.src = { product };
                     }}
                 />
 
@@ -175,7 +175,7 @@ const ProductInnovationPage = () => {
                     p: { xs: 3, sm: 4, md: 5 },
                     borderRadius: 4,
                     backgroundColor: theme.palette.background?.default || "#fff",
-                    mb:6
+                    mb: 6
                 }}
             >
                 <Typography
@@ -183,14 +183,14 @@ const ProductInnovationPage = () => {
                     align="center"
                     color="primary"
                     gutterBottom
-                    sx={{ 
-                        fontWeight: 550, mb: { xs: 3, sm: 4 }, letterSpacing: 0.8, fontSize: { xs: "1.8rem", sm: "2.2rem", md: "2.8rem" } 
+                    sx={{
+                        fontWeight: 550, mb: { xs: 3, sm: 4 }, letterSpacing: 0.8, fontSize: { xs: "1.8rem", sm: "2.2rem", md: "2.8rem" }
                     }}
                 >
                     Our Methodology
 
                 </Typography>
-                <br/>
+                <br />
 
 
                 {/* Animated Image */}
@@ -198,12 +198,12 @@ const ProductInnovationPage = () => {
                     component={motion.img}
                     src={matrix}
                     alt="Product Innovation"
-                    sx={{ mt: { xs: 3, sm: 4 },mb: { xs: 3, sm: 4 }, maxWidth: "100%", height: "auto" }}
+                    sx={{ mt: { xs: 3, sm: 4 }, mb: { xs: 3, sm: 4 }, maxWidth: "100%", height: "auto" }}
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
                     onError={(e) => {
-                        e.target.src = {matrix};
+                        e.target.src = { matrix };
                     }}
                 />
 
