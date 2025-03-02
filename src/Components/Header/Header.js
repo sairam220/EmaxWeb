@@ -11,6 +11,7 @@ import {
   Container,
   Button,
   Typography,
+  Tooltip
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
@@ -19,16 +20,20 @@ import TrendingUpOutlinedIcon from "@mui/icons-material/TrendingUpOutlined";
 import ContactMailOutlinedIcon from "@mui/icons-material/ContactMailOutlined";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import DomainOutlinedIcon from "@mui/icons-material/DomainOutlined";
+import InventoryIcon from '@mui/icons-material/Inventory';
 import logo from '../../asserts/Header/emax-white-multicolor-3.webp';
+import CloseIcon from "@mui/icons-material/Close";
+
 
 
 const pages = [
-  { name: "HOME", icon: <HomeOutlinedIcon />, path: "/" },
-  { name: "Services", icon: <BuildOutlinedIcon />, path: "/services" },
-  { name: "Industries", icon: <DomainOutlinedIcon />, path: "/industries" },
-  { name: "Trends & Advances", icon: <TrendingUpOutlinedIcon />, path: "/trends-advances" },
-  { name: "Contact", icon: <ContactMailOutlinedIcon />, path: "/contact" },
-  { name: "About Us", icon: <InfoOutlinedIcon />, path: "/about-us" },
+  { name: "HOME", icon: <HomeOutlinedIcon />, path: "/", tooltip: 'Home' },
+  { name: "SpecX", icon: <InventoryIcon />, path: "/specializedProducts", tooltip: 'Specialized Products' },
+  { name: "Services", icon: <BuildOutlinedIcon />, path: "/services", tooltip: 'Services' },
+  { name: "Industries", icon: <DomainOutlinedIcon />, path: "/industries", tooltip: 'Industries' },
+  { name: "Trends", icon: <TrendingUpOutlinedIcon />, path: "/trends-advances", tooltip: 'Trends & Advances' },
+  { name: "Contact", icon: <ContactMailOutlinedIcon />, path: "/contact", tooltip: 'Contact' },
+  { name: "About Us", icon: <InfoOutlinedIcon />, path: "/about-us", tooltip: 'About Us' },
 ];
 
 function ResponsiveAppBar() {
@@ -72,8 +77,13 @@ function ResponsiveAppBar() {
           {/* MOBILE MENU */}
           <Box sx={{ display: { xs: "flex", md: "none" } }}>
             <IconButton size="large" aria-label="menu" onClick={handleOpenNavMenu} color="inherit">
-              <MenuIcon sx={{ color: "#FFF" }} />
+              {anchorElNav ? (
+                <CloseIcon sx={{ color: "#FFF" }} />
+              ) : (
+                <MenuIcon sx={{ color: "#FFF" }} />
+              )}
             </IconButton>
+
             <Menu
               id="menu-appbar"
               anchorEl={anchorElNav}
@@ -107,38 +117,42 @@ function ResponsiveAppBar() {
           </Box>
 
           {/* DESKTOP NAVIGATION */}
-          <Box sx={{ display: { xs: "none", md: "flex" }, justifyContent: "flex-end", alignItems: "center", flexGrow: 1 }}>
+          <Box sx={{ display: { xs: "none", md: "flex" }, justifyContent: "flex-end", alignItems: "center" }}>
             {pages.map((page) => (
-              <Button
-                key={page.name}
-                component={Link}
-                to={page.path}
-                sx={{
-                  mx: 1.5,
-                  px: 3,
-                  py: 1,
-                  borderRadius: "25px",
-                  fontWeight: "bold",
-                  textTransform: "uppercase",
-                  fontSize: "14px",
-                  fontFamily: "'Playfair Display', serif",
-                  color: location.pathname === page.path ? "#000" : "#EDE7F6",
-                  backgroundColor: location.pathname === page.path ? "#e8eaf6" : "transparent",
-                  transition: "all 0.3s ease-in-out",
-                  "&:hover": {
-                    backgroundColor: "#e8eaf6",
-                    color: "#000",
-                    transform: "scale(1.05)",
-                  },
-                }}
-              >
-                {React.cloneElement(page.icon, {
-                  sx: { marginRight: 1, fontSize: "22px" },
-                })}
-                <Typography variant="body1" sx={{ fontWeight: "500", fontFamily: "'Playfair Display', serif", }}>
-                  {page.name}
-                </Typography>
-              </Button>
+              <Tooltip key={page.name} title={page.tooltip} placement="bottom">
+                <Button
+                  key={page.name}
+                  component={Link}
+                  to={page.path}
+                  sx={{
+                    mx: 1.5,
+                    px: 1,
+                    py: 1,
+                    borderRadius: "25px",
+                    fontWeight: "bold",
+                    textTransform: "uppercase",
+                    fontSize: "12px",
+                    fontFamily: "'Playfair Display', serif",
+                    color: location.pathname === page.path ? "#000" : "#EDE7F6",
+                    backgroundColor: location.pathname === page.path ? "#e8eaf6" : "transparent",
+                    transition: "all 0.3s ease-in-out",
+                    "&:hover": {
+                      backgroundColor: "#e8eaf6",
+                      color: "#000",
+                      transform: "scale(1.05)",
+                    },
+                    // minWidth:'auto',
+                    // height:'auto'
+                  }}
+                >
+                  {React.cloneElement(page.icon, {
+                    sx: { marginRight: 1, fontSize: "22px" },
+                  })}
+                  <Typography variant="body1" sx={{ fontWeight: "500", fontFamily: "'Playfair Display', serif", }}>
+                    {page.name}
+                  </Typography>
+                </Button>
+              </Tooltip>
             ))}
           </Box>
         </Toolbar>

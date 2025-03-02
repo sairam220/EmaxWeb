@@ -73,6 +73,9 @@ const Footer = () => {
                             <Link to="/" style={{ textDecoration: 'none', color:'#FFFF'}}>
                                 <NeuralLink variant="body1">Home</NeuralLink>
                             </Link>
+                            <Link to="/specializedProducts" style={{ textDecoration: 'none', color:'#FFFF'}}>
+                                <NeuralLink variant="body1">Specialized Products</NeuralLink>
+                            </Link>
                             <Link to="/services" style={{ textDecoration: 'none', color:'#FFFF'}}>
                                 <NeuralLink variant="body1">Services</NeuralLink>
                             </Link>

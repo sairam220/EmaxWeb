@@ -1,29 +1,19 @@
 import { useState, useEffect } from "react";
 import { Tabs, Tab, Box, Typography } from "@mui/material";
-import { BarChart, Lightbulb, Dashboard, Search, Layers, LayersClear, RadioButtonChecked, Psychology } from '@mui/icons-material';
+import LightbulbCircleIcon from '@mui/icons-material/LightbulbCircle';
 import MiscellaneousServicesIcon from '@mui/icons-material/MiscellaneousServices';
-import ProcessImprovementPage from "./sapi";
+import HdrStrongIcon from '@mui/icons-material/HdrStrong';
+import MemoryIcon from '@mui/icons-material/Memory';
 import { motion } from 'framer-motion';
-import ProductInnovationPage from "./productInnovation";
-import TemServicesPage from "./tem";
-import ScanningElectronMicroscopyPage from "./sem";
-import FibSemPage from "./FIB";
-import XRDPage from "./xdr";
-import StructuralProbeStationPage from "./sps";
-import AiMlPage from "./AiMl";
 
-const services = [
-    { name: "SAPI", icon: <BarChart /> },
-    { name: "Product Innovation", icon: <Lightbulb /> },
-    { name: "TEM", icon: <Dashboard /> },
-    { name: "SEM", icon: <Search /> },
-    { name: "FIB-SEM", icon: <Layers /> },
-    { name: "XRD", icon: <LayersClear /> },
-    { name: "SPS", icon: <RadioButtonChecked /> },
-    { name: "AI/ML", icon: <Psychology /> }
+
+const specX = [
+    { name: "MEMS Chips", icon: <MemoryIcon /> },
+    { name: "TEM Holders", icon: <LightbulbCircleIcon /> },
+    { name: "Silicon Nitride Whefors", icon: <HdrStrongIcon /> }
 ];
 
-export default function Services() {
+export default function SpecializedProducts() {
     const [value, setValue] = useState(0);
     const handleChange = (_, newValue) => setValue(newValue);
     const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
@@ -49,28 +39,28 @@ export default function Services() {
         visible: { opacity: 1, y: 0, transition: { duration: 1, ease: "easeOut" } },
     };
 
-    const renderPage = () => {
-        switch (value) {
-            case 0:
-                return <ProcessImprovementPage />;
-            case 1:
-                return <ProductInnovationPage />;
-            case 2:
-                return <TemServicesPage />;
-            case 3:
-                return <ScanningElectronMicroscopyPage />;
-            case 4:
-                return <FibSemPage />;
-            case 5:
-                return <XRDPage />;
-            case 6:
-                return <StructuralProbeStationPage />;
-            case 7:
-                return <AiMlPage />;
-            default:
-                return <ProcessImprovementPage />;
-        }
-    };
+    // const renderPage = () => {
+    //     switch (value) {
+    //         case 0:
+    //             return <ProcessImprovementPage />;
+    //         case 1:
+    //             return <ProductInnovationPage />;
+    //         case 2:
+    //             return <TemServicesPage />;
+    //         case 3:
+    //             return <ScanningElectronMicroscopyPage />;
+    //         case 4:
+    //             return <FibSemPage />;
+    //         case 5:
+    //             return <XRDPage />;
+    //         case 6:
+    //             return <StructuralProbeStationPage />;
+    //         case 7:
+    //             return <AiMlPage />;
+    //         default:
+    //             return <ProcessImprovementPage />;
+    //     }
+    // };
 
     return (
         <motion.div variants={pageVariants} initial="hidden" animate="visible">
@@ -106,7 +96,7 @@ export default function Services() {
                     }}
                 >
 
-                    Our Services
+                    Specialized Products
                     <MiscellaneousServicesIcon sx={{ color: "#000000", fontSize: "2.2rem" }} />
                 </Typography>
 
@@ -120,9 +110,10 @@ export default function Services() {
                     scrollButtons={isMobile ? "auto" : false}
                     allowScrollButtonsMobile
                     sx={{
-                        width: { xs: "100%", sm: "auto"},
+                        width: { xs: "100%", sm: "auto" },
                         maxWidth: "100%",
                         overflowX: "auto",
+                        // padding:'10px',
                         bgcolor: "#ffffff",
                         borderRadius: 2,
                         boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
@@ -162,7 +153,7 @@ export default function Services() {
                         },
                     }}
                 >
-                    {services.map((service, index) => (
+                    {specX.map((service, index) => (
                         <Tab
                             key={index}
                             label={
@@ -173,12 +164,12 @@ export default function Services() {
                             }
                             sx={{
                                 ...(index === 0 && { ml: 1 }),
-                                ...(index === services.length - 1 && { mr: 1 }),
+                                ...(index === specX.length - 1 && { mr: 1 }),
                             }}
                         />
                     ))}
                 </Tabs>
-                {renderPage()}
+                {/* {renderPage()} */}
             </Box>
         </motion.div>
     );

@@ -103,7 +103,7 @@ export default function Industries() {
                     value={value}
                     onChange={handleChange}
                     variant="scrollable"
-                    scrollButtons="auto"
+                    scrollButtons={isMobile ? "auto" : false}
                     allowScrollButtonsMobile
                     sx={{
                         width: { xs: "100%", sm: "auto"},
@@ -157,6 +157,10 @@ export default function Industries() {
                                     <Box sx={{ ml: 1 }}>{service.name}</Box>
                                 </Box>
                             }
+                            sx={{
+                                ...(index === 0 && { ml: 1 }),
+                                ...(index === industries.length - 1 && { mr: 1 }),
+                            }}
                         />
                     ))}
                 </Tabs>
