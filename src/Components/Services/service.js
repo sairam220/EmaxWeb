@@ -15,14 +15,15 @@ import AiMlPage from "./AiMl";
 const services = [
     { name: "SAPI", icon: <BarChart /> },
     { name: "Product Innovation", icon: <Lightbulb /> },
-    { name: "TEM", icon: <Dashboard /> },
-    { name: "SEM", icon: <Search /> },
-    { name: "FIB-SEM", icon: <Layers /> },
-    { name: "XRD", icon: <LayersClear /> },
-    { name: "SPS", icon: <RadioButtonChecked /> },
+    { name: "TEM", icon: <Dashboard /> }, // comes first 
+    { name: "SEM", icon: <Search /> }, // fourth
+    { name: "FIB-SEM", icon: <Layers /> }, // second
+    { name: "XRD", icon: <LayersClear /> }, // five 
+    { name: "SPS", icon: <RadioButtonChecked /> }, 
     { name: "AI/ML", icon: <Psychology /> }
 ];
-
+// mems devices for institue studies  third
+// alide services (SPAI, SPS, AI/ML, Product Innovation)
 export default function Services() {
     const [value, setValue] = useState(0);
     const handleChange = (_, newValue) => setValue(newValue);

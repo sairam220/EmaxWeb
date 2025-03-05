@@ -19,7 +19,7 @@ import PsychologyIcon from '@mui/icons-material/Psychology';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { motion } from 'framer-motion';
-
+import HandshakeIcon from '@mui/icons-material/Handshake';
 import HomeImage from '../../asserts/Home/output.jpg'
 import sapc from '../../asserts/Home/sapc.webp'
 import productInnovation from '../../asserts/Home/productInnovation.png'
@@ -34,6 +34,8 @@ import continuous from '../../asserts/Home/continuous-improvement.png'
 import artificial from '../../asserts/Home/artificial-intelligence.png'
 import Frame from '../../asserts/Home/Frame 185.png'
 import AlbertEinstein from '../../asserts/Home/Img02.png'
+import download from '../../asserts/Partners/download.jpeg'
+import iithyd from '../../asserts/Partners/iithyd.jpg'
 
 // Services Data
 const services = [
@@ -89,6 +91,24 @@ const capabilitiesData = [
     },
 ];
 
+const partners = [
+    {
+        partnerName: 'PSG-STEP',
+        description: 'Provide world-class Engineering Education, Foster Research and Development. Evolve innovative applications of Technology. Encourage Entrepreneurship. Ultimately mould young men and women capable of assuming leadership of the society for the betterment of the Country. ',
+        image: download
+    },
+    {
+        partnerName: 'S.N Micro Tech Ben',
+        description: '',
+        image: download
+    },
+        {
+            partnerName: 'Indian Institute of Technology Hyderabad',
+            description: 'IITH offers undergraduate programs in all the classical engineering disciplines, applied sciences, design, as well as several modern interdisciplinary areas. Students are given a flexibility to explore a broad set of areas, and potentially pursue a minor or double major in a discipline that is not their own. Students who wish to seek a deeper understanding of their own discipline are strongly encouraged to get involved in cutting-edge research with the help of a faculty to mentor them, and earn an Honors in their own field.',
+            image: iithyd
+    }
+]
+
 
 const Home = () => {
     const navigate = useNavigate();
@@ -126,6 +146,30 @@ const Home = () => {
             { breakpoint: 600, settings: { slidesToShow: 1, arrows: false } },
         ],
 
+    };
+
+    const partnersSettings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,  // Display one card at a time
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        responsive: [
+            {
+                breakpoint: 1200,
+                settings: { slidesToShow: 1 }, // Show 1 slide at a time
+            },
+            {
+                breakpoint: 900,
+                settings: { slidesToShow: 1 }, // Show 1 slide at a time
+            },
+            {
+                breakpoint: 600,
+                settings: { slidesToShow: 1, arrows: false }, // Show 1 slide at a time on mobile
+            },
+        ],
     };
 
     return (
@@ -459,6 +503,96 @@ const Home = () => {
                         />
                     </Box>
 
+                    <Box mt={6} mb={6} sx={{ mt: { xs: '50px', sm: '70px', md: '100px' } }}>
+                        <Typography
+                            variant="h4"
+                            fontWeight="bold"
+                            textAlign="center"
+                            mb={6}
+                            sx={{
+                                fontFamily: "'Roboto', sans-serif",
+                                position: 'relative',
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                padding: '8px 16px',
+                                backgroundColor: '#424242',
+                                color: 'white',
+                                borderRadius: 2,
+                                textTransform: 'uppercase',
+                                boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
+                                fontSize: '1.5rem',
+                                '@media (max-width: 600px)': {
+                                    fontSize: '1.25rem',
+                                    padding: '6px 12px',
+                                },
+                                '&::before': {
+                                    content: '""',
+                                    position: 'absolute',
+                                    bottom: '-10px',
+                                    left: '50%',
+                                    transform: 'translateX(-50%)',
+                                    borderLeft: '10px solid transparent',
+                                    borderRight: '10px solid transparent',
+                                    borderTop: '10px solid #424242',
+                                },
+                            }}
+                        >
+                            <Box sx={{ mr: 1 }}>
+                                <HandshakeIcon sx={{ color: 'white', fontSize: '2rem' }} />
+                            </Box>
+                            Our Partners
+                        </Typography>
+
+                        <Slider {...partnersSettings}>
+                            {partners.map((partner, index) => (
+                                <Box key={index} px={2}>
+                                    <Card
+                                        sx={{
+                                            display: 'flex',
+                                            flexDirection: 'row', // Image on the left, content on the right
+                                            alignItems: 'center',
+                                            justifyContent: 'flex-start',
+                                            boxShadow: 3,
+                                            borderRadius: 3,
+                                            maxWidth: 800,
+                                            margin: '0 auto',
+                                        }}
+                                    >
+                                        <CardMedia
+                                            component="img"
+                                            height="220"
+                                            image={partner.image}
+                                            alt={partner.partnerName}
+                                            sx={{
+                                                width: { xs: '90%', sm: 250 }, // 100% width for mobile, 250px for larger screens
+                                                objectFit: 'cover',  // Image covers the space without distortion
+                                                borderRadius: 2,
+                                                marginLeft:2,
+                                                marginRight: 2, // Space between image and content
+                                            }}
+                                        />
+                                        <CardContent
+                                            sx={{
+                                                padding: 2,
+                                                display: 'flex',
+                                                flexDirection: 'column',
+                                                justifyContent: 'center',
+                                                textAlign: 'left', // Align text to the left
+                                            }}
+                                        >
+                                            <Typography variant="h6" fontWeight="bold" sx={{ mb: 2 }}>
+                                                {partner.partnerName}
+                                            </Typography>
+                                            <Typography variant="body1" sx={{ color: 'text.secondary' }}>
+                                                {partner.description || 'No description available.'}
+                                            </Typography>
+                                        </CardContent>
+                                    </Card>
+                                </Box>
+                            ))}
+                        </Slider>
+                    </Box>
+
                     <Box mt={6} mb={6} px={{ xs: 1, sm: 4, md: 6 }}>
                         <Card
                             sx={{
@@ -515,7 +649,6 @@ const Home = () => {
                             </CardContent>
                         </Card>
                     </Box>
-
 
 
                 </Container>

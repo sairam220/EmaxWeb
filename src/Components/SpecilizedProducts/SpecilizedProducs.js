@@ -5,6 +5,7 @@ import MiscellaneousServicesIcon from '@mui/icons-material/MiscellaneousServices
 import HdrStrongIcon from '@mui/icons-material/HdrStrong';
 import MemoryIcon from '@mui/icons-material/Memory';
 import { motion } from 'framer-motion';
+import MeMsChips from "./Mems";
 
 
 const specX = [
@@ -39,28 +40,19 @@ export default function SpecializedProducts() {
         visible: { opacity: 1, y: 0, transition: { duration: 1, ease: "easeOut" } },
     };
 
-    // const renderPage = () => {
-    //     switch (value) {
-    //         case 0:
-    //             return <ProcessImprovementPage />;
-    //         case 1:
-    //             return <ProductInnovationPage />;
-    //         case 2:
-    //             return <TemServicesPage />;
-    //         case 3:
-    //             return <ScanningElectronMicroscopyPage />;
-    //         case 4:
-    //             return <FibSemPage />;
-    //         case 5:
-    //             return <XRDPage />;
-    //         case 6:
-    //             return <StructuralProbeStationPage />;
-    //         case 7:
-    //             return <AiMlPage />;
-    //         default:
-    //             return <ProcessImprovementPage />;
-    //     }
-    // };
+    const renderPage = () => {
+        switch (value) {
+            case 0:
+                return <MeMsChips />;
+            // case 1:
+            //     return <ProductInnovationPage />;
+            // case 2:
+            //     return <TemServicesPage />;
+            
+            default:
+                return <MeMsChips />;
+        }
+    };
 
     return (
         <motion.div variants={pageVariants} initial="hidden" animate="visible">
@@ -169,7 +161,7 @@ export default function SpecializedProducts() {
                         />
                     ))}
                 </Tabs>
-                {/* {renderPage()} */}
+                {renderPage()}
             </Box>
         </motion.div>
     );
