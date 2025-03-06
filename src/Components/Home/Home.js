@@ -22,13 +22,10 @@ import { motion } from 'framer-motion';
 import HandshakeIcon from '@mui/icons-material/Handshake';
 import HomeImage from '../../asserts/Home/output.jpg'
 import sapc from '../../asserts/Home/sapc.webp'
-import productInnovation from '../../asserts/Home/productInnovation.png'
 import tem from '../../asserts/Home/tem.webp'
 import sem from '../../asserts/Home/sem.png'
 import fib from '../../asserts/Home/fib-sem-2.png'
 import xray from '../../asserts/Home/x-ray.png'
-import spss from '../../asserts/Home/x-ray.png'
-import aiml from '../../asserts/Home/aiml.webp'
 import managem from '../../asserts/Home/managem.png'
 import continuous from '../../asserts/Home/continuous-improvement.png'
 import artificial from '../../asserts/Home/artificial-intelligence.png'
@@ -36,41 +33,70 @@ import Frame from '../../asserts/Home/Frame 185.png'
 import AlbertEinstein from '../../asserts/Home/Img02.png'
 import download from '../../asserts/Partners/download.jpeg'
 import iithyd from '../../asserts/Partners/iithyd.jpg'
+import Picture3 from '../../asserts/Mems/Picture3.jpg'
+import cover from '../../asserts/Industries/cover-1.png'
+import cover2 from '../../asserts/Industries/cover-2.png'
+import functionality2 from '../../asserts/Industries/functionality-2.webp'
+import process4 from '../../asserts/Industries/process-4.png'
+import DomainOutlinedIcon from "@mui/icons-material/DomainOutlined";
+
 
 // Services Data
 const services = [
     {
-        title: 'Statistical Approach for Process Improvement',
-        img: sapc,
-    },
-    {
-        title: 'Our Approach to New Product Innovation',
-        img: productInnovation,
-    },
-    {
         title: 'Transmission Electron Microscopy (TEM)',
         img: tem,
-    },
-    {
-        title: 'Scanning Electron Microscopy (SEM) services',
-        img: sem,
+        tab: 0
     },
     {
         title: 'Focussed Ion Beam-Scanning Electron Microscopy (FIB-SEM) services',
         img: fib,
+        tab: 1
+    },
+    {
+        title: 'MEMS',
+        img: Picture3,
+        tab: 0
+    },
+    {
+        title: 'Scanning Electron Microscopy (SEM) services',
+        img: sem,
+        tab: 4
     },
     {
         title: 'X-Ray Diffraction Services',
         img: xray,
+        tab: 5
     },
     {
-        title: 'Structural & Probe Station Services',
-        img: spss,
+        title: 'Alide services',
+        img: sapc,
+        tab: 2
+    },
+
+];
+
+const industries = [
+    {
+        title: 'Semiconductors',
+        img: cover,
+        tab: 0
     },
     {
-        title: 'AI & ML Services',
-        img: aiml,
+        title: 'Metals & Alloys',
+        img: cover2,
+        tab: 1
     },
+    {
+        title: 'Ceramics & Cement',
+        img: functionality2,
+        tab: 2
+    },
+    {
+        title: 'Food Science & Pharmaceutical',
+        img: process4,
+        tab: 3
+    }
 ];
 
 const capabilitiesData = [
@@ -98,14 +124,14 @@ const partners = [
         image: download
     },
     {
+        partnerName: 'Indian Institute of Technology Hyderabad',
+        description: 'IITH offers undergraduate programs in all the classical engineering disciplines, applied sciences, design, as well as several modern interdisciplinary areas. Students are given a flexibility to explore a broad set of areas, and potentially pursue a minor or double major in a discipline that is not their own. Students who wish to seek a deeper understanding of their own discipline are strongly encouraged to get involved in cutting-edge research with the help of a faculty to mentor them, and earn an Honors in their own field.',
+        image: iithyd
+    },
+    {
         partnerName: 'S.N Micro Tech Ben',
         description: '',
-        image: download
-    },
-        {
-            partnerName: 'Indian Institute of Technology Hyderabad',
-            description: 'IITH offers undergraduate programs in all the classical engineering disciplines, applied sciences, design, as well as several modern interdisciplinary areas. Students are given a flexibility to explore a broad set of areas, and potentially pursue a minor or double major in a discipline that is not their own. Students who wish to seek a deeper understanding of their own discipline are strongly encouraged to get involved in cutting-edge research with the help of a faculty to mentor them, and earn an Honors in their own field.',
-            image: iithyd
+        image: ''
     }
 ]
 
@@ -125,12 +151,21 @@ const Home = () => {
         visible: { opacity: 1, y: 0, transition: { duration: 1, ease: "easeOut" } },
     };
 
-    const handleLearnMore = (index) => {
-        localStorage.setItem("activeTab", index);
-        navigate("/services");
+    const handleLearnMore = (title, index) => {
+        if (title === "MEMS") {
+            localStorage.setItem("activeTab", index);
+            navigate("/specializedProducts");
+        } else {
+            localStorage.setItem("activeTab", index);
+            navigate("/services");
+        }
 
     };
 
+    const handleLearnMoreIndustries = (title, index) => {
+        localStorage.setItem("activeTab", index);
+        navigate("/industries");
+    }
 
     const settings = {
         dots: true,
@@ -139,6 +174,24 @@ const Home = () => {
         slidesToShow: 3,
         slidesToScroll: 1,
         autoplay: true,
+        autoplaySpeed: 3000,
+        responsive: [
+            { breakpoint: 1200, settings: { slidesToShow: 3 } },
+            { breakpoint: 900, settings: { slidesToShow: 2 } },
+            { breakpoint: 600, settings: { slidesToShow: 1, arrows: false } },
+        ],
+
+    };
+
+
+    const industriesSettings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        rtl: true,
         autoplaySpeed: 3000,
         responsive: [
             { breakpoint: 1200, settings: { slidesToShow: 3 } },
@@ -311,7 +364,92 @@ const Home = () => {
                                                     width: '100%',
 
                                                 }}
-                                                onClick={() => handleLearnMore(index)}
+                                                onClick={() => handleLearnMore(service.title, service.tab)}
+                                            >
+                                                Learn More
+                                            </Button>
+                                        </CardContent>
+                                    </Card>
+                                </Box>
+                            ))}
+                        </Slider>
+                    </Box>
+
+                    {/* Slider Section (industries) */}
+                    <Box mt={6} mb={6} sx={{ mt: { xs: '50px', sm: '70px', md: '100px' } }}>
+                        <Typography
+                            variant="h4"
+                            fontWeight="bold"
+                            textAlign="center"
+                            mb={6}
+                            sx={{
+                                fontFamily: "'Roboto', sans-serif",
+                                position: 'relative',
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                padding: '8px 16px',
+                                backgroundColor: '#424242', // Gray background color
+                                color: 'white',
+                                borderRadius: 2,
+                                textTransform: 'uppercase',
+                                boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
+                                fontSize: '1.5rem',
+                                '@media (max-width: 600px)': {
+                                    fontSize: '1.25rem',
+                                    padding: '6px 12px',
+                                },
+                                '&::before': {
+                                    content: '""',
+                                    position: 'absolute',
+                                    bottom: '-10px',
+                                    left: '50%',
+                                    transform: 'translateX(-50%)',
+                                    borderLeft: '10px solid transparent',
+                                    borderRight: '10px solid transparent',
+                                    borderTop: '10px solid #424242', // Match the background color
+                                },
+                            }}
+                        >
+                            <Box sx={{ mr: 1 }}>
+                                <DomainOutlinedIcon sx={{ color: 'white', fontSize: '2rem' }} /> {/* Icon for services */}
+                            </Box>
+                            Our Industries
+                        </Typography>
+                        <Slider
+                            {...industriesSettings}
+                        // nextArrow={ }
+                        >
+                            {industries.map((service, index) => (
+                                <Box key={index} px={2}>
+                                    <Card
+                                        sx={{
+                                            boxShadow: 3,
+                                            borderRadius: 3,
+                                            maxWidth: 296,
+                                            height: 400,
+                                            margin: '0 auto',
+                                            display: 'flex',
+                                            flexDirection: 'column',
+                                            justifyContent: 'space-between',
+                                            alignContent: 'center'
+                                        }}
+                                    >
+                                        <CardMedia component="img" height="220" image={service.img} alt={service.title} />
+                                        <CardContent sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', flexGrow: 1 }}>
+                                            <Typography variant="h6" fontWeight="bold" sx={{ mb: 2 }}>
+                                                {service.title}
+                                            </Typography>
+                                            <Button
+                                                variant="outlined"
+                                                sx={{
+
+                                                    textTransform: 'none',
+                                                    fontSize: '0.9rem',
+                                                    borderRadius: 2,
+                                                    width: '100%',
+
+                                                }}
+                                                onClick={() => handleLearnMoreIndustries(service.title, service.tab)}
                                             >
                                                 Learn More
                                             </Button>
@@ -567,7 +705,7 @@ const Home = () => {
                                                 width: { xs: '90%', sm: 250 }, // 100% width for mobile, 250px for larger screens
                                                 objectFit: 'cover',  // Image covers the space without distortion
                                                 borderRadius: 2,
-                                                marginLeft:2,
+                                                marginLeft: 2,
                                                 marginRight: 2, // Space between image and content
                                             }}
                                         />
@@ -654,7 +792,7 @@ const Home = () => {
                 </Container>
                 {/* </motion.div> */}
             </Box >
-        </motion.div>
+        </motion.div >
     );
 };
 

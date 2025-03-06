@@ -13,11 +13,11 @@ import StructuralProbeStationPage from "./sps";
 import AiMlPage from "./AiMl";
 
 const services = [
+    { name: "TEM", icon: <Dashboard /> }, // comes first 
+    { name: "FIB-SEM", icon: <Layers /> }, // second
     { name: "SAPI", icon: <BarChart /> },
     { name: "Product Innovation", icon: <Lightbulb /> },
-    { name: "TEM", icon: <Dashboard /> }, // comes first 
     { name: "SEM", icon: <Search /> }, // fourth
-    { name: "FIB-SEM", icon: <Layers /> }, // second
     { name: "XRD", icon: <LayersClear /> }, // five 
     { name: "SPS", icon: <RadioButtonChecked /> }, 
     { name: "AI/ML", icon: <Psychology /> }
@@ -53,15 +53,15 @@ export default function Services() {
     const renderPage = () => {
         switch (value) {
             case 0:
-                return <ProcessImprovementPage />;
-            case 1:
-                return <ProductInnovationPage />;
-            case 2:
                 return <TemServicesPage />;
-            case 3:
-                return <ScanningElectronMicroscopyPage />;
-            case 4:
+            case 1:
                 return <FibSemPage />;
+            case 2:
+                return <ProcessImprovementPage />; 
+            case 3:
+                return <ProductInnovationPage />;
+            case 4:
+                return <ScanningElectronMicroscopyPage />;
             case 5:
                 return <XRDPage />;
             case 6:
@@ -69,7 +69,7 @@ export default function Services() {
             case 7:
                 return <AiMlPage />;
             default:
-                return <ProcessImprovementPage />;
+                return <TemServicesPage />;
         }
     };
 

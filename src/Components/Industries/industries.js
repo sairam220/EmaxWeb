@@ -33,6 +33,17 @@ export default function Industries() {
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
+    useEffect(() => {
+        const savedTab = localStorage.getItem("activeTab");
+        if (savedTab !== null) {
+            setValue(Number(savedTab));
+        }
+        return () => {
+            localStorage.removeItem("activeTab");
+        };
+    }, []);
+
+
     const pageVariants = {
         hidden: { opacity: 0, y: isMobile ? 20 : 50 },
         visible: { opacity: 1, y: 0, transition: { duration: 1, ease: "easeOut" } },
