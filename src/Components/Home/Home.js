@@ -116,24 +116,23 @@ const capabilitiesData = [
         information: "Statistical Design"
     },
 ];
-
 const partners = [
     {
         partnerName: 'PSG-STEP',
-        description: 'Provide world-class Engineering Education, Foster Research and Development. Evolve innovative applications of Technology. Encourage Entrepreneurship. Ultimately mould young men and women capable of assuming leadership of the society for the betterment of the Country. ',
+        description: 'PSG-STEP fosters entrepreneurship and innovation by providing mentoring, training, and startup ecosystem support to young leaders aiming to solve real-world problems.',
         image: download
     },
     {
         partnerName: 'Indian Institute of Technology Hyderabad',
-        description: 'IITH offers undergraduate programs in all the classical engineering disciplines, applied sciences, design, as well as several modern interdisciplinary areas. Students are given a flexibility to explore a broad set of areas, and potentially pursue a minor or double major in a discipline that is not their own. Students who wish to seek a deeper understanding of their own discipline are strongly encouraged to get involved in cutting-edge research with the help of a faculty to mentor them, and earn an Honors in their own field.',
+        description: 'IITH offers diverse programs in engineering, science, and technology, encouraging innovation, research, and interdisciplinary learning to tackle global challenges.',
         image: iithyd
     },
     {
         partnerName: 'S.N Micro Tech Ben',
-        description: '',
+        description: 'S.N Micro Tech Ben specializes in microelectronics, embedded systems, and industrial automation, delivering innovative solutions to enhance business productivity and efficiency.',
         image: ''
     }
-]
+];
 
 
 const Home = () => {
@@ -205,25 +204,26 @@ const Home = () => {
         dots: true,
         infinite: true,
         speed: 500,
-        slidesToShow: 1,  // Display one card at a time
+        slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 3000,
         responsive: [
             {
                 breakpoint: 1200,
-                settings: { slidesToShow: 1 }, // Show 1 slide at a time
+                settings: { slidesToShow: 1 },
             },
             {
                 breakpoint: 900,
-                settings: { slidesToShow: 1 }, // Show 1 slide at a time
+                settings: { slidesToShow: 1 },
             },
             {
                 breakpoint: 600,
-                settings: { slidesToShow: 1, arrows: false }, // Show 1 slide at a time on mobile
+                settings: { slidesToShow: 1, arrows: false },
             },
         ],
     };
+
 
     return (
         <motion.div variants={pageVariants} initial="hidden" animate="visible">
@@ -641,7 +641,7 @@ const Home = () => {
                         />
                     </Box>
 
-                    <Box mt={6} mb={6} sx={{ mt: { xs: '50px', sm: '70px', md: '100px' } }}>
+                    <Box mt={6} mb={6} sx={{ mt: { xs: "50px", sm: "70px", md: "100px" } }}>
                         <Typography
                             variant="h4"
                             fontWeight="bold"
@@ -649,36 +649,30 @@ const Home = () => {
                             mb={6}
                             sx={{
                                 fontFamily: "'Roboto', sans-serif",
-                                position: 'relative',
-                                display: 'inline-flex',
-                                alignItems: 'center',
-                                padding: '8px 16px',
-                                backgroundColor: '#424242',
-                                color: 'white',
+                                position: "relative",
+                                display: "inline-flex",
+                                alignItems: "center",
+                                px: 3,
+                                py: 1,
+                                backgroundColor: "#424242",
+                                color: "white",
                                 borderRadius: 2,
-                                textTransform: 'uppercase',
-                                boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
-                                fontSize: '1.5rem',
-                                '@media (max-width: 600px)': {
-                                    fontSize: '1.25rem',
-                                    padding: '6px 12px',
-                                },
-                                '&::before': {
+                                textTransform: "uppercase",
+                                boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
+                                fontSize: { xs: "1.25rem", sm: "1.5rem" },
+                                "&::before": {
                                     content: '""',
-                                    position: 'absolute',
-                                    bottom: '-10px',
-                                    left: '50%',
-                                    transform: 'translateX(-50%)',
-                                    borderLeft: '10px solid transparent',
-                                    borderRight: '10px solid transparent',
-                                    borderTop: '10px solid #424242',
+                                    position: "absolute",
+                                    bottom: "-10px",
+                                    left: "50%",
+                                    transform: "translateX(-50%)",
+                                    borderLeft: "10px solid transparent",
+                                    borderRight: "10px solid transparent",
+                                    borderTop: "10px solid #424242",
                                 },
                             }}
                         >
-                            <Box sx={{ mr: 1 }}>
-                                <HandshakeIcon sx={{ color: 'white', fontSize: '2rem' }} />
-                            </Box>
-                            Our Partners
+                            <HandshakeIcon sx={{ mr: 1, fontSize: "2rem" }} /> Our Partners
                         </Typography>
 
                         <Slider {...partnersSettings}>
@@ -686,43 +680,45 @@ const Home = () => {
                                 <Box key={index} px={2}>
                                     <Card
                                         sx={{
-                                            display: 'flex',
-                                            flexDirection: 'row', // Image on the left, content on the right
-                                            alignItems: 'center',
-                                            justifyContent: 'flex-start',
+                                            display: "flex",
+                                            flexDirection: { xs: "column", sm: "row" },
+                                            alignItems: "center",
+                                            justifyContent: "space-between",
                                             boxShadow: 3,
                                             borderRadius: 3,
-                                            maxWidth: 800,
-                                            margin: '0 auto',
+                                            maxWidth: { xs: 296, sm: 800 },
+                                            margin: "0 auto",
+                                            p: 2,
+                                            height: 'auto',
                                         }}
                                     >
                                         <CardMedia
                                             component="img"
-                                            height="220"
                                             image={partner.image}
                                             alt={partner.partnerName}
                                             sx={{
-                                                width: { xs: '90%', sm: 250 }, // 100% width for mobile, 250px for larger screens
-                                                objectFit: 'cover',  // Image covers the space without distortion
+                                                width: 250,
+                                                height: 220,
+                                                objectFit: "cover",
                                                 borderRadius: 2,
-                                                marginLeft: 2,
-                                                marginRight: 2, // Space between image and content
+                                                mb: { xs: 2, sm: 0 },
                                             }}
                                         />
                                         <CardContent
                                             sx={{
                                                 padding: 2,
-                                                display: 'flex',
-                                                flexDirection: 'column',
-                                                justifyContent: 'center',
-                                                textAlign: 'left', // Align text to the left
+                                                display: "flex",
+                                                flexDirection: "column",
+                                                justifyContent: "center",
+                                                textAlign: "left",
+                                                flexGrow: 1,
                                             }}
                                         >
                                             <Typography variant="h6" fontWeight="bold" sx={{ mb: 2 }}>
                                                 {partner.partnerName}
                                             </Typography>
-                                            <Typography variant="body1" sx={{ color: 'text.secondary' }}>
-                                                {partner.description || 'No description available.'}
+                                            <Typography variant="body1" sx={{ color: "text.secondary" }}>
+                                                {partner.description}
                                             </Typography>
                                         </CardContent>
                                     </Card>
