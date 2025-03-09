@@ -39,6 +39,8 @@ import cover2 from '../../asserts/Industries/cover-2.png'
 import functionality2 from '../../asserts/Industries/functionality-2.webp'
 import process4 from '../../asserts/Industries/process-4.png'
 import DomainOutlinedIcon from "@mui/icons-material/DomainOutlined";
+import { IconButton } from '@mui/material';
+import { ArrowBackIosNew, ArrowForwardIos } from '@mui/icons-material';
 
 
 // Services Data
@@ -166,6 +168,62 @@ const Home = () => {
         navigate("/industries");
     }
 
+
+    const NextArrow = (props) => {
+        const { onClick } = props;
+        return (
+            <IconButton
+                onClick={onClick}
+                sx={{
+                    position: 'absolute',
+                    top: '50%',
+                    right: '-40px',
+                    transform: 'translateY(-50%)',
+                    backgroundColor: 'rgba(0, 0, 0, 0.6)',
+                    color: 'white',
+                    zIndex: 10,
+                    '&:hover': {
+                        backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                        boxShadow: '0 4px 10px rgba(0, 0, 0, 0.2)',
+                    },
+                    width: 48,
+                    height: 48,
+                    display: { xs: 'none', sm: 'flex' }
+                }}
+            >
+                <ArrowForwardIos sx={{ fontSize: 24 }} />
+            </IconButton>
+        );
+    };
+
+    const PrevArrow = (props) => {
+        const { onClick } = props;
+        return (
+            <IconButton
+                onClick={onClick}
+                sx={{
+                    position: 'absolute',
+                    top: '50%',
+                    left: '-40px',
+                    transform: 'translateY(-50%)',
+                    backgroundColor: 'rgba(0, 0, 0, 0.6)',
+                    color: 'white',
+                    zIndex: 10,
+                    '&:hover': {
+                        backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                        boxShadow: '0 4px 10px rgba(0, 0, 0, 0.2)',
+                    },
+                    width: 48,
+                    height: 48,
+                    display: { xs: 'none', sm: 'flex' },
+                }}
+            >
+                <ArrowBackIosNew sx={{ fontSize: 24 }} />
+            </IconButton>
+        );
+    };
+
+    // Updated Slider Settings
     const settings = {
         dots: true,
         infinite: true,
@@ -174,13 +232,15 @@ const Home = () => {
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 3000,
+        nextArrow: <NextArrow />,
+        prevArrow: <PrevArrow />,
         responsive: [
             { breakpoint: 1200, settings: { slidesToShow: 3 } },
             { breakpoint: 900, settings: { slidesToShow: 2 } },
             { breakpoint: 600, settings: { slidesToShow: 1, arrows: false } },
         ],
-
     };
+
 
 
     const industriesSettings = {
@@ -192,6 +252,8 @@ const Home = () => {
         autoplay: true,
         rtl: true,
         autoplaySpeed: 3000,
+        nextArrow: <NextArrow />,
+        prevArrow: <PrevArrow />,
         responsive: [
             { breakpoint: 1200, settings: { slidesToShow: 3 } },
             { breakpoint: 900, settings: { slidesToShow: 2 } },
@@ -208,6 +270,8 @@ const Home = () => {
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 3000,
+        nextArrow: <NextArrow />,
+        prevArrow: <PrevArrow />,
         responsive: [
             {
                 breakpoint: 1200,
