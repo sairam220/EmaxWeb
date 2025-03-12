@@ -2,8 +2,7 @@ import React from "react";
 import {
     Container, Grid, Typography, Card, CardContent,
     CardMedia, List, ListItem, ListItemText, ListItemIcon, Paper,
-    Box, useTheme,
-    useMediaQuery,
+    Box, useTheme, useMediaQuery,
 } from "@mui/material";
 import { styled } from "@mui/system";
 import MailIcon from "@mui/icons-material/Mail";
@@ -26,16 +25,13 @@ const StyledCard = styled(Card)(({ theme }) => ({
     height: "100%",
     display: "flex",
     flexDirection: "column",
-    justifyContent: "center",
+    justifyContent: "space-around",
     cursor: "pointer",
-    // transition: "transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out",
-    "&:hover": {
-        transform: "translateY(-5px)",
-        boxShadow: "0px 5px 15px rgba(0, 0, 0, 0.2)",
-    },
     borderRadius: "15px",
     padding: theme.spacing(2),
     backgroundColor: "#fafafa",
+    alignItems: "center",
+    
 }));
 
 const ImageContainer = styled(Box)({
@@ -59,6 +55,7 @@ const AboutUs = () => {
         {
             name: "Dr. P S Sankara Rama Krishnan",
             image: electron,
+            position: "",
             expertise: "PhD from The University of New South Wales, Sydney, Australia",
             info: "Dr. P S Sankara Rama Krishnan has strong background in electron microscopy, analytical and process optimization across bulk, thin film oxides, and alloys."
         },
@@ -66,16 +63,29 @@ const AboutUs = () => {
             name: "P S Suriyanarayanan",
             image: project,
             expertise: "",
+            position: "",
             info: "P.S Suryanarayanan is a financial professional with more than three decades of expertise in corporate management and finance."
+        },
+    ];
+
+    const scientificTeam = [
+        {
+            name: "Dr. Shakti Prasad Padhy",
+            position: "",
+            image: ml,
+            expertise: "PhD from Nanyang Technological University, Singapore",
+            info: "Dr. Shakti Prasad Padhy has strong background in machine learning, automation, and high-throughput experiments for accelerated materials discovery"
         },
         {
             name: "Dr. D.H.K Murthy",
+            position: "",
             image: image122,
             expertise: "PhD from Delft University of Technology, Netherlands",
             info: "Dr. D.H.K Murthy has strong experimental background in spectroscopy and chemical synthesis."
         },
         {
             name: "Dr. S.V Ilango",
+            position: "",
             image: industrial,
             expertise: "PhD from Indian Institute of Technology, Bombay",
             info: "Dr. S.V Ilango has over three decades of industrial product development and was heading a corporate research, scale-up, and production related to ceramics, cement, and concrete wing."
@@ -87,12 +97,15 @@ const AboutUs = () => {
             expertise: "PhD from Indian Institute of Science, Bangalore",
             info: "Dr. Mohan Bhadbade has strong background in the analytical X-ray diffraction and expertise in physical chemistry."
         },
+    ]
+
+    const collaborators = [
         {
-            name: "Dr. Shakti Prasad Padhy",
+            name: "Sairam Mallada",
             position: "",
-            image: ml,
-            expertise: "PhD from Nanyang Technological University, Singapore",
-            info: "Dr. Shakti Prasad Padhy has strong background in machine learning, automation, and high-throughput experiments for accelerated materials discovery"
+            image: "",
+            expertise: "IIT Hyderabad",
+            info: "Leading collaborative research projects in advanced materials."
         }
     ];
 
@@ -163,24 +176,12 @@ const AboutUs = () => {
                             </Box>
                         </Paper>
 
-                        <Typography
-                            variant="h3"
-                            align="center"
-                            gutterBottom
-                            sx={{
-                                fontWeight: 700,
-                                color: "#0D47A1",
-                                display: "flex",
-                                alignItems: "center",
-                                justifyContent: "center",
-                                gap: 1
-                            }}
-                        >
+                        <Typography variant="h3" align="center" gutterBottom>
                             Our Team
                             <GroupIcon sx={{ fontSize: 38, color: "#0D47A1", }} />
                         </Typography>
 
-                        <Grid container spacing={4} my={4}>
+                        <Grid container spacing={4} my={4} justifyContent="center">
                             {teamMembers.map((member) => (
                                 <Grid item xs={12} sm={6} md={4} sx={{ mb: 3 }} key={member.name}>
 
@@ -203,48 +204,64 @@ const AboutUs = () => {
                                 </Grid>
                             ))}
                         </Grid>
-                        <Paper elevation={3} sx={{ p: { xs: 2, sm: 4 }, mt: 6, backgroundColor: "#f5f5f5", borderRadius: '20px' }}>
-                            <Typography variant="h5" gutterBottom align="center" sx={{ fontWeight: 600 }}>
-                                Promoters
-                            </Typography>
-                            <List>
-                                <ListItem
-                                    sx={{
-                                        display: "flex",
-                                        flexDirection: { xs: "column", sm: "column" },
-                                        alignItems: "center",
-                                        gap: 1,
-                                        textAlign: { xs: "center", sm: "center" },
-                                    }}
-                                >
-                                    <ListItemText
-                                        primary={<Typography sx={{ fontWeight: 700 }}>Dr. P. S. Sankara Rama Krishnan, PhD (UNSW, Sydney)</Typography>}
-                                    />
-                                    <ListItemText primary="CEO, CTO" />
-                                    <a href="mailto:sankara.ps@emaxss.org" style={{ color: 'inherit', textDecoration: 'none' }}>
-                                        sankara.ps@emaxss.org
-                                    </a>
-                                </ListItem>
-                                <ListItem
-                                    sx={{
-                                        display: "flex",
-                                        flexDirection: { xs: "column", sm: "column" },
-                                        alignItems: "center",
-                                        gap: 1,
-                                        mt: { xs: 2, sm: 3 }, // Adjust margin for small screens
-                                        textAlign: { xs: "center", sm: "center" },
-                                    }}
-                                >
-                                    <ListItemText
-                                        primary={<Typography sx={{ fontWeight: 700 }}>P. S Suryanarayanan</Typography>}
-                                    />
-                                    <ListItemText primary="COO" />
-                                    <a href="mailto:surya.ps@emaxss.org" style={{ color: 'inherit', textDecoration: 'none' }}>
-                                        surya.ps@emaxss.org
-                                    </a>
-                                </ListItem>
-                            </List>
-                        </Paper>
+
+                        
+
+                        <Typography variant="h3" align="center" gutterBottom>Scientific Team</Typography>
+                        <Grid container spacing={4} sx={{ mb: 8 }}>
+                            {scientificTeam.map((member) => (
+                                <Grid item xs={12} sm={6} md={3} sx={{ mb: 3 }} key={member.name}>
+
+                                    <StyledCard>
+                                        <ImageContainer>
+                                            <CardMedia component="img" image={member.image} alt={member.name} sx={{ width: 100, height: 100, objectFit: "contain" }} />
+                                        </ImageContainer>
+                                        <CardContent>
+                                            <Typography variant="h6" fontWeight={600} gutterBottom>
+                                                {member.name}
+                                            </Typography>
+                                            <Typography variant="body2" color="text.secondary" gutterBottom>
+                                                {member.expertise}
+                                            </Typography>
+                                            <Typography variant="body2">
+                                                {member.info}
+                                            </Typography>
+                                        </CardContent>
+                                    </StyledCard>
+                                </Grid>
+                            ))}
+                        </Grid>
+
+                        <Typography variant="h3" align="center" gutterBottom>
+                            Our Collaborators
+                            
+                        </Typography>
+
+                        <Grid container spacing={4} my={4} justifyContent="center">
+                            {collaborators.map((member) => (
+                                <Grid item xs={12} sm={6} md={4} sx={{ mb: 3 }} key={member.name}>
+
+                                    <StyledCard>
+                                        <ImageContainer>
+                                            <CardMedia component="img" image={member.image} alt={member.name} sx={{ width: 100, height: 100, objectFit: "contain" }} />
+                                        </ImageContainer>
+                                        <CardContent>
+                                            <Typography variant="h6" fontWeight={600} gutterBottom>
+                                                {member.name}
+                                            </Typography>
+                                            <Typography variant="body2" color="text.secondary" gutterBottom>
+                                                {member.expertise}
+                                            </Typography>
+                                            <Typography variant="body2">
+                                                {member.info}
+                                            </Typography>
+                                        </CardContent>
+                                    </StyledCard>
+                                </Grid>
+                            ))}
+                        </Grid>
+
+                        
 
 
                         <Paper elevation={3} sx={{ p: 4, mt: 6, backgroundColor: "#f5f5f5", borderRadius: '20px' }}>

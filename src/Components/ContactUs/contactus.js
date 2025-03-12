@@ -178,7 +178,15 @@ export default function ContactUs() {
 
                     <ContactInfo>
                         <Grid container spacing={3}>
-                            <Grid item xs={12} md={4}><Box display="flex" alignItems="center"><LocalPhoneIcon sx={{ mr: 1 }} color="primary" /><Typography>+1 (555) 123-4567</Typography></Box></Grid>
+                            <Grid item xs={12} md={4}>
+                                <Box display="flex" alignItems="center">
+                                    <LocalPhoneIcon sx={{ mr: 1 }} color="primary" />
+                                    <a href="tel:+919150851970" style={{ color: 'inherit', textDecoration: 'none' }}>
+                                        <Typography>+91 9150851970</Typography>
+                                    </a>
+                                </Box>
+                            </Grid>
+
                             <Grid item xs={12} md={4}><Box display="flex" alignItems="center"><MailIcon sx={{ mr: 1 }} color="primary" /><Typography component="a" href="mailto:surya.ps@emaxss.org" style={{ color: 'inherit', textDecoration: 'none' }}>sankara.ps@emaxss.org</Typography></Box></Grid>
                             <Grid item xs={12} md={4}><Box display="flex" alignItems="center"><WatchLaterIcon sx={{ mr: 1 }} color="primary" /><Typography>Mon-Fri: 9AM-5PM EST</Typography></Box></Grid>
                         </Grid>
