@@ -355,90 +355,8 @@ const Home = () => {
                     </Grid>
 
                     {/* Slider Section (Services) */}
-                    <Box mt={6} mb={6} sx={{ mt: { xs: '50px', sm: '70px', md: '100px' } }}>
-                        <Typography
-                            variant="h4"
-                            fontWeight="bold"
-                            textAlign="center"
-                            mb={6}
-                            sx={{
-                                fontFamily: "'Roboto', sans-serif",
-                                position: 'relative',
-                                display: 'inline-flex',
-                                alignItems: 'center',
-                                padding: '8px 16px',
-                                backgroundColor: '#424242', // Gray background color
-                                color: 'white',
-                                borderRadius: 2,
-                                textTransform: 'uppercase',
-                                boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
-                                fontSize: '1.5rem',
-                                '@media (max-width: 600px)': {
-                                    fontSize: '1.25rem',
-                                    padding: '6px 12px',
-                                },
-                                '&::before': {
-                                    content: '""',
-                                    position: 'absolute',
-                                    bottom: '-10px',
-                                    left: '50%',
-                                    transform: 'translateX(-50%)',
-                                    borderLeft: '10px solid transparent',
-                                    borderRight: '10px solid transparent',
-                                    borderTop: '10px solid #424242', // Match the background color
-                                },
-                            }}
-                        >
-                            <Box sx={{ mr: 1 }}>
-                                <MiscellaneousServicesIcon sx={{ color: 'white', fontSize: '2rem' }} /> {/* Icon for services */}
-                            </Box>
-                            Our Services
-                        </Typography>
-                        <Slider
-                            {...settings}
-                        // nextArrow={}
-                        >
-                            {services.map((service, index) => (
-                                <Box key={index} px={2}>
-                                    <Card
-                                        sx={{
-                                            boxShadow: 3,
-                                            borderRadius: 3,
-                                            maxWidth: 296,
-                                            height: 400,
-                                            margin: '0 auto',
-                                            display: 'flex',
-                                            flexDirection: 'column',
-                                            justifyContent: 'space-between',
-                                            alignContent: 'center'
-                                        }}
-                                    >
-                                        <CardMedia component="img" height="220" image={service.img} alt={service.title} />
-                                        <CardContent sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', flexGrow: 1 }}>
-                                            <Typography variant="h6" fontWeight="bold" sx={{ mb: 2 }}>
-                                                {service.title}
-                                            </Typography>
-                                            <Button
-                                                variant="outlined"
-                                                sx={{
-
-                                                    textTransform: 'none',
-                                                    fontSize: '0.9rem',
-                                                    borderRadius: 2,
-                                                    width: '100%',
-
-                                                }}
-                                                onClick={() => handleLearnMore(service.title, service.tab)}
-                                            >
-                                                Learn More
-                                            </Button>
-                                        </CardContent>
-                                    </Card>
-                                </Box>
-                            ))}
-                        </Slider>
-                    </Box>
-
+                   
+                                                
                     {/* Slider Section (industries) */}
                     <Box mt={6} mb={6} sx={{ mt: { xs: '50px', sm: '70px', md: '100px' } }}>
                         <Typography
@@ -857,3 +775,88 @@ const Home = () => {
 };
 
 export default Home;
+
+
+// <Box mt={6} mb={6} sx={{ mt: { xs: '50px', sm: '70px', md: '100px' } }}>
+// <Typography
+//     variant="h4"
+//     fontWeight="bold"
+//     textAlign="center"
+//     mb={6}
+//     sx={{
+//         fontFamily: "'Roboto', sans-serif",
+//         position: 'relative',
+//         display: 'inline-flex',
+//         alignItems: 'center',
+//         padding: '8px 16px',
+//         backgroundColor: '#424242', // Gray background color
+//         color: 'white',
+//         borderRadius: 2,
+//         textTransform: 'uppercase',
+//         boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
+//         fontSize: '1.5rem',
+//         '@media (max-width: 600px)': {
+//             fontSize: '1.25rem',
+//             padding: '6px 12px',
+//         },
+//         '&::before': {
+//             content: '""',
+//             position: 'absolute',
+//             bottom: '-10px',
+//             left: '50%',
+//             transform: 'translateX(-50%)',
+//             borderLeft: '10px solid transparent',
+//             borderRight: '10px solid transparent',
+//             borderTop: '10px solid #424242', // Match the background color
+//         },
+//     }}
+// >
+//     <Box sx={{ mr: 1 }}>
+//         <MiscellaneousServicesIcon sx={{ color: 'white', fontSize: '2rem' }} /> {/* Icon for services */}
+//     </Box>
+//     Our Services
+// </Typography>
+// <Slider
+//     {...settings}
+// // nextArrow={}
+// >
+//     {services.map((service, index) => (
+//         <Box key={index} px={2}>
+//             <Card
+//                 sx={{
+//                     boxShadow: 3,
+//                     borderRadius: 3,
+//                     maxWidth: 296,
+//                     height: 400,
+//                     margin: '0 auto',
+//                     display: 'flex',
+//                     flexDirection: 'column',
+//                     justifyContent: 'space-between',
+//                     alignContent: 'center'
+//                 }}
+//             >
+//                 <CardMedia component="img" height="220" image={service.img} alt={service.title} />
+//                 <CardContent sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', flexGrow: 1 }}>
+//                     <Typography variant="h6" fontWeight="bold" sx={{ mb: 2 }}>
+//                         {service.title}
+//                     </Typography>
+//                     <Button
+//                         variant="outlined"
+//                         sx={{
+
+//                             textTransform: 'none',
+//                             fontSize: '0.9rem',
+//                             borderRadius: 2,
+//                             width: '100%',
+
+//                         }}
+//                         onClick={() => handleLearnMore(service.title, service.tab)}
+//                     >
+//                         Learn More
+//                     </Button>
+//                 </CardContent>
+//             </Card>
+//         </Box>
+//     ))}
+// </Slider>
+// </Box>
