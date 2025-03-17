@@ -34,11 +34,6 @@ import AlbertEinstein from '../../asserts/Home/Img02.png'
 import download from '../../asserts/Partners/download.jpeg'
 import iithyd from '../../asserts/Partners/iithyd.jpg'
 import Picture3 from '../../asserts/Mems/Picture3.jpg'
-import cover from '../../asserts/Industries/cover-1.png'
-import cover2 from '../../asserts/Industries/cover-2.png'
-import functionality2 from '../../asserts/Industries/functionality-2.webp'
-import process4 from '../../asserts/Industries/process-4.png'
-import DomainOutlinedIcon from "@mui/icons-material/DomainOutlined";
 import { IconButton } from '@mui/material';
 import { ArrowBackIosNew, ArrowForwardIos } from '@mui/icons-material';
 
@@ -78,29 +73,6 @@ const services = [
 
 ];
 
-const industries = [
-    {
-        title: 'Semiconductors',
-        img: cover,
-        tab: 0
-    },
-    {
-        title: 'Metals & Alloys',
-        img: cover2,
-        tab: 1
-    },
-    {
-        title: 'Ceramics & Cement',
-        img: functionality2,
-        tab: 2
-    },
-    {
-        title: 'Food Science & Pharmaceutical',
-        img: process4,
-        tab: 3
-    }
-];
-
 const capabilitiesData = [
     {
         image: managem,
@@ -118,6 +90,7 @@ const capabilitiesData = [
         information: "Statistical Design"
     },
 ];
+
 const partners = [
     {
         partnerName: 'PSG-STEP',
@@ -163,10 +136,7 @@ const Home = () => {
 
     };
 
-    const handleLearnMoreIndustries = (title, index) => {
-        localStorage.setItem("activeTab", index);
-        navigate("/industries");
-    }
+    
 
 
     const NextArrow = (props) => {
@@ -241,26 +211,6 @@ const Home = () => {
         ],
     };
 
-
-
-    const industriesSettings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        autoplay: true,
-        rtl: true,
-        autoplaySpeed: 3000,
-        nextArrow: <NextArrow />,
-        prevArrow: <PrevArrow />,
-        responsive: [
-            { breakpoint: 1200, settings: { slidesToShow: 3 } },
-            { breakpoint: 900, settings: { slidesToShow: 2 } },
-            { breakpoint: 600, settings: { slidesToShow: 1, arrows: false } },
-        ],
-
-    };
 
     const partnersSettings = {
         dots: true,
@@ -355,9 +305,6 @@ const Home = () => {
                     </Grid>
 
                     {/* Slider Section (Services) */}
-                   
-                                                
-                    {/* Slider Section (industries) */}
                     <Box mt={6} mb={6} sx={{ mt: { xs: '50px', sm: '70px', md: '100px' } }}>
                         <Typography
                             variant="h4"
@@ -393,15 +340,15 @@ const Home = () => {
                             }}
                         >
                             <Box sx={{ mr: 1 }}>
-                                <DomainOutlinedIcon sx={{ color: 'white', fontSize: '2rem' }} /> {/* Icon for services */}
+                                <MiscellaneousServicesIcon sx={{ color: 'white', fontSize: '2rem' }} /> {/* Icon for services */}
                             </Box>
-                            Our Industries
+                            Our Services
                         </Typography>
                         <Slider
-                            {...industriesSettings}
-                        // nextArrow={ }
+                            {...settings}
+                        // nextArrow={}
                         >
-                            {industries.map((service, index) => (
+                            {services.map((service, index) => (
                                 <Box key={index} px={2}>
                                     <Card
                                         sx={{
@@ -431,7 +378,7 @@ const Home = () => {
                                                     width: '100%',
 
                                                 }}
-                                                onClick={() => handleLearnMoreIndustries(service.title, service.tab)}
+                                                onClick={() => handleLearnMore(service.title, service.tab)}
                                             >
                                                 Learn More
                                             </Button>
@@ -777,86 +724,3 @@ const Home = () => {
 export default Home;
 
 
-// <Box mt={6} mb={6} sx={{ mt: { xs: '50px', sm: '70px', md: '100px' } }}>
-// <Typography
-//     variant="h4"
-//     fontWeight="bold"
-//     textAlign="center"
-//     mb={6}
-//     sx={{
-//         fontFamily: "'Roboto', sans-serif",
-//         position: 'relative',
-//         display: 'inline-flex',
-//         alignItems: 'center',
-//         padding: '8px 16px',
-//         backgroundColor: '#424242', // Gray background color
-//         color: 'white',
-//         borderRadius: 2,
-//         textTransform: 'uppercase',
-//         boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
-//         fontSize: '1.5rem',
-//         '@media (max-width: 600px)': {
-//             fontSize: '1.25rem',
-//             padding: '6px 12px',
-//         },
-//         '&::before': {
-//             content: '""',
-//             position: 'absolute',
-//             bottom: '-10px',
-//             left: '50%',
-//             transform: 'translateX(-50%)',
-//             borderLeft: '10px solid transparent',
-//             borderRight: '10px solid transparent',
-//             borderTop: '10px solid #424242', // Match the background color
-//         },
-//     }}
-// >
-//     <Box sx={{ mr: 1 }}>
-//         <MiscellaneousServicesIcon sx={{ color: 'white', fontSize: '2rem' }} /> {/* Icon for services */}
-//     </Box>
-//     Our Services
-// </Typography>
-// <Slider
-//     {...settings}
-// // nextArrow={}
-// >
-//     {services.map((service, index) => (
-//         <Box key={index} px={2}>
-//             <Card
-//                 sx={{
-//                     boxShadow: 3,
-//                     borderRadius: 3,
-//                     maxWidth: 296,
-//                     height: 400,
-//                     margin: '0 auto',
-//                     display: 'flex',
-//                     flexDirection: 'column',
-//                     justifyContent: 'space-between',
-//                     alignContent: 'center'
-//                 }}
-//             >
-//                 <CardMedia component="img" height="220" image={service.img} alt={service.title} />
-//                 <CardContent sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', flexGrow: 1 }}>
-//                     <Typography variant="h6" fontWeight="bold" sx={{ mb: 2 }}>
-//                         {service.title}
-//                     </Typography>
-//                     <Button
-//                         variant="outlined"
-//                         sx={{
-
-//                             textTransform: 'none',
-//                             fontSize: '0.9rem',
-//                             borderRadius: 2,
-//                             width: '100%',
-
-//                         }}
-//                         onClick={() => handleLearnMore(service.title, service.tab)}
-//                     >
-//                         Learn More
-//                     </Button>
-//                 </CardContent>
-//             </Card>
-//         </Box>
-//     ))}
-// </Slider>
-// </Box>
