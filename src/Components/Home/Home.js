@@ -95,16 +95,19 @@ const partners = [
     {
         partnerName: 'PSG-STEP',
         description: 'PSG-STEP fosters entrepreneurship and innovation by providing mentoring, training, and startup ecosystem support to young leaders aiming to solve real-world problems.',
+        role: 'Incubation Center',
         image: download
     },
     {
         partnerName: 'Indian Institute of Technology Hyderabad',
         description: 'IITH offers diverse programs in engineering, science, and technology, encouraging innovation, research, and interdisciplinary learning to tackle global challenges.',
+        role: 'Electron Microscope Product Collaborator',
         image: iithyd
     },
     {
         partnerName: 'S.N Micro Tech Ben',
         description: 'S.N Micro Tech Ben specializes in microelectronics, embedded systems, and industrial automation, delivering innovative solutions to enhance business productivity and efficiency.',
+        role: 'Fabrication Collaborator',
         image: ''
     }
 ];
@@ -645,6 +648,9 @@ const Home = () => {
                                         >
                                             <Typography variant="h6" fontWeight="bold" sx={{ mb: 2 }}>
                                                 {partner.partnerName}
+                                            </Typography>
+                                            <Typography variant="h8" fontWeight="bold" sx={{ mb: 2 }}>
+                                                {partner.role}
                                             </Typography>
                                             <Typography variant="body1" sx={{ color: "text.secondary" }}>
                                                 {partner.description}

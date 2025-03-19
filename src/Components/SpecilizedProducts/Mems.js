@@ -55,7 +55,17 @@ const MeMsChips = () => {
                     backgroundColor: theme.palette.background?.default || "#fff"
                 }}
             >
-
+                <Typography
+                    variant={{ xs: "h5", sm: "h4", md: "h3" }}
+                    align="center"
+                    color="primary"
+                    gutterBottom
+                    sx={{
+                        fontWeight: 550, mb: { xs: 3, sm: 4 }, letterSpacing: 0.8, fontSize: { xs: "1.8rem", sm: "2.2rem", md: "2.8rem" }
+                    }}
+                >
+                    MEMES DEVICES FOR INSTITUTE
+                </Typography>
 
 
 

@@ -4,20 +4,17 @@ import OfflineBoltIcon from '@mui/icons-material/OfflineBolt';
 import ConstructionIcon from '@mui/icons-material/Construction';
 import EngineeringIcon from '@mui/icons-material/Engineering';
 import EscalatorIcon from '@mui/icons-material/Escalator';
-import MedicationIcon from '@mui/icons-material/Medication';
 import RocketIcon from '@mui/icons-material/Rocket';
 import { motion } from 'framer-motion';
 import SemiConductors from "./semconductors";
 import MetalsPage from "./metals";
 import CeramicsPage from "./ceramics";
-import PharmaPage from "./pharma";
 import DefencePage from "./defence";
 
 const industries = [
     { name: "Semiconductors", icon: <OfflineBoltIcon /> },
     { name: "Metals", icon: <ConstructionIcon /> },
     { name: "Ceramics", icon: <EscalatorIcon /> },
-    { name: "Pharma", icon: <MedicationIcon /> },
     { name: "Aerospace", icon: <RocketIcon /> },
 ];
 
@@ -58,15 +55,7 @@ export default function Industries() {
             case 2:
                 return <CeramicsPage />;
             case 3:
-                return <PharmaPage />;
-            case 4:
                 return <DefencePage />;
-            // case 5:
-            //     return <XRDPage />;
-            // case 6:
-            //     return <StructuralProbeStationPage />;
-            // case 7:
-            //     return <AiMlPage />;
             default:
                 return <SemiConductors />;
         }

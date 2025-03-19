@@ -188,7 +188,7 @@ export default function ContactUs() {
                             </Grid>
 
                             <Grid item xs={12} md={4}><Box display="flex" alignItems="center"><MailIcon sx={{ mr: 1 }} color="primary" /><Typography component="a" href="mailto:surya.ps@emaxss.org" style={{ color: 'inherit', textDecoration: 'none' }}>sankara.ps@emaxss.org</Typography></Box></Grid>
-                            <Grid item xs={12} md={4}><Box display="flex" alignItems="center"><WatchLaterIcon sx={{ mr: 1 }} color="primary" /><Typography>Mon-Fri: 9AM-5PM EST</Typography></Box></Grid>
+                            <Grid item xs={12} md={4}><Box display="flex" alignItems="center"><WatchLaterIcon sx={{ mr: 1 }} color="primary" /><Typography>Mon-Sat: 9AM-7PM IST</Typography></Box></Grid>
                         </Grid>
                     </ContactInfo>
 
