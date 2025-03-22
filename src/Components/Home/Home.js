@@ -58,17 +58,17 @@ const services = [
     {
         title: 'Scanning Electron Microscopy (SEM) services',
         img: sem,
-        tab: 4
+        tab: 2
     },
     {
         title: 'X-Ray Diffraction Services',
         img: xray,
-        tab: 5
+        tab: 3
     },
     {
         title: 'Alide services',
         img: sapc,
-        tab: 2
+        tab: 4
     },
 
 ];

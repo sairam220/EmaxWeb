@@ -31,12 +31,12 @@ export default function Industries() {
     }, []);
 
     useEffect(() => {
-        const savedTab = localStorage.getItem("activeTab");
+        const savedTab = localStorage.getItem("activeTab1");
         if (savedTab !== null) {
             setValue(Number(savedTab));
         }
         return () => {
-            localStorage.removeItem("activeTab");
+            localStorage.removeItem("activeTab1");
         };
     }, []);
 

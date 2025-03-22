@@ -15,11 +15,11 @@ import AiMlPage from "./AiMl";
 const services = [
     { name: "TEM", icon: <Dashboard /> }, // comes first 
     { name: "FIB-SEM", icon: <Layers /> }, // second
+    { name: "SEM", icon: <Search /> }, // fourth
+    { name: "XRD", icon: <LayersClear /> }, // five
+    { name: "SPS", icon: <RadioButtonChecked /> }, 
     { name: "SAPI", icon: <BarChart /> },
     { name: "Product Innovation", icon: <Lightbulb /> },
-    { name: "SEM", icon: <Search /> }, // fourth
-    { name: "XRD", icon: <LayersClear /> }, // five 
-    { name: "SPS", icon: <RadioButtonChecked /> }, 
     { name: "AI/ML", icon: <Psychology /> }
 ];
 // mems devices for institue studies  third
@@ -57,15 +57,15 @@ export default function Services() {
             case 1:
                 return <FibSemPage />;
             case 2:
-                return <ProcessImprovementPage />; 
-            case 3:
-                return <ProductInnovationPage />;
-            case 4:
                 return <ScanningElectronMicroscopyPage />;
-            case 5:
+            case 3:
                 return <XRDPage />;
-            case 6:
+            case 4:
                 return <StructuralProbeStationPage />;
+            case 5:
+                return <ProcessImprovementPage />; 
+            case 6:
+                return <ProductInnovationPage />;
             case 7:
                 return <AiMlPage />;
             default:

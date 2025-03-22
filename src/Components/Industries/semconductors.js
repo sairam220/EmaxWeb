@@ -2,7 +2,7 @@ import React from "react";
 import {
     Container, Typography, Paper, useTheme,
     Grid, Box,
-    Card, CardMedia, CardContent,
+    Card, CardMedia, CardContent, Button
 } from "@mui/material";
 import { styled } from "@mui/system";
 import { motion } from "framer-motion";
@@ -14,8 +14,8 @@ import structure from '../../asserts/Industries/structure.png'
 import trends1 from '../../asserts/Industries/trends1.png'
 import trends from '../../asserts/Industries/trends.png'
 import ricjardfeynman_white from '../../asserts/Industries/ricjardfeynman_white.webp'
-
-
+import { Dashboard, Search, Layers, LayersClear, RadioButtonChecked } from '@mui/icons-material';
+import { useNavigate } from "react-router-dom";
 
 const StyledImage = styled(motion.img)(({ theme }) => ({
 
@@ -33,6 +33,12 @@ const StyledImage = styled(motion.img)(({ theme }) => ({
 
 const SemiConductors = () => {
     const theme = useTheme();
+    const navigate = useNavigate();
+
+    const handleIndustriesClcik = (index) => {
+        localStorage.setItem("activeTab", index);
+        navigate("/services");
+    }
 
     return (
         <Container maxWidth="xl" sx={{ px: { xs: 2, sm: 4, md: 6 }, py: { xs: 4, sm: 6 } }}>
@@ -61,7 +67,7 @@ const SemiConductors = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, ease: "easeOut" }}
                             onError={(e) => {
-                                e.target.src = {cover};
+                                e.target.src = { cover };
                             }}
                         />
 
@@ -70,6 +76,135 @@ const SemiConductors = () => {
 
 
                 </Grid>
+
+                <Box sx={{ display: "flex", justifyContent: "center", gap: "16px", flexWrap: "wrap", mt: 4 }}>
+
+                    {/* TEM Button */}
+                    <Button
+                        startIcon={<Dashboard sx={{ color: '#ffff' }} />}
+                        onClick={() => handleIndustriesClcik(0)}
+                        sx={{
+                            fontWeight: 600,
+                            fontSize: "1rem",
+                            borderRadius: "30px",
+                            padding: "12px 24px",
+                            textTransform: "capitalize",
+                            background: "linear-gradient(45deg, #0A74DA, #084C99)",
+                            color: "#fff",
+                            boxShadow: "0px 8px 16px rgba(0, 0, 0, 0.3)",
+                            "&:hover": {
+                                background: "linear-gradient(45deg, #084C99, #0A74DA)",
+                                cursor: "pointer",
+                                transform: "scale(1.05)",
+                                boxShadow: "0px 12px 24px rgba(0, 0, 0, 0.4)",
+                            },
+                            transition: "all 0.3s ease-out",
+                        }}
+                    >
+                        TEM
+                    </Button>
+
+                    {/* FIB-SEM Button */}
+                    <Button
+                        startIcon={<Layers sx={{ color: '#ffff' }} />}
+                        onClick={() => handleIndustriesClcik(1)}
+                        sx={{
+                            fontWeight: 600,
+                            fontSize: "1rem",
+                            borderRadius: "30px",
+                            padding: "12px 24px",
+                            textTransform: "capitalize",
+                            background: "linear-gradient(45deg, #FF5733, #C23A1A)",
+                            color: "#fff",
+                            boxShadow: "0px 8px 16px rgba(0, 0, 0, 0.3)",
+                            "&:hover": {
+                                background: "linear-gradient(45deg, #C23A1A, #FF5733)",
+                                cursor: "pointer",
+                                transform: "scale(1.05)",
+                                boxShadow: "0px 12px 24px rgba(0, 0, 0, 0.4)",
+                            },
+                            transition: "all 0.3s ease-out",
+                        }}
+                    >
+                        FIB-SEM
+                    </Button>
+
+                    {/* SEM Button */}
+                    <Button
+                        startIcon={<Search sx={{ color: '#ffff' }} />}
+                        onClick={() => handleIndustriesClcik(2)}
+                        sx={{
+                            fontWeight: 600,
+                            fontSize: "1rem",
+                            borderRadius: "30px",
+                            padding: "12px 24px",
+                            textTransform: "capitalize",
+                            background: "linear-gradient(45deg, #F39C12, #E67E22)",
+                            color: "#fff",
+                            boxShadow: "0px 8px 16px rgba(0, 0, 0, 0.3)",
+                            "&:hover": {
+                                background: "linear-gradient(45deg, #E67E22, #F39C12)",
+                                cursor: "pointer",
+                                transform: "scale(1.05)",
+                                boxShadow: "0px 12px 24px rgba(0, 0, 0, 0.4)",
+                            },
+                            transition: "all 0.3s ease-out",
+                        }}
+                    >
+                        SEM
+                    </Button>
+
+                    {/* XRD Button */}
+                    <Button
+                        startIcon={<LayersClear sx={{ color: '#ffff' }} />}
+                        onClick={() => handleIndustriesClcik(3)}
+                        sx={{
+                            fontWeight: 600,
+                            fontSize: "1rem",
+                            borderRadius: "30px",
+                            padding: "12px 24px",
+                            textTransform: "capitalize",
+                            background: "linear-gradient(45deg, #9B59B6, #8E44AD)",
+                            color: "#fff",
+                            boxShadow: "0px 8px 16px rgba(0, 0, 0, 0.3)",
+                            "&:hover": {
+                                background: "linear-gradient(45deg, #8E44AD, #9B59B6)",
+                                cursor: "pointer",
+                                transform: "scale(1.05)",
+                                boxShadow: "0px 12px 24px rgba(0, 0, 0, 0.4)",
+                            },
+                            transition: "all 0.3s ease-out",
+                        }}
+                    >
+                        XRD
+                    </Button>
+
+                    {/* SPS Button */}
+                    <Button
+                        startIcon={<RadioButtonChecked sx={{ color: '#ffff' }} />}
+                        onClick={() => handleIndustriesClcik(4)}
+                        sx={{
+                            fontWeight: 600,
+                            fontSize: "1rem",
+                            borderRadius: "30px",
+                            padding: "12px 24px",
+                            textTransform: "capitalize",
+                            background: "linear-gradient(45deg, #1ABC9C, #16A085)",
+                            color: "#fff",
+                            boxShadow: "0px 8px 16px rgba(0, 0, 0, 0.3)",
+                            "&:hover": {
+                                background: "linear-gradient(45deg, #16A085, #1ABC9C)",
+                                cursor: "pointer",
+                                transform: "scale(1.05)",
+                                boxShadow: "0px 12px 24px rgba(0, 0, 0, 0.4)",
+                            },
+                            transition: "all 0.3s ease-out",
+                        }}
+                    >
+                        SPS
+                    </Button>
+
+                </Box>
 
             </Paper>
 
@@ -115,7 +250,7 @@ const SemiConductors = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, ease: "easeOut" }}
                             onError={(e) => {
-                                e.target.src = {fabrication1};
+                                e.target.src = { fabrication1 };
                             }}
                         />
 
@@ -133,7 +268,7 @@ const SemiConductors = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, ease: "easeOut" }}
                             onError={(e) => {
-                                e.target.src = {fabrication21}; // Fallback if image fails to load
+                                e.target.src = { fabrication21 }; // Fallback if image fails to load
                             }}
                         />
 
@@ -149,7 +284,7 @@ const SemiConductors = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, ease: "easeOut" }}
                             onError={(e) => {
-                                e.target.src = {fabrication4}; // Fallback if image fails to load
+                                e.target.src = { fabrication4 }; // Fallback if image fails to load
                             }}
                         />
 
@@ -202,7 +337,7 @@ const SemiConductors = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, ease: "easeOut" }}
                             onError={(e) => {
-                                e.target.src = {structure};
+                                e.target.src = { structure };
                             }}
                         />
 
@@ -267,7 +402,7 @@ const SemiConductors = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, ease: "easeOut" }}
                             onError={(e) => {
-                                e.target.src = {trends1};
+                                e.target.src = { trends1 };
                             }}
                         />
 
@@ -285,7 +420,7 @@ const SemiConductors = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, ease: "easeOut" }}
                             onError={(e) => {
-                                e.target.src = {trends}; // Fallback if image fails to load
+                                e.target.src = { trends }; // Fallback if image fails to load
                             }}
                         />
 

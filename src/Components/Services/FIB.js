@@ -2,13 +2,17 @@ import React from "react";
 import {
     Container, Typography, List,
     ListItemIcon, ListItemText, Paper, useTheme,
-    Box, Card, CardMedia, CardContent
+    Box, Card, CardMedia, CardContent, Button
 } from "@mui/material";
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { styled } from "@mui/system";
 import { motion } from "framer-motion";
 import fib from '../../asserts/Home/fib-sem-2.png'
 import ernestrutherford_white from '../../asserts/Services/ernestrutherford_white.webp'
+import OfflineBoltIcon from '@mui/icons-material/OfflineBolt';
+import ConstructionIcon from '@mui/icons-material/Construction';
+import EngineeringIcon from '@mui/icons-material/Engineering';
+import { useNavigate } from "react-router-dom";
 
 const StyledImage = styled(motion.img)(({ theme }) => ({
     width: "100%",
@@ -45,7 +49,13 @@ const StyledListItem = styled(motion.li)(({ theme }) => ({
 }));
 
 const FibSemPage = () => {
+    const navigate = useNavigate();
     const theme = useTheme();
+
+    const handleIndustriesClcik = (index) => {
+        localStorage.setItem("activeTab1", index);
+        navigate("/industries");
+    }
 
     const doePoints = [
         {
@@ -108,7 +118,7 @@ const FibSemPage = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
                     onError={(e) => {
-                        e.target.src = {fib};
+                        e.target.src = { fib };
                     }}
                 />
 
@@ -152,6 +162,84 @@ const FibSemPage = () => {
                         </StyledListItem>
                     ))}
                 </List>
+                <Box sx={{ display: "flex", justifyContent: "center", gap: "16px", flexWrap: "wrap", mt: 4 }}>
+
+                    {/* Semiconductors Button */}
+                    <Button
+                        startIcon={<ConstructionIcon sx={{ color: '#ffff' }} />}
+                        onClick={() => handleIndustriesClcik(0)}
+                        sx={{
+                            fontWeight: 600,
+                            fontSize: "1rem",
+                            borderRadius: "30px",
+                            padding: "12px 24px",
+                            textTransform: "capitalize",
+                            background: "linear-gradient(45deg, #0A74DA, #084C99)",
+                            color: "#fff",
+                            boxShadow: "0px 8px 16px rgba(0, 0, 0, 0.3)",
+                            "&:hover": {
+                                background: "linear-gradient(45deg, #084C99, #0A74DA)",
+                                cursor: "pointer",
+                                transform: "scale(1.05)",
+                                boxShadow: "0px 12px 24px rgba(0, 0, 0, 0.4)",
+                            },
+                            transition: "all 0.3s ease-out",
+                        }}
+                    >
+                        Semiconductors
+                    </Button>
+
+                    {/* Metals & Alloys Button */}
+                    <Button
+                        startIcon={<OfflineBoltIcon sx={{ color: '#ffff' }} />}
+                        onClick={() => handleIndustriesClcik(1)}
+                        sx={{
+                            fontWeight: 600,
+                            fontSize: "1rem",
+                            borderRadius: "30px",
+                            padding: "12px 24px",
+                            textTransform: "capitalize",
+                            background: "linear-gradient(45deg, #FF5733, #C23A1A)",
+                            color: "#fff",
+                            boxShadow: "0px 8px 16px rgba(0, 0, 0, 0.3)",
+                            "&:hover": {
+                                background: "linear-gradient(45deg, #C23A1A, #FF5733)",
+                                cursor: "pointer",
+                                transform: "scale(1.05)",
+                                boxShadow: "0px 12px 24px rgba(0, 0, 0, 0.4)",
+                            },
+                            transition: "all 0.3s ease-out",
+                        }}
+                    >
+                        Metals & Alloys
+                    </Button>
+
+                    {/* Ceramics Button */}
+                    <Button
+                        startIcon={<EngineeringIcon sx={{ color: '#ffff' }} />}
+                        onClick={() => handleIndustriesClcik(2)}
+                        sx={{
+                            fontWeight: 600,
+                            fontSize: "1rem",
+                            borderRadius: "30px",
+                            padding: "12px 24px",
+                            textTransform: "capitalize",
+                            background: "linear-gradient(45deg, #F39C12, #E67E22)",
+                            color: "#fff",
+                            boxShadow: "0px 8px 16px rgba(0, 0, 0, 0.3)",
+                            "&:hover": {
+                                background: "linear-gradient(45deg, #E67E22, #F39C12)",
+                                cursor: "pointer",
+                                transform: "scale(1.05)",
+                                boxShadow: "0px 12px 24px rgba(0, 0, 0, 0.4)",
+                            },
+                            transition: "all 0.3s ease-out",
+                        }}
+                    >
+                        Ceramics
+                    </Button>
+
+                </Box>
             </Paper>
             <Box mt={6} mb={6} px={{ xs: 1, sm: 4, md: 6 }}>
                 <Card

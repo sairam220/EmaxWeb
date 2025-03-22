@@ -1,13 +1,14 @@
 import React from "react";
 import {
-    Grid, Container, Typography, Paper, useTheme
+    Grid, Container, Typography, Paper, useTheme, Box, Button
 } from "@mui/material";
 import { styled } from "@mui/system";
 import { motion } from "framer-motion";
 import functionality2 from '../../asserts/Industries/functionality-2.webp'
 import structure3 from '../../asserts/Industries/structure-3.webp'
 import quality from '../../asserts/Industries/quality.webp'
-
+import { Dashboard, Search, Layers, LayersClear, RadioButtonChecked } from '@mui/icons-material';
+import { useNavigate } from "react-router-dom";
 
 const StyledImage = styled(motion.img)(({ theme }) => ({
     width: "100%",
@@ -23,8 +24,13 @@ const StyledImage = styled(motion.img)(({ theme }) => ({
 
 
 const CeramicsPage = () => {
+    const navigate = useNavigate();
     const theme = useTheme();
 
+    const handleIndustriesClcik = (index) => {
+        localStorage.setItem("activeTab", index);
+        navigate("/services");
+    }
 
 
     return (
@@ -69,7 +75,134 @@ const CeramicsPage = () => {
                     or carbide material. Some elements, such as carbon or silicon, may be considered ceramics.
                     Ceramic materials are brittle, hard, strong in compression, and weak in shearing and tension.
                 </Typography>
+                <Box sx={{ display: "flex", justifyContent: "center", gap: "16px", flexWrap: "wrap", mt: 4 }}>
 
+                    {/* TEM Button */}
+                    <Button
+                        startIcon={<Dashboard sx={{ color: '#ffff' }} />}
+                        onClick={() => handleIndustriesClcik(0)}
+                        sx={{
+                            fontWeight: 600,
+                            fontSize: "1rem",
+                            borderRadius: "30px",
+                            padding: "12px 24px",
+                            textTransform: "capitalize",
+                            background: "linear-gradient(45deg, #0A74DA, #084C99)",
+                            color: "#fff",
+                            boxShadow: "0px 8px 16px rgba(0, 0, 0, 0.3)",
+                            "&:hover": {
+                                background: "linear-gradient(45deg, #084C99, #0A74DA)",
+                                cursor: "pointer",
+                                transform: "scale(1.05)",
+                                boxShadow: "0px 12px 24px rgba(0, 0, 0, 0.4)",
+                            },
+                            transition: "all 0.3s ease-out",
+                        }}
+                    >
+                        TEM
+                    </Button>
+
+                    {/* FIB-SEM Button */}
+                    <Button
+                        startIcon={<Layers sx={{ color: '#ffff' }} />}
+                        onClick={() => handleIndustriesClcik(1)}
+                        sx={{
+                            fontWeight: 600,
+                            fontSize: "1rem",
+                            borderRadius: "30px",
+                            padding: "12px 24px",
+                            textTransform: "capitalize",
+                            background: "linear-gradient(45deg, #FF5733, #C23A1A)",
+                            color: "#fff",
+                            boxShadow: "0px 8px 16px rgba(0, 0, 0, 0.3)",
+                            "&:hover": {
+                                background: "linear-gradient(45deg, #C23A1A, #FF5733)",
+                                cursor: "pointer",
+                                transform: "scale(1.05)",
+                                boxShadow: "0px 12px 24px rgba(0, 0, 0, 0.4)",
+                            },
+                            transition: "all 0.3s ease-out",
+                        }}
+                    >
+                        FIB-SEM
+                    </Button>
+
+                    {/* SEM Button */}
+                    <Button
+                        startIcon={<Search sx={{ color: '#ffff' }} />}
+                        onClick={() => handleIndustriesClcik(2)}
+                        sx={{
+                            fontWeight: 600,
+                            fontSize: "1rem",
+                            borderRadius: "30px",
+                            padding: "12px 24px",
+                            textTransform: "capitalize",
+                            background: "linear-gradient(45deg, #F39C12, #E67E22)",
+                            color: "#fff",
+                            boxShadow: "0px 8px 16px rgba(0, 0, 0, 0.3)",
+                            "&:hover": {
+                                background: "linear-gradient(45deg, #E67E22, #F39C12)",
+                                cursor: "pointer",
+                                transform: "scale(1.05)",
+                                boxShadow: "0px 12px 24px rgba(0, 0, 0, 0.4)",
+                            },
+                            transition: "all 0.3s ease-out",
+                        }}
+                    >
+                        SEM
+                    </Button>
+
+                    {/* XRD Button */}
+                    <Button
+                        startIcon={<LayersClear sx={{ color: '#ffff' }} />}
+                        onClick={() => handleIndustriesClcik(3)}
+                        sx={{
+                            fontWeight: 600,
+                            fontSize: "1rem",
+                            borderRadius: "30px",
+                            padding: "12px 24px",
+                            textTransform: "capitalize",
+                            background: "linear-gradient(45deg, #9B59B6, #8E44AD)",
+                            color: "#fff",
+                            boxShadow: "0px 8px 16px rgba(0, 0, 0, 0.3)",
+                            "&:hover": {
+                                background: "linear-gradient(45deg, #8E44AD, #9B59B6)",
+                                cursor: "pointer",
+                                transform: "scale(1.05)",
+                                boxShadow: "0px 12px 24px rgba(0, 0, 0, 0.4)",
+                            },
+                            transition: "all 0.3s ease-out",
+                        }}
+                    >
+                        XRD
+                    </Button>
+
+                    {/* SPS Button */}
+                    <Button
+                        startIcon={<RadioButtonChecked sx={{ color: '#ffff' }} />}
+                        onClick={() => handleIndustriesClcik(4)}
+                        sx={{
+                            fontWeight: 600,
+                            fontSize: "1rem",
+                            borderRadius: "30px",
+                            padding: "12px 24px",
+                            textTransform: "capitalize",
+                            background: "linear-gradient(45deg, #1ABC9C, #16A085)",
+                            color: "#fff",
+                            boxShadow: "0px 8px 16px rgba(0, 0, 0, 0.3)",
+                            "&:hover": {
+                                background: "linear-gradient(45deg, #16A085, #1ABC9C)",
+                                cursor: "pointer",
+                                transform: "scale(1.05)",
+                                boxShadow: "0px 12px 24px rgba(0, 0, 0, 0.4)",
+                            },
+                            transition: "all 0.3s ease-out",
+                        }}
+                    >
+                        SPS
+                    </Button>
+
+                </Box>
             </Paper>
             <Paper
                 elevation={3}
@@ -106,7 +239,7 @@ const CeramicsPage = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, ease: "easeOut" }}
                             onError={(e) => {
-                                e.target.src = {functionality2};
+                                e.target.src = { functionality2 };
                             }}
                         />
                         <Typography variant="h6" color="primary" align="center" sx={{ fontWeight: 600, mb: 2 }}>
@@ -132,7 +265,7 @@ const CeramicsPage = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, ease: "easeOut" }}
                             onError={(e) => {
-                                e.target.src = {structure3} // Fallback if image fails to load
+                                e.target.src = { structure3 } // Fallback if image fails to load
                             }}
                         />
                         <Typography variant="h6" color="primary" align="center" sx={{ fontWeight: 600, mb: 2 }}>
@@ -155,7 +288,7 @@ const CeramicsPage = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, ease: "easeOut" }}
                             onError={(e) => {
-                                e.target.src = {quality}; // Fallback if image fails to load
+                                e.target.src = { quality }; // Fallback if image fails to load
                             }}
                         />
                         <Typography variant="h6" color="primary" align="center" sx={{ fontWeight: 600, mb: 2 }}>
