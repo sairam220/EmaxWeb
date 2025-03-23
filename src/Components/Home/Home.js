@@ -22,6 +22,7 @@ import { motion } from 'framer-motion';
 import HandshakeIcon from '@mui/icons-material/Handshake';
 import HomeImage from '../../asserts/Home/output.jpg'
 import sapc from '../../asserts/Home/sapc.webp'
+import iithyd from '../../asserts/Home/iithyd.jpg'
 import tem from '../../asserts/Home/tem.webp'
 import sem from '../../asserts/Home/sem.png'
 import fib from '../../asserts/Home/fib-sem-2.png'
@@ -32,7 +33,6 @@ import artificial from '../../asserts/Home/artificial-intelligence.png'
 import Frame from '../../asserts/Home/Frame 185.png'
 import AlbertEinstein from '../../asserts/Home/Img02.png'
 import download from '../../asserts/Partners/download.jpeg'
-import iithyd from '../../asserts/Partners/iithyd.jpg'
 import Picture3 from '../../asserts/Mems/Picture3.jpg'
 import { IconButton } from '@mui/material';
 import { ArrowBackIosNew, ArrowForwardIos } from '@mui/icons-material';
@@ -105,9 +105,9 @@ const partners = [
         image: iithyd
     },
     {
-        partnerName: 'S.N Micro Tech Ben',
-        description: 'S.N Micro Tech Ben specializes in microelectronics, embedded systems, and industrial automation, delivering innovative solutions to enhance business productivity and efficiency.',
-        role: 'Fabrication Collaborator',
+        partnerName: 'SN Microtech, Bangalore',
+        description: 'SN Microtech specializes in microelectronics, embedded systems, and industrial automation, delivering innovative solutions to enhance business productivity and efficiency.',
+        role: 'Eg allied industries',
         image: ''
     }
 ];
@@ -724,6 +724,7 @@ const Home = () => {
                 {/* </motion.div> */}
             </Box >
         </motion.div >
+
     );
 };
 
