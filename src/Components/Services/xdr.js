@@ -6,7 +6,7 @@ import {
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { styled } from "@mui/system";
 import { motion } from "framer-motion";
-import xdr from '../../asserts/Home/x-ray.png'
+import xdr from '../../asserts/Home/x-ray.webp'
 import OfflineBoltIcon from '@mui/icons-material/OfflineBolt';
 import ConstructionIcon from '@mui/icons-material/Construction';
 import EngineeringIcon from '@mui/icons-material/Engineering';

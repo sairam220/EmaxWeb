@@ -20,18 +20,18 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { motion } from 'framer-motion';
 import HandshakeIcon from '@mui/icons-material/Handshake';
-import HomeImage from '../../asserts/Home/output.jpg'
+import HomeImage from '../../asserts/Home/output.webp'
 import sapc from '../../asserts/Home/sapc.webp'
-import iithyd from '../../asserts/Home/iithyd.jpg'
+import iithyd from '../../asserts/Home/iithyd.webp'
 import tem from '../../asserts/Home/tem.webp'
-import sem from '../../asserts/Home/sem.png'
-import fib from '../../asserts/Home/fib-sem-2.png'
-import xray from '../../asserts/Home/x-ray.png'
-import managem from '../../asserts/Home/managem.png'
-import continuous from '../../asserts/Home/continuous-improvement.png'
-import artificial from '../../asserts/Home/artificial-intelligence.png'
-import Frame from '../../asserts/Home/Frame 185.png'
-import AlbertEinstein from '../../asserts/Home/Img02.png'
+import sem from '../../asserts/Home/sem.webp'
+import fib from '../../asserts/Home/fib-sem-2.webp'
+import xray from '../../asserts/Home/x-ray.webp'
+import managem from '../../asserts/Home/managem.webp'
+import continuous from '../../asserts/Home/continuous-improvement.webp'
+import artificial from '../../asserts/Home/artificial-intelligence.webp'
+import Frame from '../../asserts/Home/Frame 185.webp'
+import AlbertEinstein from '../../asserts/Home/Img02.webp'
 import download from '../../asserts/Partners/download.jpeg'
 import Picture3 from '../../asserts/Mems/Picture3.jpg'
 import { IconButton } from '@mui/material';

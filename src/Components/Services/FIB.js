@@ -7,7 +7,7 @@ import {
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { styled } from "@mui/system";
 import { motion } from "framer-motion";
-import fib from '../../asserts/Home/fib-sem-2.png'
+import fib from '../../asserts/Home/fib-sem-2.webp'
 import ernestrutherford_white from '../../asserts/Services/ernestrutherford_white.webp'
 import OfflineBoltIcon from '@mui/icons-material/OfflineBolt';
 import ConstructionIcon from '@mui/icons-material/Construction';
