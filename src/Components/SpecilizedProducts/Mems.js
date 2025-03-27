@@ -7,13 +7,13 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import { styled } from "@mui/system";
 import { motion } from "framer-motion";
-import Picture1 from '../../asserts/Mems/Picture1.jpg'
-import Picture2 from '../../asserts/Mems/Picture2.jpg'
-import Picture3 from '../../asserts/Mems/Picture3.jpg'
-import Picture4 from '../../asserts/Mems/Picture4.jpg'
-import Picture5 from '../../asserts/Mems/Picture5.jpg'
-import Picture6 from '../../asserts/Mems/Picture6.jpg'
-import Picture7 from '../../asserts/Mems/Picture7.png'
+import Picture1 from '../../asserts/Mems/Picture1.webp'
+import Picture2 from '../../asserts/Mems/Picture2.webp'
+import Picture3 from '../../asserts/Mems/Picture3.webp'
+import Picture4 from '../../asserts/Mems/Picture4.webp'
+import Picture5 from '../../asserts/Mems/Picture5.webp'
+import Picture6 from '../../asserts/Mems/Picture6.webp'
+import Picture7 from '../../asserts/Mems/Picture7.webp'
 
 
 const StyledImage = styled(motion.img)(({ theme }) => ({
