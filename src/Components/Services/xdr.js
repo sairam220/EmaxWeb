@@ -119,7 +119,6 @@ const XRDPage = () => {
                         <StyledImage
                             component={motion.img}
                             src={xdr}
-                            loading="lazy"
                             alt="Our Methodology"
                             sx={{ width: "100%", height: "auto" }}
                             initial={{ opacity: 0, y: 50 }}

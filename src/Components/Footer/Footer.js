@@ -50,7 +50,6 @@ const Footer = () => {
                         <Box sx={{ display: "flex", justifyContent: isMobile ? "center" : "left", mb: 2 }}>
                             <img
                                 src={logo}
-                                loading="lazy"
                                 alt="Logo"
                                 style={{ height: '50px', objectFit: 'contain' }}
                             />

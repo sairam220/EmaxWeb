@@ -297,7 +297,6 @@ const Home = () => {
                                 component="img"
                                 src={HomeImage}
                                 alt="Industrial Solutions"
-                                loading="lazy"
                                 sx={{
                                     width: '100%',
                                     maxWidth: 500,
@@ -467,7 +466,6 @@ const Home = () => {
                                         >
                                             <img
                                                 src={item.image}
-                                                loading="lazy"
                                                 alt={item.text}
                                                 style={{
                                                     width: '100%',
@@ -565,7 +563,6 @@ const Home = () => {
                         </Typography>
                         <img
                             src={Frame}
-                            loading="lazy"
                             alt="Methodology"
                             style={{
                                 width: '90%', // Makes the image responsive

@@ -82,7 +82,6 @@ const MetalsPage = () => {
                         <StyledImage
                             component={motion.img}
                             src={cover2}
-                            loading="lazy"
                             alt="Metals & Alloys"
                             sx={{ width: "100%", height: "auto" }}
                             initial={{ opacity: 0, y: 50 }}
@@ -257,7 +256,6 @@ const MetalsPage = () => {
                         <StyledImage
                             component={motion.img}
                             src={process}
-                            loading="lazy"
                             alt="Alloy Manufacturing"
                             sx={{ width: "100%", height: "auto" }}
                             initial={{ opacity: 0, y: 50 }}
@@ -284,7 +282,6 @@ const MetalsPage = () => {
                         <StyledImage
                             component={motion.img}
                             src={structure} // Add the URL of the second image
-                            loading="lazy"
                             alt="Microstructure Development"
                             sx={{ width: "100%", height: "auto" }}
                             initial={{ opacity: 0, y: 50 }}
@@ -309,7 +306,6 @@ const MetalsPage = () => {
                         <StyledImage
                             component={motion.img}
                             src={functionality} // Add the URL of the second image
-                            loading="lazy"
                             alt="Achieving enhanced/ optimised functionality"
                             sx={{ width: "100%", height: "auto" }}
                             initial={{ opacity: 0, y: 50 }}

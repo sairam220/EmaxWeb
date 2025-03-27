@@ -114,7 +114,6 @@ const ScanningElectronMicroscopyPage = () => {
                 <StyledImage
                     component={motion.img}
                     src={sem}
-                    loading="lazy"
                     alt="Process Improvement"
                     sx={{ mb: { xs: 3, sm: 4 }, maxWidth: "100%", height: "auto" }}
                     initial={{ opacity: 0, y: 50 }}

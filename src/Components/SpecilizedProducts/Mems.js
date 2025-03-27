@@ -80,7 +80,6 @@ const MeMsChips = () => {
                         <StyledImage
                             component={motion.img}
                             src={Picture1}
-                            loading="lazy"
                             alt="Our Methodology"
                             sx={{ width: "100%", height: "auto" }}
                             initial={{ opacity: 0, y: 50 }}
@@ -105,7 +104,6 @@ const MeMsChips = () => {
                         <StyledImage
                             component={motion.img}
                             src={Picture2} // Add the URL of the second image
-                            loading="lazy"
                             alt="TEM Image Example"
                             sx={{ width: "100%", height: "auto" }}
                             initial={{ opacity: 0, y: 50 }}
@@ -156,7 +154,6 @@ const MeMsChips = () => {
                         <StyledImage
                             component={motion.img}
                             src={Picture3}
-                            loading="lazy"
                             alt="Our Methodology"
                             sx={{ width: "100%", height: "auto" }}
                             initial={{ opacity: 0, y: 50 }}
@@ -176,7 +173,6 @@ const MeMsChips = () => {
                         <StyledImage
                             component={motion.img}
                             src={Picture4} // Add the URL of the second image
-                            loading="lazy"
                             alt="TEM Image Example"
                             sx={{ width: "100%", height: "auto" }}
                             initial={{ opacity: 0, y: 50 }}
@@ -195,7 +191,6 @@ const MeMsChips = () => {
                         <StyledImage
                             component={motion.img}
                             src={Picture5}
-                            loading="lazy"
                             alt="Our Methodology"
                             sx={{ width: "100%", height: "auto" }}
                             initial={{ opacity: 0, y: 50 }}
@@ -215,7 +210,6 @@ const MeMsChips = () => {
                         <StyledImage
                             component={motion.img}
                             src={Picture6} // Add the URL of the second image
-                            loading="lazy"
                             alt="TEM Image Example"
                             sx={{ width: "100%", height: "auto" }}
                             initial={{ opacity: 0, y: 50 }}
@@ -268,7 +262,6 @@ const MeMsChips = () => {
                             <StyledImage
                                 component={motion.img}
                                 src={Picture7} // Add the URL of the second image
-                                loading="lazy"
                                 alt="TEM Image Example"
                                 sx={{ width: "100%", height: "auto" }}
                                 initial={{ opacity: 0, y: 50 }}

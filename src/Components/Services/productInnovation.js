@@ -118,7 +118,6 @@ const ProductInnovationPage = () => {
                 <StyledImage
                     component={motion.img}
                     src={product}
-                    loading="lazy"
                     alt="Product Innovation"
                     sx={{ mt: { xs: 3, sm: 4 }, mb: { xs: 3, sm: 4 }, maxWidth: "100%", height: "auto" }}
                     initial={{ opacity: 0, y: 50 }}
@@ -198,7 +197,6 @@ const ProductInnovationPage = () => {
                 <StyledImage
                     component={motion.img}
                     src={matrix}
-                    loading="lazy"
                     alt="Product Innovation"
                     sx={{ mt: { xs: 3, sm: 4 }, mb: { xs: 3, sm: 4 }, maxWidth: "100%", height: "auto" }}
                     initial={{ opacity: 0, y: 50 }}
