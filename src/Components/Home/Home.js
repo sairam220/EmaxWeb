@@ -297,7 +297,6 @@ const Home = () => {
                                 component="img"
                                 src={HomeImage}
                                 alt="Industrial Solutions"
-                                loading="eager" 
                                 sx={{
                                     width: '100%',
                                     maxWidth: 500,
