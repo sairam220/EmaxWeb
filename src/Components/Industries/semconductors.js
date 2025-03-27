@@ -6,13 +6,13 @@ import {
 } from "@mui/material";
 import { styled } from "@mui/system";
 import { motion } from "framer-motion";
-import cover from '../../asserts/Industries/cover-1.png'
+import cover from '../../asserts/Industries/cover-1.webp'
 import fabrication1 from '../../asserts/Industries/fabrication1.webp'
-import fabrication21 from '../../asserts/Industries/fabrication2-1.png'
-import fabrication4 from '../../asserts/Industries/fabrication4.png'
-import structure from '../../asserts/Industries/structure.png'
-import trends1 from '../../asserts/Industries/trends1.png'
-import trends from '../../asserts/Industries/trends.png'
+import fabrication21 from '../../asserts/Industries/fabrication2-1.webp'
+import fabrication4 from '../../asserts/Industries/fabrication4.webp'
+import structure from '../../asserts/Industries/structure.webp'
+import trends1 from '../../asserts/Industries/trends1.webp'
+import trends from '../../asserts/Industries/trends.webp'
 import ricjardfeynman_white from '../../asserts/Industries/ricjardfeynman_white.webp'
 import { Dashboard, Search, Layers, LayersClear, RadioButtonChecked } from '@mui/icons-material';
 import { useNavigate } from "react-router-dom";

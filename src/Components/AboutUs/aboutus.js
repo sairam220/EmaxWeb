@@ -12,12 +12,12 @@ import { motion } from "framer-motion";
 import InfoIcon from '@mui/icons-material/Info';
 import GroupIcon from '@mui/icons-material/Group';
 import sircv_white from '../../asserts/Services/sircv_white-1.webp'
-import electron from '../../asserts/AboutUs/Group 245.png'
-import project from '../../asserts/AboutUs/project-management-2.png'
-import image122 from '../../asserts/AboutUs/image-122.png'
-import industrial from '../../asserts/AboutUs/industrial-product.png'
-import physical from '../../asserts/AboutUs/physical-chemistry.png'
-import ml from '../../asserts/AboutUs/ml.png'
+import electron from '../../asserts/AboutUs/Group 245.webp'
+import project from '../../asserts/AboutUs/project-management-2.webp'
+import image122 from '../../asserts/AboutUs/image-122.webp'
+import industrial from '../../asserts/AboutUs/industrial-product.webp'
+import physical from '../../asserts/AboutUs/physical-chemistry.webp'
+import ml from '../../asserts/AboutUs/ml.webp'
 
 
 

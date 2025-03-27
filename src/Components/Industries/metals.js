@@ -4,7 +4,7 @@ import {
 } from "@mui/material";
 import { styled } from "@mui/system";
 import { motion } from "framer-motion";
-import cover2 from '../../asserts/Industries/cover-2.png'
+import cover2 from '../../asserts/Industries/cover-2.webp'
 import process from '../../asserts/Industries/process.webp'
 import structure from '../../asserts/Industries/structure-5.webp'
 import functionality from '../../asserts/Industries/functionality-3.webp'
