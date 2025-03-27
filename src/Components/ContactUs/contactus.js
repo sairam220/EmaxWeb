@@ -25,7 +25,7 @@ import WatchLaterIcon from "@mui/icons-material/WatchLater";
 import emailjs from "@emailjs/browser";
 import EventIcon from '@mui/icons-material/Event';
 import LocationOnIcon from "@mui/icons-material/LocationOn";
-import swamychinmayananda_white from '../../asserts/Services/swamychinmayananda_white.png'
+import swamychinmayananda_white from '../../asserts/Services/swamychinmayananda_white.webp'
 
 
 

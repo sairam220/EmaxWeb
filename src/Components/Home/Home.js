@@ -32,7 +32,7 @@ import continuous from '../../asserts/Home/continuous-improvement.webp'
 import artificial from '../../asserts/Home/artificial-intelligence.webp'
 import Frame from '../../asserts/Home/Frame 185.webp'
 import AlbertEinstein from '../../asserts/Home/Img02.webp'
-import download from '../../asserts/Partners/download.jpeg'
+import download from '../../asserts/Partners/download.webp'
 import Picture3 from '../../asserts/Mems/Picture3.webp'
 import { IconButton } from '@mui/material';
 import { ArrowBackIosNew, ArrowForwardIos } from '@mui/icons-material';

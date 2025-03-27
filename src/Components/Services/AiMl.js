@@ -7,8 +7,8 @@ import {
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { styled } from "@mui/system";
 import { motion } from "framer-motion";
-import aiml from '../../asserts/Services/aiml-3.png'
-import img03 from '../../asserts/Services/img03.png'
+import aiml from '../../asserts/Services/aiml-3.webp'
+import img03 from '../../asserts/Services/img03.webp'
 
 const StyledImage = styled(motion.img)(({ theme }) => ({
     width: "100%",

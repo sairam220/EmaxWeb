@@ -6,8 +6,8 @@ import {
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { styled } from "@mui/system";
 import { motion } from "framer-motion";
-import product from '../../asserts/Services/new-product-innovation-1.png'
-import matrix from '../../asserts/Services/matrix-1.png'
+import product from '../../asserts/Services/new-product-innovation-1.webp'
+import matrix from '../../asserts/Services/matrix-1.webp'
 
 
 const StyledImage = styled(motion.img)(({ theme }) => ({

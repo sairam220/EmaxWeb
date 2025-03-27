@@ -8,14 +8,14 @@ import {
 import RadarIcon from '@mui/icons-material/Radar';
 import { styled } from "@mui/system";
 import { motion } from "framer-motion";
-import tem from '../../asserts/Services/electron-microscopy-services-1-2.png'
-import conventionaltem from '../../asserts/Services/conventionaltem-1.png'
-import stem from '../../asserts/Services/stem-mode-insitu.png'
+import tem from '../../asserts/Services/electron-microscopy-services-1-2.webp'
+import conventionaltem from '../../asserts/Services/conventionaltem-1.webp'
+import stem from '../../asserts/Services/stem-mode-insitu.webp'
 import louisdebrogliepng_white from '../../asserts/Services/louisdebrogliepng_white-1.webp'
-import frame from '../../asserts/Services/frame-49-3.png'
-import geometry from '../../asserts/Services/geometry.png'
-import aberration from '../../asserts/Services/aberration-corrections.png'
-import ernstruska from '../../asserts/Services/ernstruska.png'
+import frame from '../../asserts/Services/frame-49-3.webp'
+import geometry from '../../asserts/Services/geometry.webp'
+import aberration from '../../asserts/Services/aberration-corrections.webp'
+import ernstruska from '../../asserts/Services/ernstruska.webp'
 import OfflineBoltIcon from '@mui/icons-material/OfflineBolt';
 import ConstructionIcon from '@mui/icons-material/Construction';
 import EngineeringIcon from '@mui/icons-material/Engineering';

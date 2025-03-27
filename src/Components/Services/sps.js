@@ -4,12 +4,12 @@ import {
 } from "@mui/material";
 import { styled } from "@mui/system";
 import { motion } from "framer-motion";
-import spss from '../../asserts/Services/structure-probe-1.png'
-import Frame166 from '../../asserts/Services/Frame 166.png'
-import Frame157 from '../../asserts/Services/frame-157.png'
-import Frame156 from '../../asserts/Services/frame-156.png'
-import Frame1612 from '../../asserts/Services/frame-161-2.png'
-import Frame155 from '../../asserts/Services/frame-155.png'
+import spss from '../../asserts/Services/structure-probe-1.webp'
+import Frame166 from '../../asserts/Services/Frame 166.webp'
+import Frame157 from '../../asserts/Services/frame-157.webp'
+import Frame156 from '../../asserts/Services/frame-156.webp'
+import Frame1612 from '../../asserts/Services/frame-161-2.webp'
+import Frame155 from '../../asserts/Services/frame-155.webp'
 import OfflineBoltIcon from '@mui/icons-material/OfflineBolt';
 import ConstructionIcon from '@mui/icons-material/Construction';
 import EngineeringIcon from '@mui/icons-material/Engineering';
