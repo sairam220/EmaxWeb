@@ -105,6 +105,7 @@ const AiMlPage = () => {
                 <StyledImage
                     component={motion.img}
                     src={aiml}
+                    loading="lazy"
                     alt="AI&ML"
                     sx={{ mb: { xs: 3, sm: 4 }, maxWidth: "100%", height: "auto" }}
                     initial={{ opacity: 0, y: 50 }}

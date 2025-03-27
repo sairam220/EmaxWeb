@@ -65,7 +65,7 @@ function ResponsiveAppBar() {
             <Link to="/">
               <img
                 src={logo}
-
+                loading="lazy"
                 alt="Logo"
                 style={{ height: "42px", objectFit: "contain", marginLeft: "20px" }}
               />

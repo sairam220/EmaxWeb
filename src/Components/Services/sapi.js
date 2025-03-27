@@ -105,6 +105,7 @@ const ProcessImprovementPage = () => {
         <StyledImage
           component={motion.img}
           src={process1}
+          loading="lazy"
           alt="Process Improvement"
           sx={{ mb: { xs: 3, sm: 4 }, maxWidth: "100%", height: "auto" }}
           initial={{ opacity: 0, y: 50 }}

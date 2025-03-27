@@ -105,6 +105,7 @@ const StructuralProbeStationPage = () => {
                         <StyledImage
                             component={motion.img}
                             src={spss}
+                            loading="lazy"
                             alt="Compression"
                             sx={{ width: "100%", height: "auto" }}
                             initial={{ opacity: 0, y: 50 }}
@@ -123,6 +124,7 @@ const StructuralProbeStationPage = () => {
                         <StyledImage
                             component={motion.img}
                             src={Frame166} // Add the URL of the second image
+                            loading="lazy"
                             alt="tensile"
                             sx={{ width: "100%", height: "auto" }}
                             initial={{ opacity: 0, y: 50 }}
@@ -159,6 +161,7 @@ const StructuralProbeStationPage = () => {
                         <StyledImage
                             component={motion.img}
                             src={Frame157}
+                            loading="lazy"
                             alt="Thermal Expansion-1"
                             sx={{ width: "100%", height: "auto" }}
                             initial={{ opacity: 0, y: 50 }}
@@ -177,6 +180,7 @@ const StructuralProbeStationPage = () => {
                         <StyledImage
                             component={motion.img}
                             src={Frame156} // Add the URL of the second image
+                            loading="lazy"
                             alt="Thermal Expansion-2"
                             sx={{ width: "100%", height: "auto" }}
                             initial={{ opacity: 0, y: 50 }}
@@ -214,6 +218,7 @@ const StructuralProbeStationPage = () => {
                         <StyledImage
                             component={motion.img}
                             src={Frame1612}
+                            loading="lazy"
                             alt="Seebeck Coefficient-1"
                             sx={{ width: "100%", height: "auto" }}
                             initial={{ opacity: 0, y: 50 }}
@@ -232,6 +237,7 @@ const StructuralProbeStationPage = () => {
                         <StyledImage
                             component={motion.img}
                             src={Frame155} // Add the URL of the second image
+                            loading="lazy"
                             alt="Seebeck Coefficient-2"
                             sx={{ width: "100%", height: "auto" }}
                             initial={{ opacity: 0, y: 50 }}

@@ -61,6 +61,7 @@ const SemiConductors = () => {
                         <StyledImage
                             component={motion.img}
                             src={cover}
+                            loading="lazy"
                             alt="Compression"
                             sx={{ width: "100%", height: "auto" }}
                             initial={{ opacity: 0, y: 50 }}
@@ -244,6 +245,7 @@ const SemiConductors = () => {
                         <StyledImage
                             component={motion.img}
                             src={fabrication1}
+                            loading="lazy"
                             alt="MOCVD"
                             sx={{ width: "100%", height: "auto" }}
                             initial={{ opacity: 0, y: 50 }}
@@ -262,6 +264,7 @@ const SemiConductors = () => {
                         <StyledImage
                             component={motion.img}
                             src={fabrication21} // Add the URL of the second image
+                            loading="lazy"
                             alt="fabrication2"
                             sx={{ width: "100%", height: "auto" }}
                             initial={{ opacity: 0, y: 50 }}
@@ -278,6 +281,7 @@ const SemiConductors = () => {
                         <StyledImage
                             component={motion.img}
                             src={fabrication4} // Add the URL of the second image
+                            loading="lazy"
                             alt="fabrication3"
                             sx={{ width: "100%", height: "auto" }}
                             initial={{ opacity: 0, y: 50 }}
@@ -332,6 +336,7 @@ const SemiConductors = () => {
                             component={motion.img}
                             src={structure}
                             alt="Microstructure Development"
+                            loading="lazy"
                             sx={{ width: "100%", height: "auto" }}
                             initial={{ opacity: 0, y: 50 }}
                             animate={{ opacity: 1, y: 0 }}
@@ -397,6 +402,7 @@ const SemiConductors = () => {
                             component={motion.img}
                             src={trends1}
                             alt="Drive&Perfomannce-1"
+                            loading="lazy"
                             sx={{ width: "100%", height: "auto" }}
                             initial={{ opacity: 0, y: 50 }}
                             animate={{ opacity: 1, y: 0 }}
@@ -414,6 +420,7 @@ const SemiConductors = () => {
                         <StyledImage
                             component={motion.img}
                             src={trends} // Add the URL of the second image
+                            loading="lazy"
                             alt="Drive&Perfomannce-2"
                             sx={{ width: "100%", height: "auto" }}
                             initial={{ opacity: 0, y: 50 }}

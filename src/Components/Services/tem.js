@@ -131,6 +131,7 @@ const TemServicesPage = () => {
                 <StyledImage
                     component={motion.img}
                     src={tem}
+                    loading="lazy"
                     alt="Transmission Electron Microscopy Services"
                     sx={{ mb: { xs: 3, sm: 4 }, maxWidth: "100%", height: "auto" }}
                     initial={{ opacity: 0, y: 50 }}
@@ -312,6 +313,7 @@ const TemServicesPage = () => {
                         <StyledImage
                             component={motion.img}
                             src={conventionaltem}
+                            loading="lazy"
                             alt="Our Methodology"
                             sx={{ width: "100%", height: "auto" }}
                             initial={{ opacity: 0, y: 50 }}
@@ -334,6 +336,7 @@ const TemServicesPage = () => {
                         <StyledImage
                             component={motion.img}
                             src={stem} // Add the URL of the second image
+                            loading="lazy"
                             alt="TEM Image Example"
                             sx={{ width: "100%", height: "auto" }}
                             initial={{ opacity: 0, y: 50 }}
@@ -447,6 +450,7 @@ const TemServicesPage = () => {
                         <StyledImage
                             component={motion.img}
                             src={frame}
+                            loading="lazy"
                             alt="Our Methodology"
                             sx={{ width: "100%", height: "auto" }}
                             initial={{ opacity: 0, y: 50 }}
@@ -465,6 +469,7 @@ const TemServicesPage = () => {
                         <StyledImage
                             component={motion.img}
                             src={geometry} // Add the URL of the second image
+                            loading="lazy"
                             alt="TEM Image Example"
                             sx={{ width: "100%", height: "auto" }}
                             initial={{ opacity: 0, y: 50 }}
@@ -529,6 +534,7 @@ const TemServicesPage = () => {
                         <StyledImage
                             component={motion.img}
                             src={aberration}
+                            loading="lazy"
                             alt="Our Methodology"
                             sx={{ width: "100%", height: "auto" }}
                             initial={{ opacity: 0, y: 50 }}

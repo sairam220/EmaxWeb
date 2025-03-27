@@ -233,6 +233,7 @@ const CeramicsPage = () => {
                         <StyledImage
                             component={motion.img}
                             src={functionality2}
+                            loading="lazy"
                             alt="Ceramic Production"
                             sx={{ width: "100%", height: "auto" }}
                             initial={{ opacity: 0, y: 50 }}
@@ -258,6 +259,7 @@ const CeramicsPage = () => {
 
                         <StyledImage
                             component={motion.img}
+                            loading="lazy"
                             src={structure3} // Add the URL of the second image
                             alt="Microstructure Development"
                             sx={{ width: "100%", height: "auto" }}
@@ -281,6 +283,7 @@ const CeramicsPage = () => {
 
                         <StyledImage
                             component={motion.img}
+                            loading="lazy"
                             src={quality} // Add the URL of the second image
                             alt="Achieving and Improving Product Quality"
                             sx={{ width: "100%", height: "auto" }}
