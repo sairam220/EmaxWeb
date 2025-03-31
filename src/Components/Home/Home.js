@@ -21,12 +21,10 @@ import 'slick-carousel/slick/slick-theme.css';
 import { motion } from 'framer-motion';
 import HandshakeIcon from '@mui/icons-material/Handshake';
 import HomeImage from '../../asserts/Home/output.webp'
-import sapc from '../../asserts/Home/sapc.webp'
 import iithyd from '../../asserts/Home/iithyd.webp'
 import tem from '../../asserts/Home/tem.webp'
-import sem from '../../asserts/Home/sem.webp'
-import fib from '../../asserts/Home/fib-sem-2.webp'
-import xray from '../../asserts/Home/x-ray.webp'
+import temHolders from '../../asserts/Home/tem holders.webp'
+import Sensor from '../../asserts/Home/CMOS-Sensor.webp'
 import managem from '../../asserts/Home/managem.webp'
 import continuous from '../../asserts/Home/continuous-improvement.webp'
 import artificial from '../../asserts/Home/artificial-intelligence.webp'
@@ -36,41 +34,43 @@ import download from '../../asserts/Partners/download.webp'
 import Picture3 from '../../asserts/Mems/Picture3.webp'
 import { IconButton } from '@mui/material';
 import { ArrowBackIosNew, ArrowForwardIos } from '@mui/icons-material';
+import aiml from '../../asserts/Services/aiml-3.webp'
+import Chip from '@mui/material/Chip';
+import MeMsChips from '../SpecilizedProducts/Mems';
 
 
 // Services Data
 const services = [
     {
-        title: 'Transmission Electron Microscopy (TEM)',
-        img: tem,
-        tab: 0
-    },
-    {
-        title: 'Focussed Ion Beam-Scanning Electron Microscopy (FIB-SEM) services',
-        img: fib,
-        tab: 1
-    },
-    {
-        title: 'MEMS',
+        title: 'MEMS CHIPS FOR IN-SITU TEM',
         img: Picture3,
-        tab: 0
+        subServices: '',
+        navigate: ''
     },
     {
-        title: 'Scanning Electron Microscopy (SEM) services',
-        img: sem,
-        tab: 2
+        title: 'TEM Holders',
+        img: temHolders,
+        subServices: '',
+        navigate: ''
     },
     {
-        title: 'X-Ray Diffraction Services',
-        img: xray,
-        tab: 3
+        title: 'Sensors',
+        img: Sensor,
+        subServices: '',
+        navigate: ''
     },
     {
-        title: 'Alide services',
-        img: sapc,
-        tab: 4
+        title: 'Specialized Services',
+        img: tem,
+        subServices: 'TEM,FIB,SEM,XRD,Probs Analysis',
+        navigate: '/services'
     },
-
+    {
+        title: 'Industrial Process Optimization',
+        img: aiml,
+        subServices: 'Our Methodology,SAPI,AI/ML Based Approach',
+        navigate: '/services'
+    },
 ];
 
 const capabilitiesData = [
@@ -128,18 +128,54 @@ const Home = () => {
         visible: { opacity: 1, y: 0, transition: { duration: 1, ease: "easeOut" } },
     };
 
-    const handleLearnMore = (title, index) => {
-        if (title === "MEMS") {
-            localStorage.setItem("activeTab", index);
-            navigate("/specializedProducts");
+    const handleLearnMore = (path, title) => {
+        if (title) {
+            switch (title) {
+                case "TEM":
+                    localStorage.setItem("activeTab", 0);
+                    navigate(path);
+                    break;
+                case "FIB":
+                    localStorage.setItem("activeTab", 1);
+                    navigate(path);
+                    break;
+                case "SEM":
+                    localStorage.setItem("activeTab", 2);
+                    navigate(path);
+                    break;
+                case "XRD":
+                    localStorage.setItem("activeTab", 3);
+                    navigate(path);
+                    break;
+                case "Probs Analysis":
+                    localStorage.setItem("activeTab", 4);
+                    navigate(path);
+                    break;
+                case "Our Methodology":
+                    localStorage.setItem("activeTab", 6);
+                    navigate(path);
+                    break;
+                case "SAPI":
+                    localStorage.setItem("activeTab", 5);
+                    navigate(path);
+                    break;
+                case "AI/ML Based Approach":
+                    localStorage.setItem("activeTab", 7);
+                    navigate(path);
+                    break;
+                default:
+                    localStorage.setItem("activeTab", 0);
+                    navigate(path);
+                    break;
+            }
+
         } else {
-            localStorage.setItem("activeTab", index);
-            navigate("/services");
+            navigate(path);
         }
 
     };
 
-    
+
 
 
     const NextArrow = (props) => {
@@ -203,7 +239,7 @@ const Home = () => {
         speed: 500,
         slidesToShow: 3,
         slidesToScroll: 1,
-        autoplay: true,
+        autoplay: isMobile,
         autoplaySpeed: 3000,
         nextArrow: <NextArrow />,
         prevArrow: <PrevArrow />,
@@ -307,8 +343,14 @@ const Home = () => {
                         </Grid>
                     </Grid>
 
+                    <MeMsChips />
+
                     {/* Slider Section (Services) */}
-                    <Box mt={6} mb={6} sx={{ mt: { xs: '50px', sm: '70px', md: '100px' } }}>
+                    <Box
+                        mt={6}
+                        mb={6}
+                        sx={{ mt: { xs: "50px", sm: "70px", md: "100px" } }}
+                    >
                         <Typography
                             variant="h4"
                             fontWeight="bold"
@@ -316,41 +358,39 @@ const Home = () => {
                             mb={6}
                             sx={{
                                 fontFamily: "'Roboto', sans-serif",
-                                position: 'relative',
-                                display: 'inline-flex',
-                                alignItems: 'center',
-                                padding: '8px 16px',
-                                backgroundColor: '#424242', // Gray background color
-                                color: 'white',
+                                position: "relative",
+                                display: "inline-flex",
+                                alignItems: "center",
+                                padding: "8px 16px",
+                                backgroundColor: "#424242",
+                                color: "white",
                                 borderRadius: 2,
-                                textTransform: 'uppercase',
-                                boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
-                                fontSize: '1.5rem',
-                                '@media (max-width: 600px)': {
-                                    fontSize: '1.25rem',
-                                    padding: '6px 12px',
+                                textTransform: "uppercase",
+                                boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
+                                fontSize: "1.5rem",
+                                "@media (max-width: 600px)": {
+                                    fontSize: "1.25rem",
+                                    padding: "6px 12px",
                                 },
-                                '&::before': {
+                                "&::before": {
                                     content: '""',
-                                    position: 'absolute',
-                                    bottom: '-10px',
-                                    left: '50%',
-                                    transform: 'translateX(-50%)',
-                                    borderLeft: '10px solid transparent',
-                                    borderRight: '10px solid transparent',
-                                    borderTop: '10px solid #424242', // Match the background color
+                                    position: "absolute",
+                                    bottom: "-10px",
+                                    left: "50%",
+                                    transform: "translateX(-50%)",
+                                    borderLeft: "10px solid transparent",
+                                    borderRight: "10px solid transparent",
+                                    borderTop: "10px solid #424242",
                                 },
                             }}
                         >
                             <Box sx={{ mr: 1 }}>
-                                <MiscellaneousServicesIcon sx={{ color: 'white', fontSize: '2rem' }} /> {/* Icon for services */}
+                                <MiscellaneousServicesIcon sx={{ color: "white", fontSize: "2rem" }} />
                             </Box>
                             Our Services
                         </Typography>
-                        <Slider
-                            {...settings}
-                        // nextArrow={}
-                        >
+
+                        <Slider {...settings}>
                             {services.map((service, index) => (
                                 <Box key={index} px={2}>
                                     <Card
@@ -358,33 +398,85 @@ const Home = () => {
                                             boxShadow: 3,
                                             borderRadius: 3,
                                             maxWidth: 296,
-                                            height: 400,
-                                            margin: '0 auto',
-                                            display: 'flex',
-                                            flexDirection: 'column',
-                                            justifyContent: 'space-between',
-                                            alignContent: 'center'
+                                            height: 420,
+                                            margin: "0 auto",
+                                            display: "flex",
+                                            flexDirection: "column",
+                                            justifyContent: "space-between",
+                                            alignItems: "center",
+                                            transition: "transform 0.3s ease-in-out, box-shadow 0.3s",
+                                            "&:hover": {
+                                                transform: "scale(1.03)",
+                                                boxShadow: "0px 6px 15px rgba(0, 0, 0, 0.2)",
+                                            },
                                         }}
                                     >
-                                        <CardMedia component="img" height="220" image={service.img} alt={service.title} />
-                                        <CardContent sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', flexGrow: 1 }}>
-                                            <Typography variant="h6" fontWeight="bold" sx={{ mb: 2 }}>
+                                        <CardMedia
+                                            component="img"
+                                            height="200"
+                                            image={service.img}
+                                            alt={service.title}
+                                            sx={{ borderTopLeftRadius: 12, borderTopRightRadius: 12 }}
+                                        />
+
+                                        <CardContent
+                                            sx={{
+                                                display: "flex",
+                                                flexDirection: "column",
+                                                alignItems: "center",
+                                                textAlign: "center",
+                                                flexGrow: 1,
+                                                justifyContent: "space-between",
+                                            }}
+                                        >
+                                            <Typography
+                                                variant="h6"
+                                                fontWeight="bold"
+                                                sx={{
+                                                    // minHeight: "50px",
+                                                    display: "flex",
+                                                    alignItems: "center",
+                                                    justifyContent: "center",
+                                                }}
+                                            >
                                                 {service.title}
                                             </Typography>
-                                            <Button
-                                                variant="outlined"
-                                                sx={{
 
-                                                    textTransform: 'none',
-                                                    fontSize: '0.9rem',
-                                                    borderRadius: 2,
-                                                    width: '100%',
+                                            {service.subServices &&
+                                                <Box sx={{ flexGrow: 1, display: "flex", alignItems: "center" }}>
+                                                    <Box
+                                                        sx={{
+                                                            display: "flex",
+                                                            flexWrap: "wrap",
+                                                            justifyContent: "center",
+                                                            gap: 1,
+                                                            mb: 2,
+                                                        }}
+                                                    >
+                                                        {service.subServices.split(",").map((sub, idx) => (
+                                                            <Chip onClick={() => handleLearnMore(service.navigate, sub)} key={idx} label={sub} variant="outlined" />
+                                                        ))}
+                                                    </Box>
+                                                </Box>
+                                            }
 
-                                                }}
-                                                onClick={() => handleLearnMore(service.title, service.tab)}
-                                            >
-                                                Learn More
-                                            </Button>
+                                            {!service.subServices &&
+                                                <Button
+                                                    variant="contained"
+                                                    color="primary"
+                                                    sx={{
+                                                        textTransform: "none",
+                                                        fontSize: "0.9rem",
+                                                        borderRadius: 2,
+                                                        height: '40px',
+                                                        width: "200px",
+                                                        marginBottom: '20%'
+                                                    }}
+                                                    onClick={() => handleLearnMore(service.navigate)}
+                                                >
+                                                    Learn More
+                                                </Button>
+                                            }
                                         </CardContent>
                                     </Card>
                                 </Box>

@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { Tabs, Tab, Box, Typography } from "@mui/material";
 import LightbulbCircleIcon from '@mui/icons-material/LightbulbCircle';
 import MiscellaneousServicesIcon from '@mui/icons-material/MiscellaneousServices';
-import HdrStrongIcon from '@mui/icons-material/HdrStrong';
 import MemoryIcon from '@mui/icons-material/Memory';
 import { motion } from 'framer-motion';
 import MeMsChips from "./Mems";
@@ -11,7 +10,6 @@ import MeMsChips from "./Mems";
 const specX = [
     { name: "MEMS Chips", icon: <MemoryIcon /> },
     { name: "TEM Holders", icon: <LightbulbCircleIcon /> },
-    { name: "Silicon Nitride Whefors", icon: <HdrStrongIcon /> }
 ];
 
 export default function SpecializedProducts() {

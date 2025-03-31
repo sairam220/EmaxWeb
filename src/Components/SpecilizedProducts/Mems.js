@@ -55,15 +55,7 @@ const MeMsChips = () => {
                     backgroundColor: theme.palette.background?.default || "#fff"
                 }}
             >
-                <Typography
-                    variant={{ xs: "h5", sm: "h4", md: "h3" }}
-                    align="center"
-                    color="primary"
-                    gutterBottom
-                    sx={{
-                        fontWeight: 550, mb: { xs: 3, sm: 4 }, letterSpacing: 0.8, fontSize: { xs: "1.8rem", sm: "2.2rem", md: "2.8rem" }
-                    }}
-                >
+                <Typography variant="h4" fontWeight="bold" gutterBottom>
                     MEMS CHIPS FOR IN-SITU TEM
                 </Typography>
 
@@ -141,13 +133,50 @@ const MeMsChips = () => {
                 <Grid container spacing={2} sx={{ mt: 3 }}>
                     <Grid item xs={12} sm={12}>
 
-                        <Typography variant="h6" color="primary" align="center" sx={{ fontWeight: 600, mb: 2 }}>
+                        <Typography variant="h6" align="center" sx={{ fontWeight: 600, mb: 2 }}>
                             Photolithography and etching of MEMS chips for different design
 
                         </Typography>
                     </Grid>
 
                     {/* First Image (50% width) */}
+                    <Grid item xs={12} sm={6}>
+
+                        {/* <br /> */}
+                        <StyledImage
+                            component={motion.img}
+                            src={Picture6} // Picture3
+                            alt="Our Methodology"
+                            sx={{ width: "100%", height: "auto" }}
+                            initial={{ opacity: 0, y: 50 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, ease: "easeOut" }}
+                            onError={(e) => {
+                                e.target.src = { Picture6 };
+                            }}
+                        />
+
+                    </Grid>
+
+                    {/* Second Image (50% width) */}
+                    <Grid item xs={12} sm={6}>
+
+                        {/* <br /> */}
+                        <StyledImage
+                            component={motion.img}
+                            src={Picture5} // Add the URL of the second image
+                            alt="TEM Image Example"
+                            sx={{ width: "100%", height: "auto" }}
+                            initial={{ opacity: 0, y: 50 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, ease: "easeOut" }}
+                            onError={(e) => {
+                                e.target.src = { Picture5 }; // Fallback if image fails to load
+                            }}
+                        />
+
+                    </Grid>
+
                     <Grid item xs={12} sm={6}>
 
                         {/* <br /> */}
@@ -180,43 +209,6 @@ const MeMsChips = () => {
                             transition={{ duration: 0.8, ease: "easeOut" }}
                             onError={(e) => {
                                 e.target.src = { Picture4 }; // Fallback if image fails to load
-                            }}
-                        />
-
-                    </Grid>
-
-                    <Grid item xs={12} sm={6}>
-
-                        {/* <br /> */}
-                        <StyledImage
-                            component={motion.img}
-                            src={Picture5}
-                            alt="Our Methodology"
-                            sx={{ width: "100%", height: "auto" }}
-                            initial={{ opacity: 0, y: 50 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8, ease: "easeOut" }}
-                            onError={(e) => {
-                                e.target.src = { Picture5 };
-                            }}
-                        />
-
-                    </Grid>
-
-                    {/* Second Image (50% width) */}
-                    <Grid item xs={12} sm={6}>
-
-                        {/* <br /> */}
-                        <StyledImage
-                            component={motion.img}
-                            src={Picture6} // Add the URL of the second image
-                            alt="TEM Image Example"
-                            sx={{ width: "100%", height: "auto" }}
-                            initial={{ opacity: 0, y: 50 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8, ease: "easeOut" }}
-                            onError={(e) => {
-                                e.target.src = { Picture6 }; // Fallback if image fails to load
                             }}
                         />
 

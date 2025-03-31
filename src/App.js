@@ -8,9 +8,7 @@ import Services from './Components/Services/service';
 import { useEffect } from 'react';
 import Industries from './Components/Industries/industries';
 import ConatctUs from './Components/ContactUs/contactus';
-import AboutUs from './Components/AboutUs/aboutus';
 import TrendsAndAdvnces from './Components/TrendsAdvances/trensAndAdvances';
-import SpecializedProducts from './Components/SpecilizedProducts/SpecilizedProducs';
 
 const theme = createTheme();
 
@@ -50,9 +48,7 @@ function App() {
           <Route path="/services" element={<Services />} />
           <Route path='/industries' element={<Industries />} />
           <Route path='/contact' element={<ConatctUs />} />
-          <Route path='/about-us' element={<AboutUs />} />
           <Route path='/trends-advances' element={<TrendsAndAdvnces />} />
-          <Route path='/specializedProducts' element={<SpecializedProducts />} />
         </Routes>
         <ThemeProvider theme={theme}>
           <Footer />

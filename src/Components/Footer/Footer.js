@@ -70,26 +70,20 @@ const Footer = () => {
                             Quick Links
                         </Typography>
                         <Box display="flex" flexDirection="column" gap={1}>
-                            <Link to="/" style={{ textDecoration: 'none', color:'#FFFF'}}>
+                            <Link to="/" style={{ textDecoration: 'none', color: '#FFFF' }}>
                                 <NeuralLink variant="body1">Home</NeuralLink>
                             </Link>
-                            <Link to="/specializedProducts" style={{ textDecoration: 'none', color:'#FFFF'}}>
-                                <NeuralLink variant="body1">Specialized Products</NeuralLink>
-                            </Link>
-                            <Link to="/services" style={{ textDecoration: 'none', color:'#FFFF'}}>
+                            <Link to="/services" style={{ textDecoration: 'none', color: '#FFFF' }}>
                                 <NeuralLink variant="body1">Services</NeuralLink>
                             </Link>
-                            <Link to="/industries" style={{ textDecoration: 'none', color:'#FFFF'}}>
+                            <Link to="/industries" style={{ textDecoration: 'none', color: '#FFFF' }}>
                                 <NeuralLink variant="body1">Industries</NeuralLink>
                             </Link>
-                            <Link to="/trends-advances" style={{ textDecoration: 'none', color:'#FFFF'}}>
+                            <Link to="/trends-advances" style={{ textDecoration: 'none', color: '#FFFF' }}>
                                 <NeuralLink variant="body1">Trends & Advances</NeuralLink>
                             </Link>
-                            <Link to="/contact" style={{ textDecoration: 'none', color:'#FFFF'}}>
+                            <Link to="/contact" style={{ textDecoration: 'none', color: '#FFFF' }}>
                                 <NeuralLink variant="body1">Contact</NeuralLink>
-                            </Link>
-                            <Link to="/about-us" style={{ textDecoration: 'none', color:'#FFFF'}}>
-                                <NeuralLink variant="body1">About Us</NeuralLink>
                             </Link>
                         </Box>
                     </Grid>

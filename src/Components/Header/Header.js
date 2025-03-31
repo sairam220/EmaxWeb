@@ -18,21 +18,17 @@ import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import BuildOutlinedIcon from "@mui/icons-material/BuildOutlined";
 import TrendingUpOutlinedIcon from "@mui/icons-material/TrendingUpOutlined";
 import ContactMailOutlinedIcon from "@mui/icons-material/ContactMailOutlined";
-import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import DomainOutlinedIcon from "@mui/icons-material/DomainOutlined";
 import logo from '../../asserts/Header/emax-white-multicolor-3.webp';
 import CloseIcon from "@mui/icons-material/Close";
-import MemoryIcon from '@mui/icons-material/Memory';
 
 
 const pages = [
   { name: "HOME", icon: <HomeOutlinedIcon />, path: "/", tooltip: 'Home' },
-  { name: "SpecX", icon: <MemoryIcon />, path: "/specializedProducts", tooltip: 'Specialized Products' },
   { name: "Services", icon: <BuildOutlinedIcon />, path: "/services", tooltip: 'Services' },
   { name: "Industries", icon: <DomainOutlinedIcon />, path: "/industries", tooltip: 'Industries' },
   { name: "Trends", icon: <TrendingUpOutlinedIcon />, path: "/trends-advances", tooltip: 'Trends & Advances' },
   { name: "Contact", icon: <ContactMailOutlinedIcon />, path: "/contact", tooltip: 'Contact' },
-  { name: "About Us", icon: <InfoOutlinedIcon />, path: "/about-us", tooltip: 'About Us' },
 ];
 
 function ResponsiveAppBar() {
