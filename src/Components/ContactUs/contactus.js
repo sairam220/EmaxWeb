@@ -28,45 +28,32 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 import swamychinmayananda_white from '../../asserts/Services/swamychinmayananda_white.webp'
 
 
-
 const StyledForm = styled("form")(({ theme }) => ({
     maxWidth: "100%",
     marginTop: theme.spacing(3),
-    background: "#FFFF",
-    backdropFilter: "blur(10px)",
-    padding: theme.spacing(4),
-    borderRadius: "15px",
-    boxShadow: "0px 10px 30px rgba(0, 0, 0, 0.1)",
+    background: "linear-gradient(135deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.5))",
+    backdropFilter: "blur(15px)",
+    padding: theme.spacing(5),
+    borderRadius: "20px",
+    boxShadow: "0px 10px 30px rgba(0, 0, 0, 0.15)",
+    textAlign: "center",
     [theme.breakpoints.down("sm")]: {
-        padding: theme.spacing(2),
+        padding: theme.spacing(3),
         margin: theme.spacing(2),
     }
 }));
 
-const ContactInfo = styled(Card)(({ theme }) => ({
-    padding: theme.spacing(4),
-    marginTop: theme.spacing(4),
-    backgroundColor: "#FFFF",
-    backdropFilter: "blur(10px)",
-    boxShadow: "0px 10px 30px rgba(0, 0, 0, 0.1)",
-    borderRadius: "15px",
-    [theme.breakpoints.down("sm")]: {
-        padding: theme.spacing(2),
-    }
-}));
-
 const AddressInfo = styled(Card)(({ theme }) => ({
-    padding: theme.spacing(4),
+    padding: theme.spacing(5),
     marginTop: theme.spacing(4),
-    backgroundColor: "#FFFF",
-    backdropFilter: "blur(10px)",
-    boxShadow: "0px 10px 30px rgba(0, 0, 0, 0.1)",
-    borderRadius: "15px",
+    background: "linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))",
+    backdropFilter: "blur(15px)",
+    boxShadow: "0px 10px 30px rgba(0, 0, 0, 0.15)",
+    borderRadius: "20px",
     [theme.breakpoints.down("sm")]: {
-        padding: theme.spacing(2),
+        padding: theme.spacing(3),
     }
 }));
-
 export default function ContactUs() {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
@@ -155,6 +142,15 @@ export default function ContactUs() {
                     ContactUs
                     <ContactMailIcon sx={{ fontSize: "1.5rem" }} color="primary" />
                 </Typography>
+                <Box sx={{ width: "100%", height: "400px", overflow: "hidden", mb: 5 }}>
+                    <iframe
+                        width="100%"
+                        height="100%"
+                        title="EMAX Location"
+                        src="https://maps.google.com/maps?width=520&height=400&hl=en&q=Level%201,%20289%20Goundappan%20Street,%20Coimbatore%20%E2%80%93%20641038,%20Tamil%20Nadu,%20India+(EMAX%20Scientific%20Solutions%20Pvt.%20Ltd)&t=&z=14&ie=UTF8&iwloc=B&output=embed"
+                        style={{ borderRadius: "10px", border: 0 }}
+                    />
+                </Box>
 
                 <Button
                     variant="contained"
@@ -168,6 +164,9 @@ export default function ContactUs() {
 
                 <Container maxWidth={isMobile ? "sm" : "md"}>
                     <StyledForm onSubmit={handleSubmit}>
+                        <Typography variant="h5" sx={{ fontWeight: "bold", mb: 3, color: "primary.main" }}>
+                            Message Us
+                        </Typography>
                         <Grid container spacing={3}>
                             <Grid item xs={12}><TextField fullWidth required name="name" label="Name" value={formData.name} onChange={handleChange} error={!!errors.name} helperText={errors.name} InputProps={{ startAdornment: <PersonIcon sx={{ mr: 1 }} color="primary" /> }} /></Grid>
                             <Grid item xs={12}><TextField fullWidth required name="email" label="Email" type="email" value={formData.email} onChange={handleChange} error={!!errors.email} helperText={errors.email} InputProps={{ startAdornment: <MailIcon sx={{ mr: 1 }} color="primary" /> }} /></Grid>
@@ -176,8 +175,11 @@ export default function ContactUs() {
                         </Grid>
                     </StyledForm>
 
-                    <ContactInfo>
-                        <Grid container spacing={3}>
+                    <AddressInfo>
+                        <Typography variant="h5" sx={{ fontWeight: "bold", mb: 6, color: "primary.main" }}>
+                            Contact Information
+                        </Typography>
+                        <Grid container spacing={2.6}>
                             <Grid item xs={12} md={4}>
                                 <Box display="flex" alignItems="center">
                                     <LocalPhoneIcon sx={{ mr: 1 }} color="primary" />
@@ -186,17 +188,26 @@ export default function ContactUs() {
                                     </a>
                                 </Box>
                             </Grid>
-
-                            <Grid item xs={12} md={4}><Box display="flex" alignItems="center"><MailIcon sx={{ mr: 1 }} color="primary" /><Typography component="a" href="mailto:surya.ps@emaxss.org" style={{ color: 'inherit', textDecoration: 'none' }}>sankara.ps@emaxss.org</Typography></Box></Grid>
-                            <Grid item xs={12} md={4}><Box display="flex" alignItems="center"><WatchLaterIcon sx={{ mr: 1 }} color="primary" /><Typography>Mon-Sat: 9AM-7PM IST</Typography></Box></Grid>
+                            <Grid item xs={12} md={4}>
+                                <Box display="flex" alignItems="center">
+                                    <MailIcon sx={{ mr: 1 }} color="primary" />
+                                    <Typography component="a" href="mailto:surya.ps@emaxss.org" style={{ color: 'inherit', textDecoration: 'none' }}>
+                                        sankara.ps@emaxss.org
+                                    </Typography>
+                                </Box>
+                            </Grid>
+                            <Grid item xs={12} md={4}>
+                                <Box display="flex" alignItems="center">
+                                    <WatchLaterIcon sx={{ mr: 1 }} color="primary" />
+                                    <Typography>Mon-Sat: 9AM-7PM IST</Typography>
+                                </Box>
+                            </Grid>
                         </Grid>
-                    </ContactInfo>
 
-                    <AddressInfo>
-                        <Typography variant="h6" sx={{ fontWeight: "bold", mb: 2 }}>
+                        <Typography variant="h6" sx={{ fontWeight: "bold", mt: 6, mb: 2 }}>
                             Our Registered Address
                         </Typography>
-                        <Typography variant="body1" sx={{ mb: 2 }} align="center">
+                        <Typography variant="body1" sx={{ mb: 6 }} align="center">
                             <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                                 <LocationOnIcon sx={{ mr: 2 }} color="primary" />
                                 <div>
@@ -227,6 +238,7 @@ export default function ContactUs() {
                             <a href="mailto:surya.ps@emaxss.org" style={{ color: 'inherit', textDecoration: 'none' }}>surya.ps@emaxss.org</a>
                         </Typography>
                     </AddressInfo>
+
                 </Container>
 
                 <Box mt={6} mb={3} px={{ xs: 1, sm: 4, md: 6 }}>
