@@ -52,75 +52,6 @@ const MeMsChips = () => {
                 sx={{
                     p: { xs: 3, sm: 4, md: 5 },
                     borderRadius: 4,
-                    backgroundColor: theme.palette.background?.default || "#fff"
-                }}
-            >
-                <Typography variant="h4" fontWeight="bold" gutterBottom>
-                    MEMS CHIPS FOR IN-SITU TEM
-                </Typography>
-
-
-
-                {/* Grid Container for Side-by-Side Images */}
-                <Grid container spacing={2} sx={{ mt: 3 }}>
-                    {/* First Image (50% width) */}
-                    <Grid item xs={12} sm={6}>
-                        <Typography variant="h6" color="primary" align="center" sx={{ fontWeight: 600, mb: 2 }}>
-                            Optical image of 2 inch double side polished Silicon wafer
-                        </Typography>
-                        {/* <br /> */}
-                        <StyledImage
-                            component={motion.img}
-                            src={Picture1}
-                            alt="Our Methodology"
-                            sx={{ width: "100%", height: "auto" }}
-                            initial={{ opacity: 0, y: 50 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8, ease: "easeOut" }}
-                            onError={(e) => {
-                                e.target.src = { Picture1 };
-                            }}
-                        />
-                        <Typography variant="body1" color="text.secondary" sx={{ mt: 2, textAlign: "center", width: '90%' }}>
-                            An optical image of a 2-inch double-side polished silicon wafer shows a smooth,
-                            defect-free surface, crucial for semiconductor applications.
-                        </Typography>
-                    </Grid>
-
-                    {/* Second Image (50% width) */}
-                    <Grid item xs={12} sm={6}>
-                        <Typography variant="h6" color="primary" align="center" sx={{ fontWeight: 600, mb: 2 }}>
-                            nitride coated wafer
-                        </Typography>
-                        {/* <br /> */}
-                        <StyledImage
-                            component={motion.img}
-                            src={Picture2} // Add the URL of the second image
-                            alt="TEM Image Example"
-                            sx={{ width: "100%", height: "auto" }}
-                            initial={{ opacity: 0, y: 50 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8, ease: "easeOut" }}
-                            onError={(e) => {
-                                e.target.src = { Picture2 }; // Fallback if image fails to load
-                            }}
-                        />
-                        <Typography variant="body1" color="text.secondary" sx={{ mt: 2, textAlign: "center", width: '90%' }}>
-                            An optical image of a nitride-coated wafer shows a silicon wafer with a thin layer of nitride,
-                            often used for insulation or protective purposes in semiconductor processes.
-                        </Typography>
-                    </Grid>
-
-                </Grid>
-
-
-            </Paper>
-
-            <Paper
-                elevation={3}
-                sx={{
-                    p: { xs: 3, sm: 4, md: 5 },
-                    borderRadius: 4,
                     mt: 4,
                     backgroundColor: theme.palette.background?.default || "#fff"
                 }}
@@ -225,6 +156,78 @@ const MeMsChips = () => {
 
 
             </Paper>
+
+            <Paper
+                elevation={3}
+                sx={{
+                    p: { xs: 3, sm: 4, md: 5 },
+                    borderRadius: 4,
+                    marginTop: 6,
+                    backgroundColor: theme.palette.background?.default || "#fff"
+                }}
+            >
+                <Typography variant="h6" sx={{ fontWeight: 600, mb: 2 }} gutterBottom>
+                    MEMS CHIPS FOR IN-SITU TEM
+                </Typography>
+
+
+
+                {/* Grid Container for Side-by-Side Images */}
+                <Grid container spacing={2} sx={{ mt: 3 }}>
+                    {/* First Image (50% width) */}
+                    <Grid item xs={12} sm={6}>
+                        <Typography variant="h6" color="primary" align="center" sx={{ fontWeight: 600, mb: 2 }}>
+                            Optical image of 2 inch double side polished Silicon wafer
+                        </Typography>
+                        {/* <br /> */}
+                        <StyledImage
+                            component={motion.img}
+                            src={Picture1}
+                            alt="Our Methodology"
+                            sx={{ width: "100%", height: "auto" }}
+                            initial={{ opacity: 0, y: 50 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, ease: "easeOut" }}
+                            onError={(e) => {
+                                e.target.src = { Picture1 };
+                            }}
+                        />
+                        <Typography variant="body1" color="text.secondary" sx={{ mt: 2, textAlign: "center", width: '90%' }}>
+                            An optical image of a 2-inch double-side polished silicon wafer shows a smooth,
+                            defect-free surface, crucial for semiconductor applications.
+                        </Typography>
+                    </Grid>
+
+                    {/* Second Image (50% width) */}
+                    <Grid item xs={12} sm={6}>
+                        <Typography variant="h6" color="primary" align="center" sx={{ fontWeight: 600, mb: 2 }}>
+                            nitride coated wafer
+                        </Typography>
+                        {/* <br /> */}
+                        <StyledImage
+                            component={motion.img}
+                            src={Picture2} // Add the URL of the second image
+                            alt="TEM Image Example"
+                            sx={{ width: "100%", height: "auto" }}
+                            initial={{ opacity: 0, y: 50 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, ease: "easeOut" }}
+                            onError={(e) => {
+                                e.target.src = { Picture2 }; // Fallback if image fails to load
+                            }}
+                        />
+                        <Typography variant="body1" color="text.secondary" sx={{ mt: 2, textAlign: "center", width: '90%' }}>
+                            An optical image of a nitride-coated wafer shows a silicon wafer with a thin layer of nitride,
+                            often used for insulation or protective purposes in semiconductor processes.
+                        </Typography>
+                    </Grid>
+
+                </Grid>
+
+
+            </Paper>
+
+
 
             {showMore &&
                 <Paper
