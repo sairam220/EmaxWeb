@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Container, Grid, Typography, IconButton, useMediaQuery } from "@mui/material";
 import { styled } from "@mui/system";
-import { Twitter, LinkedIn, GitHub } from "@mui/icons-material";
+import { Twitter, LinkedIn } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 import logo from '../../asserts/Header/emax-white-multicolor-3.webp';
 
