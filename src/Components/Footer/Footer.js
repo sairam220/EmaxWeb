@@ -58,10 +58,19 @@ const Footer = () => {
                             Industrial Process & Product Solutions
                         </Typography>
                         <Box sx={{ display: "flex", justifyContent: isMobile ? "center" : "left" }} gap={1}>
-                            <AnimatedIcon aria-label="Twitter"><Twitter /></AnimatedIcon>
-                            <AnimatedIcon aria-label="LinkedIn"><LinkedIn /></AnimatedIcon>
-                            <AnimatedIcon aria-label="GitHub"><GitHub /></AnimatedIcon>
+                            <AnimatedIcon aria-label="Twitter">
+                                <a href="https://twitter.com/EmaxSSLimited" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+                                    <Twitter sx={{ color: 'inherit' }} />
+                                </a>
+                            </AnimatedIcon>
+                            <AnimatedIcon aria-label="LinkedIn">
+                                <a href="https://www.linkedin.com/company/emax-scientific-solutions-private-limited" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+                                    <LinkedIn sx={{ color: 'inherit' }} />
+                                </a>
+                            </AnimatedIcon>
                         </Box>
+
+
                     </Grid>
 
                     {/* Quick Links */}
