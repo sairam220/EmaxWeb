@@ -5,16 +5,16 @@
     {
       "src": "cropped-emax-favicon-multicolor.webp",
       "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "type": "image/webp"
     },
     {
       "src": "cropped-emax-favicon-multicolor.webp",
-      "type": "image/png",
+      "type": "image/webp",
       "sizes": "192x192"
     },
     {
       "src": "cropped-emax-favicon-multicolor.webp",
-      "type": "image/png",
+      "type": "image/webp",
       "sizes": "512x512"
     }
   ],
