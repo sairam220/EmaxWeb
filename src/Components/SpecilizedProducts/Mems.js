@@ -7,7 +7,6 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import { styled } from "@mui/system";
 import { motion } from "framer-motion";
-import Picture1 from '../../asserts/Mems/Picture1.webp'
 import Picture2 from '../../asserts/Mems/Picture2.webp'
 import Picture3 from '../../asserts/Mems/Picture3.webp'
 import Picture4 from '../../asserts/Mems/Picture4.webp'
@@ -56,9 +55,6 @@ const MeMsChips = () => {
                     backgroundColor: theme.palette.background?.default || "#fff"
                 }}
             >
-
-
-
 
                 {/* Grid Container for Side-by-Side Images */}
                 <Grid container spacing={2} sx={{ mt: 3 }}>
@@ -154,52 +150,16 @@ const MeMsChips = () => {
 
                 </Grid>
 
-
-            </Paper>
-
-            <Paper
-                elevation={3}
-                sx={{
-                    p: { xs: 3, sm: 4, md: 5 },
-                    borderRadius: 4,
-                    marginTop: 6,
-                    backgroundColor: theme.palette.background?.default || "#fff"
-                }}
-            >
-                <Typography variant="h6" sx={{ fontWeight: 600, mb: 2 }} gutterBottom>
+                <Typography variant="h6" sx={{ fontWeight: 600, mb: 2, mt:6}} gutterBottom>
                     MEMS CHIPS FOR IN-SITU TEM
                 </Typography>
-
-
 
                 {/* Grid Container for Side-by-Side Images */}
                 <Grid container spacing={2} sx={{ mt: 3 }}>
                     {/* First Image (50% width) */}
-                    <Grid item xs={12} sm={6}>
-                        <Typography variant="h6" color="primary" align="center" sx={{ fontWeight: 600, mb: 2 }}>
-                            Optical image of 2 inch double side polished Silicon wafer
-                        </Typography>
-                        {/* <br /> */}
-                        <StyledImage
-                            component={motion.img}
-                            src={Picture1}
-                            alt="Our Methodology"
-                            sx={{ width: "100%", height: "auto" }}
-                            initial={{ opacity: 0, y: 50 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8, ease: "easeOut" }}
-                            onError={(e) => {
-                                e.target.src = { Picture1 };
-                            }}
-                        />
-                        <Typography variant="body1" color="text.secondary" sx={{ mt: 2, textAlign: "center", width: '90%' }}>
-                            An optical image of a 2-inch double-side polished silicon wafer shows a smooth,
-                            defect-free surface, crucial for semiconductor applications.
-                        </Typography>
-                    </Grid>
-
+                   
                     {/* Second Image (50% width) */}
-                    <Grid item xs={12} sm={6}>
+                    <Grid item xs={12} sm={12}>
                         <Typography variant="h6" color="primary" align="center" sx={{ fontWeight: 600, mb: 2 }}>
                             nitride coated wafer
                         </Typography>
@@ -208,7 +168,13 @@ const MeMsChips = () => {
                             component={motion.img}
                             src={Picture2} // Add the URL of the second image
                             alt="TEM Image Example"
-                            sx={{ width: "100%", height: "auto" }}
+                            sx={{
+                                width: '100%',
+                                maxWidth: 350,
+                                height: 'auto',
+                                borderRadius: 2,
+                                boxShadow: 3,
+                            }}
                             initial={{ opacity: 0, y: 50 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, ease: "easeOut" }}
@@ -223,7 +189,6 @@ const MeMsChips = () => {
                     </Grid>
 
                 </Grid>
-
 
             </Paper>
 

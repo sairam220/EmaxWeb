@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef} from 'react';
 import { useNavigate } from "react-router-dom";
 
 import {
@@ -45,7 +45,7 @@ const services = [
         title: 'MEMS CHIPS FOR IN-SITU TEM',
         img: Picture3,
         subServices: '',
-        navigate: ''
+        navigate: 'MEMS'
     },
     {
         title: 'TEM Holders',
@@ -115,7 +115,9 @@ const partners = [
 
 const Home = () => {
     const navigate = useNavigate();
+    const memsRef = useRef(null);
     const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+    const [memsVisible, setMemsVisble] = useState(false)
 
     useEffect(() => {
         const handleResize = () => setIsMobile(window.innerWidth < 768);
@@ -129,6 +131,14 @@ const Home = () => {
     };
 
     const handleLearnMore = (path, title) => {
+        if (path === "MEMS") {
+            setMemsVisble(true)
+            setTimeout(() => {
+                memsRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+            }, 100);
+            return
+        }
+        setMemsVisble(false)
         if (title) {
             switch (title) {
                 case "TEM":
@@ -334,16 +344,14 @@ const Home = () => {
                                 src={HomeImage}
                                 alt="Industrial Solutions"
                                 sx={{
-                                    width: '100%',
-                                    maxWidth: 500,
+                                    width: '80%', // reduce from 100%
+                                    maxWidth: 450, // reduce from 500
                                     borderRadius: 2,
                                     boxShadow: 3,
                                 }}
                             />
                         </Grid>
                     </Grid>
-
-                    <MeMsChips />
 
                     {/* Slider Section (Services) */}
                     <Box
@@ -365,7 +373,7 @@ const Home = () => {
                                 backgroundColor: "#424242",
                                 color: "white",
                                 borderRadius: 2,
-                                textTransform: "uppercase",
+                                // textTransform: "uppercase",
                                 boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
                                 fontSize: "1.5rem",
                                 "@media (max-width: 600px)": {
@@ -387,7 +395,7 @@ const Home = () => {
                             <Box sx={{ mr: 1 }}>
                                 <MiscellaneousServicesIcon sx={{ color: "white", fontSize: "2rem" }} />
                             </Box>
-                            Our Services
+                            Our Products & Services
                         </Typography>
 
                         <Slider {...settings}>
@@ -484,6 +492,11 @@ const Home = () => {
                         </Slider>
                     </Box>
 
+                    {memsVisible && (
+                        <Box ref={memsRef}>
+                            <MeMsChips />
+                        </Box>
+                    )}
                     {/* Timeline Section (Capabilites)*/}
                     <Box mt={6} mb={2} sx={{ mt: { xs: '50px', sm: '70px', md: '100px' } }}>
 
@@ -501,7 +514,7 @@ const Home = () => {
                                 backgroundColor: '#0073e6',
                                 color: 'white',
                                 borderRadius: 2,
-                                textTransform: 'uppercase',
+                                // textTransform: 'uppercase',
                                 boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
                                 fontSize: '1.5rem',
                                 '@media (max-width: 600px)': {
@@ -629,7 +642,7 @@ const Home = () => {
                                 backgroundColor: '#4e342e',
                                 color: 'white',
                                 borderRadius: 2,
-                                textTransform: 'uppercase',
+                                // textTransform: 'uppercase',
                                 boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
                                 fontSize: '1.5rem',
                                 '@media (max-width: 600px)': {
@@ -681,7 +694,7 @@ const Home = () => {
                                 backgroundColor: "#424242",
                                 color: "white",
                                 borderRadius: 2,
-                                textTransform: "uppercase",
+                                // textTransform: "uppercase",
                                 boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
                                 fontSize: { xs: "1.25rem", sm: "1.5rem" },
                                 "&::before": {
