@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, useLocation, Navigate} from "react-router-dom";
 import TopBar from './Components/Header/Header';
 import Home from './Components/Home/Home';
 import Footer from './Components/Footer/Footer';
@@ -49,6 +49,7 @@ function App() {
           <Route path='/industries' element={<Industries />} />
           <Route path='/contact' element={<ConatctUs />} />
           <Route path='/trends-advances' element={<TrendsAndAdvnces />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
         <ThemeProvider theme={theme}>
           <Footer />
