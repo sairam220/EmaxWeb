@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef} from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from "react-router-dom";
 
 import {
@@ -313,28 +313,57 @@ const Home = () => {
                             <Typography variant="body1" color="text.secondary" paragraph>
                                 We at EMAX SS provide holistic scientific solutions across a spectrum of industries, enhancing product development and process optimization solutions using advanced characterization techniques, statistical design, and machine learning algorithms.
                             </Typography>
+                            <Box display="flex" gap={2} justifyContent="center" alignItems="center" textAlign="center" mt={2}>
+                                {/* Contact Us Button */}
 
-                            {/* Contact Us Button */}
-                            <Button
-                                variant="contained"
-                                color="primary"
-                                sx={{
-                                    backgroundColor: '#0073e6',
-                                    color: 'white',
-                                    paddingX: 3,
-                                    paddingY: 1.5,
-                                    borderRadius: '8px',
-                                    fontSize: '1rem',
-                                    textTransform: 'none',
-                                    '&:hover': {
-                                        backgroundColor: '#005bb5',
-                                    },
-                                }}
-                                endIcon={<CallIcon />}
-                                onClick={() => navigate("/contact")}
-                            >
-                                Contact Us
-                            </Button>
+                                <Button
+                                    variant="contained"
+                                    color="primary"
+                                    sx={{
+                                        backgroundColor: '#0073e6',
+                                        color: 'white',
+                                        paddingX: 3,
+                                        paddingY: 1.5,
+                                        borderRadius: '8px',
+                                        fontSize: '1rem',
+                                        textTransform: 'none',
+                                        '&:hover': {
+                                            backgroundColor: '#005bb5',
+                                        },
+                                    }}
+                                    endIcon={<CallIcon />}
+                                    onClick={() => navigate("/contact")}
+                                >
+                                    Contact Us
+                                </Button>
+
+                                <Button
+                                    variant="outlined"
+                                    color="primary"
+                                    sx={{
+                                        color: '#0073e6',
+                                        paddingX: 3,
+                                        paddingY: 1.5,
+                                        borderRadius: '8px',
+                                        fontSize: '1rem',
+                                        textTransform: 'none',
+                                        border: '2px solid #0073e6',
+                                        '&:hover': {
+                                            backgroundColor: '#e6f0ff',
+                                        },
+                                    }}
+                                    onClick={() => {
+                                        // Trigger PDF download
+                                        const link = document.createElement('a');
+                                        link.href = '/assets/FINAL_COMBINED.pdf';
+                                        link.download = 'EMAX.pdf';
+                                        link.click();
+                                    }}
+                                >
+                                    Learn More
+                                </Button>
+
+                            </Box>
                         </Grid>
 
                         {/* Right Side Image */}
